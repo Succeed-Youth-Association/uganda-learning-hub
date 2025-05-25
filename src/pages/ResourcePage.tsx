@@ -7,6 +7,8 @@ import { Input } from '../components/ui/input';
 import { ArrowLeft, Search, Eye, Download, FileText } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import ScrollToTop from '../components/ScrollToTop';
+import ThemeToggle from '../components/ThemeToggle';
+import Footer from '../components/Footer';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
@@ -90,12 +92,13 @@ const ResourcePage = () => {
     <SidebarProvider>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 w-full flex">
         <AppSidebar />
-        <main className="flex-1 overflow-x-hidden">
-          <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2">
+        <main className="flex-1 overflow-x-hidden min-w-0">
+          <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2 flex items-center justify-between">
             <SidebarTrigger />
+            <ThemeToggle />
           </div>
-          <div className="p-4 lg:p-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="p-4 lg:p-8 min-w-0">
+            <div className="max-w-7xl mx-auto min-w-0">
               <div className="mb-8">
                 <Link to={`/class/${classId}`}>
                   <Button variant="outline" className="mb-4">
@@ -127,30 +130,30 @@ const ResourcePage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
                 {currentResources.map((resource) => (
-                  <div key={resource.id} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border">
+                  <div key={resource.id} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
                     <div className="flex items-start justify-between mb-4">
-                      <FileText className="h-8 w-8 text-orange-600" />
+                      <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
                       <span className="text-xs text-muted-foreground">{resource.fileSize}</span>
                     </div>
                     
-                    <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2">
+                    <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
                       {resource.title}
                     </h3>
                     
                     <div className="space-y-1 mb-4">
-                      <p className="text-sm text-muted-foreground">Subject: {resource.subject}</p>
+                      <p className="text-sm text-muted-foreground break-words">Subject: {resource.subject}</p>
                       <p className="text-sm text-muted-foreground">Term: {resource.term}</p>
                       <p className="text-sm text-muted-foreground">Year: {resource.year}</p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                    <div className="flex flex-col gap-2">
                       <Button
                         onClick={() => handlePreview(resource)}
                         variant="outline"
                         size="sm"
-                        className="flex-1"
+                        className="w-full"
                       >
                         <Eye className="h-4 w-4 mr-1" />
                         Preview
@@ -158,7 +161,7 @@ const ResourcePage = () => {
                       <Button
                         onClick={() => handleDownload(resource)}
                         size="sm"
-                        className="flex-1 bg-orange-600 hover:bg-orange-700"
+                        className="w-full bg-orange-600 hover:bg-orange-700"
                       >
                         <Download className="h-4 w-4 mr-1" />
                         Download
@@ -178,6 +181,7 @@ const ResourcePage = () => {
               )}
             </div>
           </div>
+          <Footer />
         </main>
         <ScrollToTop />
       </div>

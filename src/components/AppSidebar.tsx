@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -13,7 +14,6 @@ import {
   SidebarFooter,
 } from './ui/sidebar';
 import { BookOpen, Home, Book, FileText, GraduationCap } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 const nurseryItems = [
   { title: "Baby Class", id: "baby" },
@@ -62,12 +62,9 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r bg-background">
       <SidebarHeader className="p-4 border-b">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <BookOpen className="h-6 w-6 text-orange-600" />
-            <span className="font-semibold text-foreground">Quick Navigation</span>
-          </div>
-          <ThemeToggle />
+        <div className="flex items-center space-x-2">
+          <BookOpen className="h-6 w-6 text-orange-600" />
+          <span className="font-semibold text-foreground">Quick Navigation</span>
         </div>
       </SidebarHeader>
       
