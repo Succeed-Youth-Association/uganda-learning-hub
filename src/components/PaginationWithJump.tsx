@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -19,11 +18,20 @@ const PaginationWithJump: React.FC<PaginationWithJumpProps> = ({
 }) => {
   const [jumpPage, setJumpPage] = useState('');
 
+  const handlePageChange = (page: number) => {
+    onPageChange(page);
+    // Scroll to top after changing page
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleJumpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const pageNum = parseInt(jumpPage);
     if (pageNum >= 1 && pageNum <= totalPages) {
-      onPageChange(pageNum);
+      handlePageChange(pageNum);
       setJumpPage('');
     }
   };
@@ -62,7 +70,7 @@ const PaginationWithJump: React.FC<PaginationWithJumpProps> = ({
         <Button
           variant="outline"
           size="sm"
-          onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+          onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
           disabled={currentPage === 1}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -77,7 +85,7 @@ const PaginationWithJump: React.FC<PaginationWithJumpProps> = ({
                 <Button
                   variant={currentPage === page ? "default" : "outline"}
                   size="sm"
-                  onClick={() => onPageChange(page as number)}
+                  onClick={() => handlePageChange(page as number)}
                   className="min-w-[2rem]"
                 >
                   {page}
@@ -90,7 +98,7 @@ const PaginationWithJump: React.FC<PaginationWithJumpProps> = ({
         <Button
           variant="outline"
           size="sm"
-          onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+          onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
           disabled={currentPage === totalPages}
         >
           <ChevronRight className="h-4 w-4" />
