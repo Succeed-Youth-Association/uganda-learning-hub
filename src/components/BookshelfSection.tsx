@@ -13,43 +13,42 @@ const BookshelfSection = () => {
   );
   
   const primaryBooks2 = libraryData.filter(item => 
-    [ 'p4', 'p5', 'p6', 'p7'].includes(item.id)
+    [ 'p4', 'p5', 'p6'].includes(item.id)
   );
   
   const secondaryBooks1 = libraryData.filter(item => 
-    ['s1', 's2', 's3', 's4'].includes(item.id)
+    ['p7','s1', 's2' ].includes(item.id)
   );
   
   const secondaryBooks2 = libraryData.filter(item => 
-    ['s5','s6'].includes(item.id)
+    ['s3','s4','s5'].includes(item.id)
   );
-
+  const secondaryBooks3 = libraryData.filter(item => 
+    ['s6'].includes(item.id)
+  );
   return (
     <div className="max-w-6xl mx-auto">
       
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Nursery Section</h2>
         <Bookshelf books={nurseryBooks} />
       </div>
       
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Primary Section (Lower)</h2>
         <Bookshelf books={primaryBooks1} />
       </div>
       
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Primary Section (Upper)</h2>
         <Bookshelf books={primaryBooks2} />
       </div>
       
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Secondary Section (Lower)</h2>
         <Bookshelf books={secondaryBooks1} />
       </div>
-      
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Secondary Section (Upper)</h2>
-        <Bookshelf books={secondaryBooks2} emptySlots={4} />
+        <Bookshelf books={secondaryBooks2} />
+      </div>
+      <div className="mb-8">
+        <Bookshelf books={secondaryBooks3} emptySlots={4} />
       </div>
     </div>
   );
