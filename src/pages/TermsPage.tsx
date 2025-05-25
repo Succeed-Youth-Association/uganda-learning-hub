@@ -94,9 +94,9 @@ const TermsPage = () => {
                 <section className="bg-card rounded-lg p-6 border">
                   <h2 className="text-xl font-semibold text-foreground mb-4">Intellectual Property Rights</h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    All content and materials available through Fresh Teacher's Library are protected by copyright 
+                    Some of the materials on Fresh Teacher's Library <i>may be</i> protected by copyright 
                     and other intellectual property laws. We grant you a limited, non-exclusive, non-transferable 
-                    license to access and use our educational resources for permitted educational purposes only.
+                    license to access and use these educational resources for permitted educational purposes only.
                   </p>
                 </section>
 
@@ -121,8 +121,7 @@ const TermsPage = () => {
                 <section className="bg-card rounded-lg p-6 border">
                   <h2 className="text-xl font-semibold text-foreground mb-4">Changes to Terms</h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    We reserve the right to modify these Terms of Service at any time. We will notify users of 
-                    any material changes by posting the updated terms on our platform. Your continued use of 
+                    We reserve the right to modify these Terms of Service at any time. Your continued use of 
                     our services after such changes constitutes acceptance of the new terms.
                   </p>
                 </section>

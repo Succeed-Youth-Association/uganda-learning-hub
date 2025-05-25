@@ -21,7 +21,7 @@ const NotFound = () => {
         {/* Caveman GIF */}
         <div className="mb-8 flex justify-center">
           <img
-            src="https://cdn.svgator.com/images/2024/04/electrocuted-caveman-animation-404-error-page.gif"
+            src="https://github.com/Succeed-Youth-Association/uganda-learning-hub/blob/main/404.gif"
             alt="Caveman discovering electricity the hard way"
             className="w-64 h-64 object-contain"
           />
