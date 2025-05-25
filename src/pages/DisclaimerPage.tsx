@@ -24,7 +24,7 @@ const DisclaimerPage = () => {
                   Fresh Teacher's Library
                 </h1>
                 <h1 className="text-sm font-bold text-foreground sm:hidden">
-                  Fresh Teacher's
+                Fresh Teacher's Library
                 </h1>
               </div>
             </div>

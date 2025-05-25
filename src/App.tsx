@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +12,8 @@ import DisclaimerPage from "./pages/DisclaimerPage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop"; // Your existing component
+import ScrollOnNavigation from "@/components/ScrollOnNavigation"; // New component
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollOnNavigation /> {/* Handles scroll on route change */}
+          <ScrollToTop /> {/* Your existing arrow button */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassPage />} />
