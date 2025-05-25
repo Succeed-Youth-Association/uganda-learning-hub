@@ -1,19 +1,12 @@
-
 import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { SidebarProvider } from '../components/ui/sidebar';
+import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
 import { AppSidebar } from '../components/AppSidebar';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { ArrowLeft, Search, Eye, Download, FileText } from 'lucide-react';
-import { 
-  Pagination, 
-  PaginationContent, 
-  PaginationItem, 
-  PaginationLink, 
-  PaginationNext, 
-  PaginationPrevious 
-} from '../components/ui/pagination';
+import PaginationWithJump from '../components/PaginationWithJump';
+import ScrollToTop from '../components/ScrollToTop';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
@@ -95,118 +88,98 @@ const ResourcePage = () => {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 w-full flex">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 w-full flex">
         <AppSidebar />
-        <main className="flex-1 p-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-8">
-              <Link to={`/class/${classId}`}>
-                <Button variant="outline" className="mb-4">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to {getClassTitle(classId || '')}
-                </Button>
-              </Link>
-              <h1 className="text-4xl font-bold text-gray-800 mb-2">
-                {getResourceTypeTitle(resourceType || '')}
-              </h1>
-              <p className="text-lg text-gray-600 mb-6">
-                {getClassTitle(classId || '')} - {filteredResources.length} resources available
-              </p>
+        <main className="flex-1 overflow-x-hidden">
+          <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2">
+            <SidebarTrigger />
+          </div>
+          <div className="p-4 lg:p-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="mb-8">
+                <Link to={`/class/${classId}`}>
+                  <Button variant="outline" className="mb-4">
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    Back to {getClassTitle(classId || '')}
+                  </Button>
+                </Link>
+                <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                  {getResourceTypeTitle(resourceType || '')}
+                </h1>
+                <p className="text-lg text-muted-foreground mb-6">
+                  {getClassTitle(classId || '')} - {filteredResources.length} resources available
+                </p>
 
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    type="search"
-                    placeholder="Search resources..."
-                    value={searchTerm}
-                    onChange={(e) => {
-                      setSearchTerm(e.target.value);
-                      setCurrentPage(1);
-                    }}
-                    className="pl-10"
-                  />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                  <div className="relative flex-1 max-w-md w-full">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                    <Input
+                      type="search"
+                      placeholder="Search resources..."
+                      value={searchTerm}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setCurrentPage(1);
+                      }}
+                      className="pl-10"
+                    />
+                  </div>
                 </div>
               </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 mb-8">
+                {currentResources.map((resource) => (
+                  <div key={resource.id} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border">
+                    <div className="flex items-start justify-between mb-4">
+                      <FileText className="h-8 w-8 text-orange-600" />
+                      <span className="text-xs text-muted-foreground">{resource.fileSize}</span>
+                    </div>
+                    
+                    <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2">
+                      {resource.title}
+                    </h3>
+                    
+                    <div className="space-y-1 mb-4">
+                      <p className="text-sm text-muted-foreground">Subject: {resource.subject}</p>
+                      <p className="text-sm text-muted-foreground">Term: {resource.term}</p>
+                      <p className="text-sm text-muted-foreground">Year: {resource.year}</p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                      <Button
+                        onClick={() => handlePreview(resource)}
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                      >
+                        <Eye className="h-4 w-4 mr-1" />
+                        Preview
+                      </Button>
+                      <Button
+                        onClick={() => handleDownload(resource)}
+                        size="sm"
+                        className="flex-1 bg-orange-600 hover:bg-orange-700"
+                      >
+                        <Download className="h-4 w-4 mr-1" />
+                        Download
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {totalPages > 1 && (
+                <PaginationWithJump
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
+                  className="mb-8"
+                />
+              )}
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-              {currentResources.map((resource) => (
-                <div key={resource.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border">
-                  <div className="flex items-start justify-between mb-4">
-                    <FileText className="h-8 w-8 text-orange-600" />
-                    <span className="text-xs text-gray-500">{resource.fileSize}</span>
-                  </div>
-                  
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
-                    {resource.title}
-                  </h3>
-                  
-                  <div className="space-y-1 mb-4">
-                    <p className="text-sm text-gray-600">Subject: {resource.subject}</p>
-                    <p className="text-sm text-gray-600">Term: {resource.term}</p>
-                    <p className="text-sm text-gray-600">Year: {resource.year}</p>
-                  </div>
-
-                  <div className="flex space-x-2">
-                    <Button
-                      onClick={() => handlePreview(resource)}
-                      variant="outline"
-                      size="sm"
-                      className="flex-1"
-                    >
-                      <Eye className="h-4 w-4 mr-1" />
-                      Preview
-                    </Button>
-                    <Button
-                      onClick={() => handleDownload(resource)}
-                      size="sm"
-                      className="flex-1 bg-orange-600 hover:bg-orange-700"
-                    >
-                      <Download className="h-4 w-4 mr-1" />
-                      Download
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {totalPages > 1 && (
-              <Pagination className="mb-8">
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious 
-                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                      className={currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
-                    />
-                  </PaginationItem>
-                  
-                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                    const pageNum = i + 1;
-                    return (
-                      <PaginationItem key={pageNum}>
-                        <PaginationLink
-                          onClick={() => setCurrentPage(pageNum)}
-                          isActive={currentPage === pageNum}
-                          className="cursor-pointer"
-                        >
-                          {pageNum}
-                        </PaginationLink>
-                      </PaginationItem>
-                    );
-                  })}
-                  
-                  <PaginationItem>
-                    <PaginationNext 
-                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                      className={currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
-                    />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
-            )}
           </div>
         </main>
+        <ScrollToTop />
       </div>
     </SidebarProvider>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -12,9 +11,9 @@ import {
   SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
-  SidebarTrigger,
 } from './ui/sidebar';
 import { BookOpen, Home, Book, FileText, GraduationCap } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const nurseryItems = [
   { title: "Baby Class", id: "baby" },
@@ -61,14 +60,14 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className="border-r bg-white">
+    <Sidebar className="border-r bg-background">
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <BookOpen className="h-6 w-6 text-orange-600" />
-            <span className="font-semibold text-gray-800">Quick Navigation</span>
+            <span className="font-semibold text-foreground">Quick Navigation</span>
           </div>
-          <SidebarTrigger />
+          <ThemeToggle />
         </div>
       </SidebarHeader>
       
@@ -77,7 +76,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton onClick={handleHomeClick} className="text-gray-700 hover:text-orange-600">
+                <SidebarMenuButton onClick={handleHomeClick} className="text-foreground hover:text-orange-600">
                   <Home className="h-4 w-4" />
                   <span>Home</span>
                 </SidebarMenuButton>
@@ -96,7 +95,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton 
                     onClick={() => handleClassClick(item.id)}
-                    className="text-gray-700 hover:text-orange-600"
+                    className="text-foreground hover:text-orange-600"
                   >
                     <span>{item.title}</span>
                   </SidebarMenuButton>
@@ -116,7 +115,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton 
                     onClick={() => handleClassClick(item.id)}
-                    className="text-gray-700 hover:text-orange-600"
+                    className="text-foreground hover:text-orange-600"
                   >
                     <span>{item.title}</span>
                   </SidebarMenuButton>
@@ -136,7 +135,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton 
                     onClick={() => handleClassClick(item.id)}
-                    className="text-gray-700 hover:text-orange-600"
+                    className="text-foreground hover:text-orange-600"
                   >
                     <span>{item.title}</span>
                   </SidebarMenuButton>
@@ -154,7 +153,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {resourceTypes.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton className="text-gray-700 hover:text-orange-600">
+                  <SidebarMenuButton className="text-foreground hover:text-orange-600">
                     <item.icon className="h-4 w-4" />
                     <span>{item.title}</span>
                   </SidebarMenuButton>
@@ -166,7 +165,7 @@ export function AppSidebar() {
       </SidebarContent>
       
       <SidebarFooter className="p-4 border-t">
-        <div className="text-xs text-gray-500 text-center">
+        <div className="text-xs text-muted-foreground text-center">
           Uganda Curriculum Resources
         </div>
       </SidebarFooter>
