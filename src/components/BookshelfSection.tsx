@@ -9,31 +9,23 @@ const BookshelfSection = () => {
   );
   
   const primaryBooks1 = libraryData.filter(item => 
-    ['p1', 'p2'].includes(item.id)
+    ['p1', 'p2', 'p3'].includes(item.id)
   );
   
   const primaryBooks2 = libraryData.filter(item => 
-    ['p3', 'p4', 'p5', 'p6', 'p7'].includes(item.id)
+    [ 'p4', 'p5', 'p6', 'p7'].includes(item.id)
   );
   
   const secondaryBooks1 = libraryData.filter(item => 
-    ['s1', 's2', 's3', 's4', 's5'].includes(item.id)
+    ['s1', 's2', 's3', 's4'].includes(item.id)
   );
   
   const secondaryBooks2 = libraryData.filter(item => 
-    ['s6'].includes(item.id)
+    ['s5','s6'].includes(item.id)
   );
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-          Fresh Teacher's Library
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-          Access educational resources for Uganda curriculum - from Nursery to Senior Six
-        </p>
-      </div>
       
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">Nursery Section</h2>

@@ -19,7 +19,7 @@ const TermsPage = () => {
             <div className="flex items-center space-x-3">
               <SidebarTrigger />
               <div className="flex items-center space-x-2">
-                <BookOpen className="h-6 w-6 text-orange-600" />
+                
                 <h1 className="text-lg font-bold text-foreground hidden sm:block">
                   Fresh Teacher's Library
                 </h1>

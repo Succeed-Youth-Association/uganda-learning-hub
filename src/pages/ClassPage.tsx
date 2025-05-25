@@ -87,7 +87,6 @@ const ClassPage = () => {
             <div className="flex items-center space-x-3">
               <SidebarTrigger />
               <div className="flex items-center space-x-2">
-                <BookOpen className="h-6 w-6 text-orange-600" />
                 <h1 className="text-lg font-bold text-foreground hidden sm:block">
                   Fresh Teacher's Library
                 </h1>
@@ -110,9 +109,7 @@ const ClassPage = () => {
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
                   {getClassTitle(classId || '')}
                 </h1>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Select a resource type to explore available materials
-                </p>
+               
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">

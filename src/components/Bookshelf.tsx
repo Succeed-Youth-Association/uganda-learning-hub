@@ -26,13 +26,7 @@ const Bookshelf: React.FC<BookshelfProps> = ({ books, emptySlots = 0 }) => {
         {books.map((book, index) => (
           <BookCover key={book.id} book={book} />
         ))}
-        {emptySlotArray.map((_, index) => (
-          <div key={`empty-${index}`} className="thumb book-1 inline-block cursor-pointer mx-[0.5%] w-[15%] max-w-[120px] shadow-md">
-            <div className="w-full h-32 bg-gray-200 flex items-center justify-center">
-              <span className="text-gray-400 text-xs">Coming Soon</span>
-            </div>
-          </div>
-        ))}
+       
       </div>
       <img 
         className="shelf-img h-auto max-w-full align-top z-0" 

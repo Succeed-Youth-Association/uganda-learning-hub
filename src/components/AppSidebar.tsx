@@ -63,7 +63,7 @@ export function AppSidebar() {
     <Sidebar className="border-r bg-background">
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center space-x-2">
-          <BookOpen className="h-6 w-6 text-orange-600" />
+          
           <span className="font-semibold text-foreground">Quick Navigation</span>
         </div>
       </SidebarHeader>
@@ -163,7 +163,7 @@ export function AppSidebar() {
       
       <SidebarFooter className="p-4 border-t">
         <div className="text-xs text-muted-foreground text-center">
-          Uganda Curriculum Resources
+          <em>For Planned Teachers</em>
         </div>
       </SidebarFooter>
     </Sidebar>
