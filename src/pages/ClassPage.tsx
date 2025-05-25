@@ -84,7 +84,18 @@ const ClassPage = () => {
         <AppSidebar />
         <main className="flex-1 overflow-x-hidden min-w-0">
           <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2 flex items-center justify-between">
-            <SidebarTrigger />
+            <div className="flex items-center space-x-3">
+              <SidebarTrigger />
+              <div className="flex items-center space-x-2">
+                <BookOpen className="h-6 w-6 text-orange-600" />
+                <h1 className="text-lg font-bold text-foreground hidden sm:block">
+                  Fresh Teacher's Library
+                </h1>
+                <h1 className="text-sm font-bold text-foreground sm:hidden">
+                  Fresh Teacher's
+                </h1>
+              </div>
+            </div>
             <ThemeToggle />
           </div>
           <div className="p-4 lg:p-8 min-w-0">
