@@ -95,7 +95,6 @@ const AboutPage = () => {
 
                 <section className="bg-card rounded-lg p-6 border">
                   <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-orange-600 mr-3" />
                     <h2 className="text-2xl font-semibold text-foreground">Our Commitment</h2>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">

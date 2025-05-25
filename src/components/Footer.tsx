@@ -28,13 +28,7 @@ const Footer = () => {
           <div>
             <h4 className="text-md font-semibold text-foreground mb-4">Quick Links</h4>
             <div className="space-y-2">
-              <Link 
-                to="/" 
-                onClick={scrollToTop}
-                className="block text-sm text-muted-foreground hover:text-orange-600 transition-colors"
-              >
-                Home
-              </Link>
+
               <Link 
                 to="/about" 
                 onClick={scrollToTop}
@@ -75,7 +69,8 @@ const Footer = () => {
         
         <div className="border-t mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Fresh Teacher's Library. All rights reserved.
+            © {currentYear} Fresh Teacher's Technologies <br /> 
+            Made with <span className="inline-block animate-pulse-heart">❤️</span> by Fresh Teacher
           </p>
         </div>
       </div>

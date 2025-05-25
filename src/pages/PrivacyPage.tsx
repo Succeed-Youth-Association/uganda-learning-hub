@@ -19,7 +19,6 @@ const PrivacyPage = () => {
             <div className="flex items-center space-x-3">
               <SidebarTrigger />
               <div className="flex items-center space-x-2">
-                <BookOpen className="h-6 w-6 text-orange-600" />
                 <h1 className="text-lg font-bold text-foreground hidden sm:block">
                   Fresh Teacher's Library
                 </h1>
@@ -55,7 +54,7 @@ const PrivacyPage = () => {
                     <ul className="list-disc pl-6 space-y-1">
                       <li>Personal information you provide when creating an account</li>
                       <li>Usage data about how you interact with our platform</li>
-                      <li>Technical information such as IP address and browser type</li>
+                      <li>Technical information such as your IP address and browser type</li>
                       <li>Educational preferences and resource access patterns</li>
                     </ul>
                   </div>
@@ -67,9 +66,9 @@ const PrivacyPage = () => {
                     <p className="leading-relaxed">We use your information to:</p>
                     <ul className="list-disc pl-6 space-y-1">
                       <li>Provide and maintain our educational services</li>
-                      <li>Improve and personalize your experience</li>
+                      <li>Improve and personalise your experience</li>
                       <li>Communicate with you about updates and new resources</li>
-                      <li>Analyze usage patterns to enhance our platform</li>
+                      <li>Analyse usage patterns to enhance our platform</li>
                       <li>Ensure the security and integrity of our services</li>
                     </ul>
                   </div>
@@ -89,7 +88,7 @@ const PrivacyPage = () => {
                   <h2 className="text-xl font-semibold text-foreground mb-4">Data Security</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We implement appropriate security measures to protect your personal information against 
-                    unauthorized access, alteration, disclosure, or destruction. However, no method of 
+                    unauthorised access, alteration, disclosure, or destruction. However, no method of 
                     transmission over the internet or electronic storage is 100% secure, and we cannot 
                     guarantee absolute security.
                   </p>
@@ -99,7 +98,7 @@ const PrivacyPage = () => {
                   <h2 className="text-xl font-semibold text-foreground mb-4">Cookies and Tracking</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We use cookies and similar tracking technologies to enhance your browsing experience, 
-                    analyze site traffic, and understand where our visitors are coming from. You can control 
+                    analyse site traffic, and understand where our visitors are coming from. You can control 
                     cookie settings through your browser preferences, though some features may not function 
                     properly if cookies are disabled.
                   </p>
@@ -132,8 +131,7 @@ const PrivacyPage = () => {
                   <h2 className="text-xl font-semibold text-foreground mb-4">Policy Updates</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     We may update this Privacy Policy from time to time to reflect changes in our practices 
-                    or for other operational, legal, or regulatory reasons. We will notify you of any material 
-                    changes by posting the updated policy on our platform and updating the effective date.
+                    or for other operational, legal, or regulatory reasons. 
                   </p>
                 </section>
 
@@ -141,7 +139,7 @@ const PrivacyPage = () => {
                   <h2 className="text-xl font-semibold text-foreground mb-4">Contact Information</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     If you have any questions about this Privacy Policy or our data practices, please contact 
-                    us through our platform or email us at privacy@freshteacherslibrary.com. We are committed 
+                    us through our platform. We are committed 
                     to addressing your concerns and protecting your privacy.
                   </p>
                 </section>
