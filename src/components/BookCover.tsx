@@ -18,8 +18,7 @@ const BookCover: React.FC<BookCoverProps> = ({ book }) => {
 
   const handleBookClick = () => {
     console.log(`Clicked on ${book.title}`);
-    // Navigate to class page - for now we'll show an alert
-    alert(`Opening ${book.title} resources. This will navigate to the class page with subjects and resources.`);
+    navigate(`/class/${book.id}`);
   };
 
   return (

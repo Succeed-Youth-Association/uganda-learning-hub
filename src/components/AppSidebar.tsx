@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Sidebar,
   SidebarContent,
@@ -11,6 +12,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
+  SidebarTrigger,
 } from './ui/sidebar';
 import { BookOpen, Home, Book, FileText, GraduationCap } from 'lucide-react';
 
@@ -48,16 +50,42 @@ const resourceTypes = [
 ];
 
 export function AppSidebar() {
+  const navigate = useNavigate();
+
+  const handleClassClick = (classId: string) => {
+    navigate(`/class/${classId}`);
+  };
+
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
   return (
     <Sidebar className="border-r bg-white">
-      <SidebarHeader className="p-4">
-        <div className="flex items-center space-x-2">
-          <BookOpen className="h-6 w-6 text-orange-600" />
-          <span className="font-semibold text-gray-800">Quick Navigation</span>
+      <SidebarHeader className="p-4 border-b">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <BookOpen className="h-6 w-6 text-orange-600" />
+            <span className="font-semibold text-gray-800">Quick Navigation</span>
+          </div>
+          <SidebarTrigger />
         </div>
       </SidebarHeader>
       
       <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton onClick={handleHomeClick} className="text-gray-700 hover:text-orange-600">
+                  <Home className="h-4 w-4" />
+                  <span>Home</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         <SidebarGroup>
           <SidebarGroupLabel className="text-orange-600 font-semibold">
             Nursery Section
@@ -66,10 +94,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {nurseryItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
-                  <SidebarMenuButton asChild>
-                    <a href={`#${item.id}`} className="text-gray-700 hover:text-orange-600">
-                      <span>{item.title}</span>
-                    </a>
+                  <SidebarMenuButton 
+                    onClick={() => handleClassClick(item.id)}
+                    className="text-gray-700 hover:text-orange-600"
+                  >
+                    <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -85,10 +114,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {primaryItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
-                  <SidebarMenuButton asChild>
-                    <a href={`#${item.id}`} className="text-gray-700 hover:text-orange-600">
-                      <span>{item.title}</span>
-                    </a>
+                  <SidebarMenuButton 
+                    onClick={() => handleClassClick(item.id)}
+                    className="text-gray-700 hover:text-orange-600"
+                  >
+                    <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -104,10 +134,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {secondaryItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
-                  <SidebarMenuButton asChild>
-                    <a href={`#${item.id}`} className="text-gray-700 hover:text-orange-600">
-                      <span>{item.title}</span>
-                    </a>
+                  <SidebarMenuButton 
+                    onClick={() => handleClassClick(item.id)}
+                    className="text-gray-700 hover:text-orange-600"
+                  >
+                    <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -123,11 +154,9 @@ export function AppSidebar() {
             <SidebarMenu>
               {resourceTypes.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href="#" className="text-gray-700 hover:text-orange-600">
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </a>
+                  <SidebarMenuButton className="text-gray-700 hover:text-orange-600">
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
