@@ -1,49 +1,68 @@
+
 import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
 import { AppSidebar } from '../components/AppSidebar';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, Eye, Download, FileText } from 'lucide-react';
+import { ArrowLeft, Search, Eye, Download, FileText, BookOpen } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
+import { extractFileName, getFileExtension } from '../utils/fileUtils';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const itemsPerPage = 12;
 
-  // Dummy data for resources
-  const generateDummyResources = (type: string, count: number = 50) => {
+  // Available subjects for each class level
+  const getSubjectsForClass = (classId: string) => {
+    const nurserySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Art'];
+    const primarySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Religious Education'];
+    const secondarySubjects = ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Literature', 'Economics', 'Agriculture'];
+
+    if (['baby', 'middle', 'top'].includes(classId || '')) {
+      return nurserySubjects;
+    } else if (['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'].includes(classId || '')) {
+      return primarySubjects;
+    } else {
+      return secondarySubjects;
+    }
+  };
+
+  // Dummy data for documents (simulating JSON file structure)
+  const generateDummyDocuments = (subject: string, count: number = 15) => {
+    const sampleUrls = [
+      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_examination.pdf`,
+      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_notes_term_1.pdf`,
+      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_textbook.pdf`,
+      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_past_paper_2023.pdf`,
+      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_revision_guide.pdf`
+    ];
+
     return Array.from({ length: count }, (_, i) => ({
-      id: `${type}-${i + 1}`,
-      title: `${type.replace('-', ' ')} ${i + 1} - Subject Topic`,
-      subject: ['Mathematics', 'English', 'Science', 'Social Studies', 'Art'][i % 5],
-      term: ['Term 1', 'Term 2', 'Term 3'][i % 3],
-      year: 2024,
-      fileSize: `${Math.floor(Math.random() * 5) + 1}.${Math.floor(Math.random() * 9)}MB`,
-      downloadUrl: '#',
-      previewUrl: '#'
+      title: extractFileName(sampleUrls[i % sampleUrls.length]),
+      pdfUrl: sampleUrls[i % sampleUrls.length].replace('.pdf', `_${i + 1}.pdf`)
     }));
   };
 
-  const allResources = useMemo(() => {
-    return generateDummyResources(resourceType || 'resource');
-  }, [resourceType]);
+  const subjects = getSubjectsForClass(classId || '');
+  const documents = selectedSubject ? generateDummyDocuments(selectedSubject) : [];
 
-  const filteredResources = useMemo(() => {
-    return allResources.filter(resource =>
-      resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      resource.subject.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredDocuments = useMemo(() => {
+    if (!selectedSubject) return [];
+    return documents.filter(doc =>
+      extractFileName(doc.pdfUrl).toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [allResources, searchTerm]);
+  }, [documents, searchTerm, selectedSubject]);
 
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentResources = filteredResources.slice(startIndex, startIndex + itemsPerPage);
+  const currentDocuments = filteredDocuments.slice(startIndex, startIndex + itemsPerPage);
 
   const getResourceTypeTitle = (type: string) => {
     const typeMap: { [key: string]: string } = {
@@ -78,14 +97,31 @@ const ResourcePage = () => {
     return classMap[id || ''] || 'Unknown Class';
   };
 
-  const handlePreview = (resource: any) => {
-    console.log('Previewing:', resource.title);
-    alert(`Previewing: ${resource.title}`);
+  const handlePreview = (document: any) => {
+    console.log('Previewing:', document.title);
+    window.open(document.pdfUrl, '_blank');
   };
 
-  const handleDownload = (resource: any) => {
-    console.log('Downloading:', resource.title);
-    alert(`Downloading: ${resource.title}`);
+  const handleDownload = (document: any) => {
+    console.log('Downloading:', document.title);
+    const link = document.createElement('a');
+    link.href = document.pdfUrl;
+    link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleSubjectSelect = (subject: string) => {
+    setSelectedSubject(subject);
+    setCurrentPage(1);
+    setSearchTerm('');
+  };
+
+  const handleBackToSubjects = () => {
+    setSelectedSubject(null);
+    setCurrentPage(1);
+    setSearchTerm('');
   };
 
   return (
@@ -100,84 +136,135 @@ const ResourcePage = () => {
           <div className="p-4 lg:p-8 min-w-0">
             <div className="max-w-7xl mx-auto min-w-0">
               <div className="mb-8">
-                <Link to={`/class/${classId}`}>
-                  <Button variant="outline" className="mb-4">
+                {selectedSubject ? (
+                  <Button variant="outline" className="mb-4" onClick={handleBackToSubjects}>
                     <ArrowLeft className="h-4 w-4 mr-2" />
-                    Back to {getClassTitle(classId || '')}
+                    Back to Subjects
                   </Button>
-                </Link>
+                ) : (
+                  <Link to={`/class/${classId}`}>
+                    <Button variant="outline" className="mb-4">
+                      <ArrowLeft className="h-4 w-4 mr-2" />
+                      Back to {getClassTitle(classId || '')}
+                    </Button>
+                  </Link>
+                )}
+                
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-                  {getResourceTypeTitle(resourceType || '')}
+                  {selectedSubject ? selectedSubject : getResourceTypeTitle(resourceType || '')}
                 </h1>
                 <p className="text-lg text-muted-foreground mb-6">
-                  {getClassTitle(classId || '')} - {filteredResources.length} resources available
+                  {selectedSubject 
+                    ? `${getClassTitle(classId || '')} - ${filteredDocuments.length} documents available`
+                    : `${getClassTitle(classId || '')} - Choose a subject to view resources`
+                  }
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-                  <div className="relative flex-1 max-w-md w-full">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                    <Input
-                      type="search"
-                      placeholder="   Search resources..."
-                      value={searchTerm}
-                      onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                        setCurrentPage(1);
-                      }}
-                      className="pl-10"
-                    />
+                {selectedSubject && (
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                    <div className="relative flex-1 max-w-md w-full">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                      <Input
+                        type="search"
+                        placeholder="   Search documents..."
+                        value={searchTerm}
+                        onChange={(e) => {
+                          setSearchTerm(e.target.value);
+                          setCurrentPage(1);
+                        }}
+                        className="pl-10"
+                      />
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                {currentResources.map((resource) => (
-                  <div key={resource.id} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
-                    <div className="flex items-start justify-between mb-4">
-                      <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
-                      <span className="text-xs text-muted-foreground">{resource.fileSize}</span>
-                    </div>
-                    
-                    <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
-                      {resource.title}
-                    </h3>
-                    
-                    <div className="space-y-1 mb-4">
-                      <p className="text-sm text-muted-foreground break-words">Subject: {resource.subject}</p>
-                      <p className="text-sm text-muted-foreground">Term: {resource.term}</p>
-                      <p className="text-sm text-muted-foreground">Year: {resource.year}</p>
-                    </div>
+              {!selectedSubject ? (
+                // Show subjects
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
+                  {subjects.map((subject) => (
+                    <div 
+                      key={subject} 
+                      className="bg-card rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 p-6 border cursor-pointer min-w-0"
+                      onClick={() => handleSubjectSelect(subject)}
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <BookOpen className="h-8 w-8 text-orange-600 flex-shrink-0" />
+                      </div>
+                      
+                      <h3 className="text-lg font-semibold text-card-foreground mb-2 break-words">
+                        {subject}
+                      </h3>
+                      
+                      <p className="text-sm text-muted-foreground mb-4">
+                        View all {getResourceTypeTitle(resourceType || '').toLowerCase()} for {subject}
+                      </p>
 
-                    <div className="flex flex-col gap-2">
                       <Button
-                        onClick={() => handlePreview(resource)}
-                        variant="outline"
-                        size="sm"
-                        className="w-full"
-                      >
-                        <Eye className="h-4 w-4 mr-1" />
-                        Preview
-                      </Button>
-                      <Button
-                        onClick={() => handleDownload(resource)}
-                        size="sm"
                         className="w-full bg-orange-600 hover:bg-orange-700"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSubjectSelect(subject);
+                        }}
                       >
-                        <Download className="h-4 w-4 mr-1" />
-                        Download
+                        View Resources
                       </Button>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                // Show documents
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
+                    {currentDocuments.map((document, index) => (
+                      <div key={`${document.pdfUrl}-${index}`} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
+                        <div className="flex items-start justify-between mb-4">
+                          <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
+                          <span className="text-xs text-muted-foreground">{getFileExtension(document.pdfUrl)}</span>
+                        </div>
+                        
+                        <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
+                          {extractFileName(document.pdfUrl)}
+                        </h3>
+                        
+                        <div className="space-y-1 mb-4">
+                          <p className="text-sm text-muted-foreground break-words">Subject: {selectedSubject}</p>
+                          <p className="text-sm text-muted-foreground">Type: {getResourceTypeTitle(resourceType || '')}</p>
+                          <p className="text-sm text-muted-foreground">Class: {getClassTitle(classId || '')}</p>
+                        </div>
 
-              {totalPages > 1 && (
-                <PaginationWithJump
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={setCurrentPage}
-                  className="mb-8"
-                />
+                        <div className="flex flex-col gap-2">
+                          <Button
+                            onClick={() => handlePreview(document)}
+                            variant="outline"
+                            size="sm"
+                            className="w-full"
+                          >
+                            <Eye className="h-4 w-4 mr-1" />
+                            Preview
+                          </Button>
+                          <Button
+                            onClick={() => handleDownload(document)}
+                            size="sm"
+                            className="w-full bg-orange-600 hover:bg-orange-700"
+                          >
+                            <Download className="h-4 w-4 mr-1" />
+                            Download
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {totalPages > 1 && (
+                    <PaginationWithJump
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      onPageChange={setCurrentPage}
+                      className="mb-8"
+                    />
+                  )}
+                </>
               )}
             </div>
           </div>
