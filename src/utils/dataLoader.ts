@@ -60,7 +60,8 @@ export const getSubjectsForClass = (classId: string): string[] => {
     'Mathematical Concepts', 
     'Reading',
     'Social Development',
-    'Writing Theology',
+    'Writing',
+    'Theology',
     'English',
     'General Knowledge',
     'Health Habits',
@@ -77,15 +78,14 @@ export const getSubjectsForClass = (classId: string): string[] => {
     'RE',
     'Thematic',
     'English',
-    'Literature 1',
-    'Literature 2',
+    'Literacy 1',
+    'Literacy 2',
     'Luganda'
   ];
 
   // UPPER PRIMARY (P4, P5, P6, P7)
   const upperPrimarySubjects = [
-    'Packages',
-    'RE',
+    'CRE',
     'Science',
     'SST',
     'Theology',
