@@ -234,7 +234,7 @@ const ResourcePage = () => {
                           </div>
                           
                           <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
-                            {document.title || extractFileName(document.pdfUrl)}
+                            {extractFileName(document.pdfUrl)}
                           </h3>
                           
                           <div className="space-y-1 mb-4">

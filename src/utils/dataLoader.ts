@@ -1,3 +1,4 @@
+
 /**
  * Utility functions for loading resource data from JSON files
  */
@@ -50,19 +51,111 @@ export const loadResourceData = async (
 };
 
 /**
- * Gets the available subjects for a class level
- * This could also be loaded from JSON files if needed
+ * Gets the available subjects for a class level based on the provided specifications
  */
 export const getSubjectsForClass = (classId: string): string[] => {
-  const nurserySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Art'];
-  const primarySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Religious Education'];
-  const secondarySubjects = ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Literature', 'Economics', 'Agriculture'];
+  // NURSERY SECTION (Baby, Middle, Top)
+  const nurserySubjects = [
+    'Literacy',
+    'Mathematical Concepts', 
+    'Reading',
+    'Social Development',
+    'Writing Theology',
+    'English',
+    'General Knowledge',
+    'Health Habits',
+    'Language Development'
+  ];
+
+  // LOWER PRIMARY (P1, P2, P3)
+  const lowerPrimarySubjects = [
+    'MTC',
+    'Music',
+    'Oral Literature',
+    'PE',
+    'Reading',
+    'RE',
+    'Thematic',
+    'English',
+    'Literature 1',
+    'Literature 2',
+    'Luganda'
+  ];
+
+  // UPPER PRIMARY (P4, P5, P6, P7)
+  const upperPrimarySubjects = [
+    'Packages',
+    'RE',
+    'Science',
+    'SST',
+    'Theology',
+    'English',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'MTC'
+  ];
+
+  // LOWER SECONDARY (S1, S2, S3, S4)
+  const lowerSecondarySubjects = [
+    'French',
+    'Geography',
+    'German',
+    'History',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'Latin',
+    'Literature',
+    'Luganda',
+    'Mathematics',
+    'Physics',
+    'Technology and Design',
+    'Agriculture',
+    'Arabic',
+    'Art',
+    'Biology',
+    'Chemistry',
+    'Chinese',
+    'Commerce',
+    'CRE',
+    'Economics',
+    'English',
+    'Entrepreneurship',
+    'FN'
+  ];
+
+  // UPPER SECONDARY (S5, S6)
+  const upperSecondarySubjects = [
+    'Physics',
+    'TD',
+    'Technical Drawing',
+    'Agriculture',
+    'Art',
+    'Biology',
+    'Chemistry',
+    'Divinity',
+    'Economics',
+    'English',
+    'Entrepreneurship',
+    'Geography',
+    'General Paper',
+    'History',
+    'ICT',
+    'IPS'
+  ];
 
   if (['baby', 'middle', 'top'].includes(classId)) {
     return nurserySubjects;
-  } else if (['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'].includes(classId)) {
-    return primarySubjects;
+  } else if (['p1', 'p2', 'p3'].includes(classId)) {
+    return lowerPrimarySubjects;
+  } else if (['p4', 'p5', 'p6', 'p7'].includes(classId)) {
+    return upperPrimarySubjects;
+  } else if (['s1', 's2', 's3', 's4'].includes(classId)) {
+    return lowerSecondarySubjects;
+  } else if (['s5', 's6'].includes(classId)) {
+    return upperSecondarySubjects;
   } else {
-    return secondarySubjects;
+    return [];
   }
 };
