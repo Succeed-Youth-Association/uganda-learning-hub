@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
@@ -90,18 +89,18 @@ const ResourcePage = () => {
   };
 
   const handlePreview = (document: ResourceDocument) => {
-    console.log('Previewing:', document.title);
+    console.log('Previewing:', extractFileName(document.pdfUrl));
     window.open(document.pdfUrl, '_blank');
   };
 
   const handleDownload = (document: ResourceDocument) => {
-    console.log('Downloading:', document.title);
-    const link = document.createElement('a');
+    console.log('Downloading:', extractFileName(document.pdfUrl));
+    const link = window.document.createElement('a');
     link.href = document.pdfUrl;
     link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-    document.body.appendChild(link);
+    window.document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    window.document.body.removeChild(link);
   };
 
   const handleSubjectSelect = (subject: string) => {

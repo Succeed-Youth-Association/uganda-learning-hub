@@ -1,10 +1,8 @@
-
 /**
  * Utility functions for loading resource data from JSON files
  */
 
 export interface ResourceDocument {
-  title: string;
   pdfUrl: string;
 }
 

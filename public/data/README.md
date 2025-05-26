@@ -36,16 +36,14 @@ public/data/
 
 ## JSON File Format
 
-Each JSON file should contain an array of resource documents:
+Each JSON file should contain an array of resource documents with only the PDF URL:
 
 ```json
 [
   {
-    "title": "Mathematics Past Paper 2023",
     "pdfUrl": "https://example.com/path/to/math-paper-2023.pdf"
   },
   {
-    "title": "Mathematics Revision Guide",
     "pdfUrl": "https://example.com/path/to/math-revision.pdf"
   }
 ]
@@ -63,30 +61,3 @@ Subject names in file names should be lowercase with hyphens:
 
 For Primary 1 Past Papers in Mathematics:
 `public/data/p1/past-papers/mathematics.json`
-```
-
-Create a sample JSON file to demonstrate the structure:
-
-<lov-write file_path="public/data/p1/past-papers/mathematics.json">
-[
-  {
-    "title": "Primary 1 Mathematics End of Term 1 Examination",
-    "pdfUrl": "https://fresh-teacher.github.io/resources/p1-mathematics-term1-exam.pdf"
-  },
-  {
-    "title": "Primary 1 Mathematics Mid Term Assessment",
-    "pdfUrl": "https://fresh-teacher.github.io/resources/p1-mathematics-midterm.pdf"
-  },
-  {
-    "title": "Primary 1 Mathematics Practice Paper Set A",
-    "pdfUrl": "https://fresh-teacher.github.io/resources/p1-mathematics-practice-a.pdf"
-  },
-  {
-    "title": "Primary 1 Mathematics Practice Paper Set B", 
-    "pdfUrl": "https://fresh-teacher.github.io/resources/p1-mathematics-practice-b.pdf"
-  },
-  {
-    "title": "Primary 1 Mathematics End of Year Examination",
-    "pdfUrl": "https://fresh-teacher.github.io/resources/p1-mathematics-final-exam.pdf"
-  }
-]
