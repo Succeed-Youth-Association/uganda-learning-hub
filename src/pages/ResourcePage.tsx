@@ -1,57 +1,49 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
 import { AppSidebar } from '../components/AppSidebar';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, Eye, Download, FileText, BookOpen } from 'lucide-react';
+import { ArrowLeft, Search, Eye, Download, FileText, BookOpen, Loader2 } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
+import { loadResourceData, getSubjectsForClass, ResourceDocument } from '../utils/dataLoader';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+  const [documents, setDocuments] = useState<ResourceDocument[]>([]);
+  const [loading, setLoading] = useState(false);
   const itemsPerPage = 12;
 
-  // Available subjects for each class level
-  const getSubjectsForClass = (classId: string) => {
-    const nurserySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Art'];
-    const primarySubjects = ['English', 'Mathematics', 'Science', 'Social Studies', 'Religious Education'];
-    const secondarySubjects = ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Literature', 'Economics', 'Agriculture'];
-
-    if (['baby', 'middle', 'top'].includes(classId || '')) {
-      return nurserySubjects;
-    } else if (['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'].includes(classId || '')) {
-      return primarySubjects;
-    } else {
-      return secondarySubjects;
-    }
-  };
-
-  // Dummy data for documents (simulating JSON file structure)
-  const generateDummyDocuments = (subject: string, count: number = 15) => {
-    const sampleUrls = [
-      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_examination.pdf`,
-      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_notes_term_1.pdf`,
-      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_textbook.pdf`,
-      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_past_paper_2023.pdf`,
-      `https://fresh-teacher.github.io/resources/${subject.toLowerCase()}_revision_guide.pdf`
-    ];
-
-    return Array.from({ length: count }, (_, i) => ({
-      title: extractFileName(sampleUrls[i % sampleUrls.length]),
-      pdfUrl: sampleUrls[i % sampleUrls.length].replace('.pdf', `_${i + 1}.pdf`)
-    }));
-  };
-
   const subjects = getSubjectsForClass(classId || '');
-  const documents = selectedSubject ? generateDummyDocuments(selectedSubject) : [];
+
+  // Load documents when subject is selected
+  useEffect(() => {
+    const loadDocuments = async () => {
+      if (!selectedSubject || !classId || !resourceType) return;
+      
+      setLoading(true);
+      try {
+        const data = await loadResourceData(classId, selectedSubject, resourceType);
+        setDocuments(data);
+        console.log(`Loaded ${data.length} documents for ${selectedSubject}`);
+      } catch (error) {
+        console.error('Error loading documents:', error);
+        setDocuments([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadDocuments();
+  }, [selectedSubject, classId, resourceType]);
 
   const filteredDocuments = useMemo(() => {
     if (!selectedSubject) return [];
@@ -97,12 +89,12 @@ const ResourcePage = () => {
     return classMap[id || ''] || 'Unknown Class';
   };
 
-  const handlePreview = (document: any) => {
+  const handlePreview = (document: ResourceDocument) => {
     console.log('Previewing:', document.title);
     window.open(document.pdfUrl, '_blank');
   };
 
-  const handleDownload = (document: any) => {
+  const handleDownload = (document: ResourceDocument) => {
     console.log('Downloading:', document.title);
     const link = document.createElement('a');
     link.href = document.pdfUrl;
@@ -122,6 +114,7 @@ const ResourcePage = () => {
     setSelectedSubject(null);
     setCurrentPage(1);
     setSearchTerm('');
+    setDocuments([]);
   };
 
   return (
@@ -155,7 +148,7 @@ const ResourcePage = () => {
                 </h1>
                 <p className="text-lg text-muted-foreground mb-6">
                   {selectedSubject 
-                    ? `${getClassTitle(classId || '')} - ${filteredDocuments.length} documents available`
+                    ? `${getClassTitle(classId || '')} - ${loading ? 'Loading...' : `${filteredDocuments.length} documents available`}`
                     : `${getClassTitle(classId || '')} - Choose a subject to view resources`
                   }
                 </p>
@@ -173,6 +166,7 @@ const ResourcePage = () => {
                           setCurrentPage(1);
                         }}
                         className="pl-10"
+                        disabled={loading}
                       />
                     </div>
                   </div>
@@ -213,50 +207,68 @@ const ResourcePage = () => {
                   ))}
                 </div>
               ) : (
-                // Show documents
+                // Show documents or loading state
                 <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                    {currentDocuments.map((document, index) => (
-                      <div key={`${document.pdfUrl}-${index}`} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
-                        <div className="flex items-start justify-between mb-4">
-                          <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
-                          <span className="text-xs text-muted-foreground">{getFileExtension(document.pdfUrl)}</span>
-                        </div>
-                        
-                        <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
-                          {extractFileName(document.pdfUrl)}
-                        </h3>
-                        
-                        <div className="space-y-1 mb-4">
-                          <p className="text-sm text-muted-foreground break-words">Subject: {selectedSubject}</p>
-                          <p className="text-sm text-muted-foreground">Type: {getResourceTypeTitle(resourceType || '')}</p>
-                          <p className="text-sm text-muted-foreground">Class: {getClassTitle(classId || '')}</p>
-                        </div>
+                  {loading ? (
+                    <div className="flex items-center justify-center py-12">
+                      <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
+                      <span className="ml-2 text-lg text-muted-foreground">Loading documents...</span>
+                    </div>
+                  ) : currentDocuments.length === 0 ? (
+                    <div className="text-center py-12">
+                      <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-muted-foreground mb-2">No documents found</h3>
+                      <p className="text-muted-foreground">
+                        {searchTerm 
+                          ? `No documents match "${searchTerm}"`
+                          : `No ${getResourceTypeTitle(resourceType || '').toLowerCase()} available for ${selectedSubject}`
+                        }
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
+                      {currentDocuments.map((document, index) => (
+                        <div key={`${document.pdfUrl}-${index}`} className="bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
+                          <div className="flex items-start justify-between mb-4">
+                            <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
+                            <span className="text-xs text-muted-foreground">{getFileExtension(document.pdfUrl)}</span>
+                          </div>
+                          
+                          <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
+                            {document.title || extractFileName(document.pdfUrl)}
+                          </h3>
+                          
+                          <div className="space-y-1 mb-4">
+                            <p className="text-sm text-muted-foreground break-words">Subject: {selectedSubject}</p>
+                            <p className="text-sm text-muted-foreground">Type: {getResourceTypeTitle(resourceType || '')}</p>
+                            <p className="text-sm text-muted-foreground">Class: {getClassTitle(classId || '')}</p>
+                          </div>
 
-                        <div className="flex flex-col gap-2">
-                          <Button
-                            onClick={() => handlePreview(document)}
-                            variant="outline"
-                            size="sm"
-                            className="w-full"
-                          >
-                            <Eye className="h-4 w-4 mr-1" />
-                            Preview
-                          </Button>
-                          <Button
-                            onClick={() => handleDownload(document)}
-                            size="sm"
-                            className="w-full bg-orange-600 hover:bg-orange-700"
-                          >
-                            <Download className="h-4 w-4 mr-1" />
-                            Download
-                          </Button>
+                          <div className="flex flex-col gap-2">
+                            <Button
+                              onClick={() => handlePreview(document)}
+                              variant="outline"
+                              size="sm"
+                              className="w-full"
+                            >
+                              <Eye className="h-4 w-4 mr-1" />
+                              Preview
+                            </Button>
+                            <Button
+                              onClick={() => handleDownload(document)}
+                              size="sm"
+                              className="w-full bg-orange-600 hover:bg-orange-700"
+                            >
+                              <Download className="h-4 w-4 mr-1" />
+                              Download
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  )}
 
-                  {totalPages > 1 && (
+                  {totalPages > 1 && !loading && (
                     <PaginationWithJump
                       currentPage={currentPage}
                       totalPages={totalPages}
