@@ -9,6 +9,7 @@ import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package } from 'luc
 import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
+import { getAvailableResourcesForClass } from '../utils/dataLoader';
 
 const ClassPage = () => {
   const { classId } = useParams();
@@ -36,7 +37,7 @@ const ClassPage = () => {
     return classMap[id || ''] || 'Unknown Class';
   };
 
-  const resourceTypes = [
+  const allResourceTypes = [
     {
       title: 'Lesson Notes',
       description: 'Comprehensive lesson notes for all subjects',
@@ -74,6 +75,14 @@ const ClassPage = () => {
     }
   ];
 
+  // Get available resources for this class
+  const availableResources = getAvailableResourcesForClass(classId || '');
+  
+  // Filter resource types to only show available ones
+  const resourceTypes = allResourceTypes.filter(resource => 
+    availableResources.includes(resource.route)
+  );
+
   const handleResourceClick = (route: string) => {
     navigate(`/class/${classId}/resources/${route}`);
   };
@@ -109,37 +118,49 @@ const ClassPage = () => {
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
                   {getClassTitle(classId || '')}
                 </h1>
-               
+                <p className="text-lg text-muted-foreground mb-6">
+                  {resourceTypes.length} resource types available
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                {resourceTypes.map((resource) => (
-                  <Card 
-                    key={resource.route} 
-                    className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-105 min-w-0"
-                    onClick={() => handleResourceClick(resource.route)}
-                  >
-                    <CardHeader className="text-center pb-2">
-                      <resource.icon className={`h-12 w-12 mx-auto mb-4 ${resource.color}`} />
-                      <CardTitle className="text-xl font-bold break-words">{resource.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <CardDescription className="text-sm break-words">
-                        {resource.description}
-                      </CardDescription>
-                      <Button 
-                        className="mt-4 w-full bg-orange-600 hover:bg-orange-700"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleResourceClick(resource.route);
-                        }}
-                      >
-                        Browse {resource.title}
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              {resourceTypes.length === 0 ? (
+                <div className="text-center py-12">
+                  <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-muted-foreground mb-2">No resources available</h3>
+                  <p className="text-muted-foreground">
+                    No resources have been configured for {getClassTitle(classId || '')} yet.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                  {resourceTypes.map((resource) => (
+                    <Card 
+                      key={resource.route} 
+                      className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-105 min-w-0"
+                      onClick={() => handleResourceClick(resource.route)}
+                    >
+                      <CardHeader className="text-center pb-2">
+                        <resource.icon className={`h-12 w-12 mx-auto mb-4 ${resource.color}`} />
+                        <CardTitle className="text-xl font-bold break-words">{resource.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-center">
+                        <CardDescription className="text-sm break-words">
+                          {resource.description}
+                        </CardDescription>
+                        <Button 
+                          className="mt-4 w-full bg-orange-600 hover:bg-orange-700"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleResourceClick(resource.route);
+                          }}
+                        >
+                          Browse {resource.title}
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <Footer />
