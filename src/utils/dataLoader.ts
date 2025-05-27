@@ -8,6 +8,237 @@ export interface ResourceDocument {
 }
 
 /**
+ * Configuration for subjects available per class
+ * Add or remove subjects based on your actual data availability
+ */
+const CLASS_SUBJECTS_CONFIG: { [key: string]: string[] } = {
+  // NURSERY SECTION
+  'baby': [
+    'Literacy',
+    'Mathematical Concepts', 
+    'Reading',
+    'Social Development',
+    'Writing',
+    'Theology',
+    'English',
+    'General Knowledge',
+    'Health Habits',
+    'Language Development'
+  ],
+  'middle': [
+    'Literacy',
+    'Mathematical Concepts', 
+    'Reading',
+    'Social Development',
+    'Writing',
+    'Theology',
+    'English',
+    'General Knowledge',
+    'Health Habits',
+    'Language Development'
+  ],
+  'top': [
+    'Literacy',
+    'Mathematical Concepts', 
+    'Reading',
+    'Social Development',
+    'Writing',
+    'Theology',
+    'English',
+    'General Knowledge',
+    'Health Habits',
+    'Language Development'
+  ],
+
+  // LOWER PRIMARY
+  'p1': [
+    'MTC',
+    'Music',
+    'Oral Literature',
+    'PE',
+    'Reading',
+    'RE',
+    'Thematic',
+    'English',
+    'Literacy 1',
+    'Literacy 2',
+    'Luganda'
+  ],
+  'p2': [
+    'MTC',
+    'Music',
+    'Oral Literature',
+    'PE',
+    'Reading',
+    'RE',
+    'Thematic',
+    'English',
+    'Literacy 1',
+    'Literacy 2',
+    'Luganda'
+  ],
+  'p3': [
+    'MTC',
+    'Music',
+    'Oral Literature',
+    'PE',
+    'Reading',
+    'RE',
+    'Thematic',
+    'English',
+    'Literacy 1',
+    'Literacy 2',
+    'Luganda'
+  ],
+
+  // UPPER PRIMARY
+  'p4': [
+    'MTC',
+    'IRE'
+  ],
+  'p5': [
+    'CRE',
+    'Science',
+    'SST',
+    'Theology',
+    'English',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'MTC'
+  ],
+  'p6': [
+    'CRE',
+    'Science',
+    'SST',
+    'Theology',
+    'English',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'MTC'
+  ],
+  'p7': [
+    'CRE',
+    'Science',
+    'SST',
+    'Theology',
+    'English',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'MTC'
+  ],
+
+  // LOWER SECONDARY - Customized per class based on actual data
+  's1': [
+    'French',
+    'Geography',
+    'History',
+    'ICT',
+    'Literature',
+    'Mathematics',
+    'Physics',
+    'Biology',
+    'Chemistry',
+    'English',
+    'Technology and Design',
+    'Agriculture'
+  ],
+  's2': [
+    'Geography',
+    'History',
+    'Mathematics',
+    'Biology',
+    'English',
+    'Technology and Design'
+  ],
+  's3': [
+    'French',
+    'Geography',
+    'German',
+    'History',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'Latin',
+    'Literature',
+    'Luganda',
+    'Mathematics',
+    'Physics',
+    'Technology and Design',
+    'Biology',
+    'Chemistry',
+    'English',
+    'Agriculture'
+  ],
+  's4': [
+    'French',
+    'Geography',
+    'German',
+    'History',
+    'ICT',
+    'IRE',
+    'Kiswahili',
+    'Latin',
+    'Literature',
+    'Luganda',
+    'Mathematics',
+    'Physics',
+    'Technology and Design',
+    'Agriculture',
+    'Arabic',
+    'Art',
+    'Biology',
+    'Chemistry',
+    'Chinese',
+    'Commerce',
+    'CRE',
+    'Economics',
+    'English',
+    'Entrepreneurship',
+    'FN'
+  ],
+
+  // UPPER SECONDARY
+  's5': [
+    'Physics',
+    'Technical Drawing',
+    'Agriculture',
+    'Art',
+    'Biology',
+    'Chemistry',
+    'Divinity',
+    'Economics',
+    'English',
+    'Entrepreneurship',
+    'Geography',
+    'General Paper',
+    'History',
+    'ICT',
+    'IPS'
+  ],
+  's6': [
+    'Physics',
+    'Technical Drawing',
+    'Agriculture',
+    'Art',
+    'Biology',
+    'Chemistry',
+    'Divinity',
+    'Economics',
+    'English',
+    'Entrepreneurship',
+    'Geography',
+    'General Paper',
+    'History',
+    'ICT',
+    'IPS',
+    'Technology and Design'
+  ]
+};
+
+/**
  * Loads resource documents for a specific class, subject, and resource type
  * @param classId - The class identifier (e.g., 'p1', 'baby', 's1')
  * @param subject - The subject name (e.g., 'Mathematics', 'English')
@@ -51,111 +282,10 @@ export const loadResourceData = async (
 };
 
 /**
- * Gets the available subjects for a class level based on the provided specifications
+ * Gets the available subjects for a specific class based on configuration
+ * @param classId - The class identifier (e.g., 'p1', 'baby', 's1')
+ * @returns Array of subject names available for the class
  */
 export const getSubjectsForClass = (classId: string): string[] => {
-  // NURSERY SECTION (Baby, Middle, Top)
-  const nurserySubjects = [
-    'Literacy',
-    'Mathematical Concepts', 
-    'Reading',
-    'Social Development',
-    'Writing',
-    'Theology',
-    'English',
-    'General Knowledge',
-    'Health Habits',
-    'Language Development'
-  ];
-
-  // LOWER PRIMARY (P1, P2, P3)
-  const lowerPrimarySubjects = [
-    'MTC',
-    'Music',
-    'Oral Literature',
-    'PE',
-    'Reading',
-    'RE',
-    'Thematic',
-    'English',
-    'Literacy 1',
-    'Literacy 2',
-    'Luganda'
-  ];
-
-  // UPPER PRIMARY (P4, P5, P6, P7)
-  const upperPrimarySubjects = [
-    'CRE',
-    'Science',
-    'SST',
-    'Theology',
-    'English',
-    'ICT',
-    'IRE',
-    'Kiswahili',
-    'MTC'
-  ];
-
-  // LOWER SECONDARY (S1, S2, S3, S4)
-  const lowerSecondarySubjects = [
-    'French',
-    'Geography',
-    'German',
-    'History',
-    'ICT',
-    'IRE',
-    'Kiswahili',
-    'Latin',
-    'Literature',
-    'Luganda',
-    'Mathematics',
-    'Physics',
-    'Technology and Design',
-    'Agriculture',
-    'Arabic',
-    'Art',
-    'Biology',
-    'Chemistry',
-    'Chinese',
-    'Commerce',
-    'CRE',
-    'Economics',
-    'English',
-    'Entrepreneurship',
-    'FN'
-  ];
-
-  // UPPER SECONDARY (S5, S6)
-  const upperSecondarySubjects = [
-    'Physics',
-    'TD',
-    'Technical Drawing',
-    'Agriculture',
-    'Art',
-    'Biology',
-    'Chemistry',
-    'Divinity',
-    'Economics',
-    'English',
-    'Entrepreneurship',
-    'Geography',
-    'General Paper',
-    'History',
-    'ICT',
-    'IPS'
-  ];
-
-  if (['baby', 'middle', 'top'].includes(classId)) {
-    return nurserySubjects;
-  } else if (['p1', 'p2', 'p3'].includes(classId)) {
-    return lowerPrimarySubjects;
-  } else if (['p4', 'p5', 'p6', 'p7'].includes(classId)) {
-    return upperPrimarySubjects;
-  } else if (['s1', 's2', 's3', 's4'].includes(classId)) {
-    return lowerSecondarySubjects;
-  } else if (['s5', 's6'].includes(classId)) {
-    return upperSecondarySubjects;
-  } else {
-    return [];
-  }
+  return CLASS_SUBJECTS_CONFIG[classId] || [];
 };
