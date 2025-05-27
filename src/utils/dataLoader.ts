@@ -8,40 +8,6 @@ export interface ResourceDocument {
 }
 
 /**
- * Checks if resource data exists for a specific class, subject, and resource type
- * @param classId - The class identifier (e.g., 'p1', 'baby', 's1')
- * @param subject - The subject name (e.g., 'Mathematics', 'English')
- * @param resourceType - The type of resource (e.g., 'past-papers', 'lesson-notes')
- * @returns Promise<boolean>
- */
-export const checkResourceDataExists = async (
-  classId: string,
-  subject: string,
-  resourceType: string
-): Promise<boolean> => {
-  try {
-    // Normalize subject name for file naming (replace spaces with hyphens, lowercase)
-    const normalizedSubject = subject.toLowerCase().replace(/\s+/g, '-');
-    
-    // Construct the file path: /data/{classId}/{resourceType}/{subject}.json
-    const filePath = `/data/${classId}/${resourceType}/${normalizedSubject}.json`;
-    
-    const response = await fetch(filePath);
-    
-    if (!response.ok) {
-      return false;
-    }
-    
-    const data = await response.json();
-    
-    // Check if the data is an array and has at least one item
-    return Array.isArray(data) && data.length > 0;
-  } catch (error) {
-    return false;
-  }
-};
-
-/**
  * Loads resource documents for a specific class, subject, and resource type
  * @param classId - The class identifier (e.g., 'p1', 'baby', 's1')
  * @param subject - The subject name (e.g., 'Mathematics', 'English')
@@ -82,30 +48,6 @@ export const loadResourceData = async (
     console.error(`Error loading resource data for ${classId}/${subject}/${resourceType}:`, error);
     return [];
   }
-};
-
-/**
- * Gets the available subjects for a class level that have data for the specified resource type
- * @param classId - The class identifier
- * @param resourceType - The type of resource to check for
- * @returns Promise<string[]>
- */
-export const getAvailableSubjectsForClass = async (
-  classId: string,
-  resourceType: string
-): Promise<string[]> => {
-  const allSubjects = getSubjectsForClass(classId);
-  const availableSubjects: string[] = [];
-
-  // Check each subject for available data
-  for (const subject of allSubjects) {
-    const hasData = await checkResourceDataExists(classId, subject, resourceType);
-    if (hasData) {
-      availableSubjects.push(subject);
-    }
-  }
-
-  return availableSubjects;
 };
 
 /**

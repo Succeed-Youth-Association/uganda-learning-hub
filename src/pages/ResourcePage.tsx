@@ -11,7 +11,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
-import { loadResourceData, getAvailableSubjectsForClass, ResourceDocument } from '../utils/dataLoader';
+import { loadResourceData, getSubjectsForClass, ResourceDocument } from '../utils/dataLoader';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
@@ -20,30 +20,10 @@ const ResourcePage = () => {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
-  const [subjectsLoading, setSubjectsLoading] = useState(true);
   const itemsPerPage = 12;
 
-  // Load available subjects when class and resource type change
-  useEffect(() => {
-    const loadAvailableSubjects = async () => {
-      if (!classId || !resourceType) return;
-      
-      setSubjectsLoading(true);
-      try {
-        const subjects = await getAvailableSubjectsForClass(classId, resourceType);
-        setAvailableSubjects(subjects);
-        console.log(`Found ${subjects.length} subjects with data for ${classId}/${resourceType}`);
-      } catch (error) {
-        console.error('Error loading available subjects:', error);
-        setAvailableSubjects([]);
-      } finally {
-        setSubjectsLoading(false);
-      }
-    };
-
-    loadAvailableSubjects();
-  }, [classId, resourceType]);
+  // Get available subjects for the class
+  const availableSubjects = classId ? getSubjectsForClass(classId) : [];
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -170,7 +150,7 @@ const ResourcePage = () => {
                 <p className="text-lg text-muted-foreground mb-6">
                   {selectedSubject 
                     ? `${getClassTitle(classId || '')} - ${loading ? 'Loading...' : `${filteredDocuments.length} documents available`}`
-                    : `${getClassTitle(classId || '')} - ${subjectsLoading ? 'Loading subjects...' : `${availableSubjects.length} subjects available`}`
+                    : `${getClassTitle(classId || '')} - ${availableSubjects.length} subjects available`
                   }
                 </p>
 
@@ -197,12 +177,7 @@ const ResourcePage = () => {
               {!selectedSubject ? (
                 // Show subjects
                 <>
-                  {subjectsLoading ? (
-                    <div className="flex items-center justify-center py-12">
-                      <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
-                      <span className="ml-2 text-lg text-muted-foreground">Loading subjects...</span>
-                    </div>
-                  ) : availableSubjects.length === 0 ? (
+                  {availableSubjects.length === 0 ? (
                     <div className="text-center py-12">
                       <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
                       <h3 className="text-xl font-semibold text-muted-foreground mb-2">No subjects available</h3>
