@@ -10,10 +10,14 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarHeader,
   SidebarFooter,
 } from './ui/sidebar';
-import { BookOpen, Home, Book, FileText, GraduationCap } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
+import { BookOpen, Home, Book, FileText, GraduationCap, ChevronRight } from 'lucide-react';
 
 const nurseryItems = [
   { title: "Baby Class", id: "baby" },
@@ -41,18 +45,24 @@ const secondaryItems = [
 ];
 
 const resourceTypes = [
-  { title: "Lesson Notes", icon: FileText },
-  { title: "Schemes of Work", icon: Book },
-  { title: "Past Papers", icon: GraduationCap },
-  { title: "Holiday Packages", icon: BookOpen },
-  { title: "Textbooks", icon: Book },
+  { title: "Lesson Notes", id: "lesson-notes", icon: FileText },
+  { title: "Schemes of Work", id: "schemes-of-work", icon: Book },
+  { title: "Past Papers", id: "past-papers", icon: GraduationCap },
+  { title: "Holiday Packages", id: "holiday-packages", icon: BookOpen },
+  { title: "Textbooks", id: "textbooks", icon: Book },
 ];
+
+const allClassItems = [...nurseryItems, ...primaryItems, ...secondaryItems];
 
 export function AppSidebar() {
   const navigate = useNavigate();
 
   const handleClassClick = (classId: string) => {
     navigate(`/class/${classId}`);
+  };
+
+  const handleResourceClick = (classId: string, resourceType: string) => {
+    navigate(`/class/${classId}/${resourceType}`);
   };
 
   const handleHomeClick = () => {
@@ -63,7 +73,6 @@ export function AppSidebar() {
     <Sidebar className="border-r bg-background">
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center space-x-2">
-          
           <span className="font-semibold text-foreground">Quick Navigation</span>
         </div>
       </SidebarHeader>
@@ -148,13 +157,32 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {resourceTypes.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton className="text-foreground hover:text-orange-600">
-                    <item.icon className="h-4 w-4" />
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+              {resourceTypes.map((resourceType) => (
+                <Collapsible key={resourceType.id} asChild>
+                  <SidebarMenuItem>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton className="text-foreground hover:text-orange-600">
+                        <resourceType.icon className="h-4 w-4" />
+                        <span>{resourceType.title}</span>
+                        <ChevronRight className="ml-auto h-4 w-4 transition-transform group-data-[state=open]:rotate-90" />
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        {allClassItems.map((classItem) => (
+                          <SidebarMenuSubItem key={`${resourceType.id}-${classItem.id}`}>
+                            <SidebarMenuSubButton 
+                              onClick={() => handleResourceClick(classItem.id, resourceType.id)}
+                              className="text-sm text-muted-foreground hover:text-orange-600"
+                            >
+                              <span>{classItem.title}</span>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        ))}
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                  </SidebarMenuItem>
+                </Collapsible>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>

@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
@@ -10,7 +11,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
-import { loadResourceData, getSubjectsForClass, ResourceDocument } from '../utils/dataLoader';
+import { loadResourceData, getAvailableSubjectsForClass, ResourceDocument } from '../utils/dataLoader';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
@@ -19,9 +20,30 @@ const ResourcePage = () => {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [loading, setLoading] = useState(false);
+  const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
+  const [subjectsLoading, setSubjectsLoading] = useState(true);
   const itemsPerPage = 12;
 
-  const subjects = getSubjectsForClass(classId || '');
+  // Load available subjects when class and resource type change
+  useEffect(() => {
+    const loadAvailableSubjects = async () => {
+      if (!classId || !resourceType) return;
+      
+      setSubjectsLoading(true);
+      try {
+        const subjects = await getAvailableSubjectsForClass(classId, resourceType);
+        setAvailableSubjects(subjects);
+        console.log(`Found ${subjects.length} subjects with data for ${classId}/${resourceType}`);
+      } catch (error) {
+        console.error('Error loading available subjects:', error);
+        setAvailableSubjects([]);
+      } finally {
+        setSubjectsLoading(false);
+      }
+    };
+
+    loadAvailableSubjects();
+  }, [classId, resourceType]);
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -148,7 +170,7 @@ const ResourcePage = () => {
                 <p className="text-lg text-muted-foreground mb-6">
                   {selectedSubject 
                     ? `${getClassTitle(classId || '')} - ${loading ? 'Loading...' : `${filteredDocuments.length} documents available`}`
-                    : `${getClassTitle(classId || '')} - Choose a subject to view resources`
+                    : `${getClassTitle(classId || '')} - ${subjectsLoading ? 'Loading subjects...' : `${availableSubjects.length} subjects available`}`
                   }
                 </p>
 
@@ -174,37 +196,54 @@ const ResourcePage = () => {
 
               {!selectedSubject ? (
                 // Show subjects
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                  {subjects.map((subject) => (
-                    <div 
-                      key={subject} 
-                      className="bg-card rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 p-6 border cursor-pointer min-w-0"
-                      onClick={() => handleSubjectSelect(subject)}
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <BookOpen className="h-8 w-8 text-orange-600 flex-shrink-0" />
-                      </div>
-                      
-                      <h3 className="text-lg font-semibold text-card-foreground mb-2 break-words">
-                        {subject}
-                      </h3>
-                      
-                      <p className="text-sm text-muted-foreground mb-4">
-                        View all {getResourceTypeTitle(resourceType || '').toLowerCase()} for {subject}
-                      </p>
-
-                      <Button
-                        className="w-full bg-orange-600 hover:bg-orange-700"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleSubjectSelect(subject);
-                        }}
-                      >
-                        View Resources
-                      </Button>
+                <>
+                  {subjectsLoading ? (
+                    <div className="flex items-center justify-center py-12">
+                      <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
+                      <span className="ml-2 text-lg text-muted-foreground">Loading subjects...</span>
                     </div>
-                  ))}
-                </div>
+                  ) : availableSubjects.length === 0 ? (
+                    <div className="text-center py-12">
+                      <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-muted-foreground mb-2">No subjects available</h3>
+                      <p className="text-muted-foreground">
+                        No {getResourceTypeTitle(resourceType || '').toLowerCase()} are available for {getClassTitle(classId || '')} at this time.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
+                      {availableSubjects.map((subject) => (
+                        <div 
+                          key={subject} 
+                          className="bg-card rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 p-6 border cursor-pointer min-w-0"
+                          onClick={() => handleSubjectSelect(subject)}
+                        >
+                          <div className="flex items-start justify-between mb-4">
+                            <BookOpen className="h-8 w-8 text-orange-600 flex-shrink-0" />
+                          </div>
+                          
+                          <h3 className="text-lg font-semibold text-card-foreground mb-2 break-words">
+                            {subject}
+                          </h3>
+                          
+                          <p className="text-sm text-muted-foreground mb-4">
+                            View all {getResourceTypeTitle(resourceType || '').toLowerCase()} for {subject}
+                          </p>
+
+                          <Button
+                            className="w-full bg-orange-600 hover:bg-orange-700"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSubjectSelect(subject);
+                            }}
+                          >
+                            View Resources
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
               ) : (
                 // Show documents or loading state
                 <>
