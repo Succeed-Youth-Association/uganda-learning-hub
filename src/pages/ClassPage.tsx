@@ -1,24 +1,18 @@
 
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
 import { AppSidebar } from '../components/AppSidebar';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { ArrowLeft, FileText, Book, GraduationCap, BookOpen } from 'lucide-react';
+import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package } from 'lucide-react';
+import ScrollToTop from '../components/ScrollToTop';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
-
-const resourceTypes = [
-  { title: "Lesson Notes", id: "lesson-notes", icon: FileText },
-  { title: "Schemes of Work", id: "schemes-of-work", icon: Book },
-  { title: "Past Papers", id: "past-papers", icon: GraduationCap },
-  { title: "Holiday Packages", id: "holiday-packages", icon: BookOpen },
-  { title: "Textbooks", id: "textbooks", icon: Book },
-];
 
 const ClassPage = () => {
   const { classId } = useParams();
+  const navigate = useNavigate();
 
   const getClassTitle = (id: string) => {
     const classMap: { [key: string]: string } = {
@@ -42,13 +36,65 @@ const ClassPage = () => {
     return classMap[id || ''] || 'Unknown Class';
   };
 
+  const resourceTypes = [
+    {
+      title: 'Lesson Notes',
+      description: 'Comprehensive lesson notes for all subjects',
+      icon: FileText,
+      route: 'lesson-notes',
+      color: 'text-blue-600'
+    },
+    {
+      title: 'Schemes of Work',
+      description: 'Detailed schemes of work for curriculum planning',
+      icon: Book,
+      route: 'schemes-of-work',
+      color: 'text-green-600'
+    },
+    {
+      title: 'Past Papers',
+      description: 'Previous examination papers and marking guides',
+      icon: GraduationCap,
+      route: 'past-papers',
+      color: 'text-purple-600'
+    },
+    {
+      title: 'Holiday Packages',
+      description: 'Educational materials for holiday assignments',
+      icon: Package,
+      route: 'holiday-packages',
+      color: 'text-yellow-600'
+    },
+    {
+      title: 'Textbooks',
+      description: 'Digital textbooks and reference materials',
+      icon: BookOpen,
+      route: 'textbooks',
+      color: 'text-orange-600'
+    }
+  ];
+
+  const handleResourceClick = (route: string) => {
+    navigate(`/class/${classId}/resources/${route}`);
+  };
+
   return (
     <SidebarProvider>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 w-full flex">
         <AppSidebar />
         <main className="flex-1 overflow-x-hidden min-w-0">
           <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2 flex items-center justify-between">
-            <SidebarTrigger />
+            <div className="flex items-center space-x-3">
+              <SidebarTrigger />
+              <div className="flex items-center space-x-2">
+                <h1 className="text-lg font-bold text-foreground hidden sm:block">
+                  Fresh Teacher's Library
+                </h1>
+                <h1 className="text-sm font-bold text-foreground sm:hidden">
+                Fresh Teacher's Library
+                </h1>
+              </div>
+            </div>
             <ThemeToggle />
           </div>
           <div className="p-4 lg:p-8 min-w-0">
@@ -60,36 +106,38 @@ const ClassPage = () => {
                     Back to Library
                   </Button>
                 </Link>
-                
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
                   {getClassTitle(classId || '')}
                 </h1>
-                <p className="text-lg text-muted-foreground mb-6">
-                  {resourceTypes.length} resource types available
-                </p>
+               
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                {resourceTypes.map((resourceType) => (
-                  <Link key={resourceType.id} to={`/class/${classId}/${resourceType.id}`}>
-                    <div className="bg-card rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 p-6 border min-w-0">
-                      <div className="flex items-start justify-between mb-4">
-                        <resourceType.icon className="h-8 w-8 text-orange-600 flex-shrink-0" />
-                      </div>
-                      
-                      <h3 className="text-lg font-semibold text-card-foreground mb-2 break-words">
-                        {resourceType.title}
-                      </h3>
-                      
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Browse {resourceType.title.toLowerCase()} for {getClassTitle(classId || '')}
-                      </p>
-
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">
-                        View Resources
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                {resourceTypes.map((resource) => (
+                  <Card 
+                    key={resource.route} 
+                    className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-105 min-w-0"
+                    onClick={() => handleResourceClick(resource.route)}
+                  >
+                    <CardHeader className="text-center pb-2">
+                      <resource.icon className={`h-12 w-12 mx-auto mb-4 ${resource.color}`} />
+                      <CardTitle className="text-xl font-bold break-words">{resource.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <CardDescription className="text-sm break-words">
+                        {resource.description}
+                      </CardDescription>
+                      <Button 
+                        className="mt-4 w-full bg-orange-600 hover:bg-orange-700"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleResourceClick(resource.route);
+                        }}
+                      >
+                        Browse {resource.title}
                       </Button>
-                    </div>
-                  </Link>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
