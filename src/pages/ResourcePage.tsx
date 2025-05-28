@@ -148,10 +148,10 @@ const ResourcePage = () => {
                 </h1>
                 <p className="text-lg text-muted-foreground mb-6">
                   {selectedSubject 
-                    ? `${getClassTitle(classId || '')} - ${loading ? 'Loading...' : `${filteredDocuments.length} documents available`}`
+                    ? `${getClassTitle(classId || '')} - ${loading ? 'Loading...' : `${filteredDocuments.length} document(s) available`}`
                     : subjects.length === 0 
-                      ? `No subjects available for ${getResourceTypeTitle(resourceType || '').toLowerCase()} in ${getClassTitle(classId || '')}`
-                      : `${getClassTitle(classId || '')} - ${subjects.length} subjects available`
+                      ? `No subject(s) available for ${getResourceTypeTitle(resourceType || '').toLowerCase()} in ${getClassTitle(classId || '')}`
+                      : `${getClassTitle(classId || '')} - ${subjects.length} subject(s) available`
                   }
                 </p>
 

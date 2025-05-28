@@ -19,54 +19,21 @@ const CLASS_RESOURCES_CONFIG: {
   // NURSERY SECTION
   'baby': {
     'lesson-notes': [
-      'Literacy',
-      'Mathematical Concepts', 
-      'Reading',
-      'Social Development',
-      'Writing',
-      'Theology',
-      'English',
-      'General Knowledge',
-      'Health Habits',
-      'Language Development'
+      'All Baby Class Lesson Notes',
     ],
     'past-papers': [
       'Literacy',
-      'Mathematical Concepts', 
-      'Reading',
-      'Social Development',
       'Writing',
-      'Theology',
       'English',
-      'General Knowledge',
-      'Health Habits',
-      'Language Development'
+      'Health Habits'
     ],
     'schemes-of-work': [
-      'Literacy',
-      'Mathematical Concepts', 
-      'Reading',
-      'Social Development',
-      'Writing',
-      'Theology',
-      'English',
-      'General Knowledge',
-      'Health Habits',
-      'Language Development'
+      'All Baby Class Schemes'
     ]
   },
   'middle': {
     'lesson-notes': [
-      'Literacy',
-      'Mathematical Concepts', 
-      'Reading',
-      'Social Development',
-      'Writing',
-      'Theology',
-      'English',
-      'General Knowledge',
-      'Health Habits',
-      'Language Development'
+      'Middle Class All Notes'
     ],
     'past-papers': [
       'Literacy',
@@ -81,16 +48,7 @@ const CLASS_RESOURCES_CONFIG: {
       'Language Development'
     ],
     'schemes-of-work': [
-      'Literacy',
-      'Mathematical Concepts', 
-      'Reading',
-      'Social Development',
-      'Writing',
-      'Theology',
-      'English',
-      'General Knowledge',
-      'Health Habits',
-      'Language Development'
+      'Middle Class All Schemes'
     ]
   },
   'top': {

@@ -1,9 +1,15 @@
-
 [
+ 
   {
-    "pdfUrl": "https://fresh-teacher.github.io/resources/s1-biology-cells-notes.pdf"
+    "title": "",
+    "description": "Senior One",
+    "price": 5000,
+    "pdfUrl": "https://fresh-teacher.github.io/s1/S1 TECHNICAL DRAWING HOLIDAY WORK (1).pdf"
   },
   {
-    "pdfUrl": "https://fresh-teacher.github.io/resources/s1-biology-classification-notes.pdf"
+    "title": "",
+    "description": "Senior One",
+    "price": 5000,
+    "pdfUrl": "https://fresh-teacher.github.io/s1/S.1 TD HOLIDAY WORK.pdf"
   }
 ]
