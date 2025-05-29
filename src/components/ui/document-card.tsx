@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from './button';
 import { Card, CardContent } from './card';
@@ -24,28 +25,19 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
 }) => {
   const [downloadState, setDownloadState] = useState<'idle' | 'downloading' | 'success'>('idle');
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     if (downloadState !== 'idle') return;
     
     setDownloadState('downloading');
-    
-    // Create a temporary anchor element for download
-    const link = window.document.createElement('a');
-    link.href = document.pdfUrl;
-    link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-    link.target = '_blank';
-    
-    // Append to body, click, and remove
-    window.document.body.appendChild(link);
-    link.click();
-    window.document.body.removeChild(link);
-    
-    // Call the original onDownload for any additional logic
-    onDownload(document);
-    
-    // Show success state briefly
-    setDownloadState('success');
-    setTimeout(() => setDownloadState('idle'), 2000);
+    try {
+      await onDownload(document);
+      setDownloadState('success');
+      // Reset to idle after 2 seconds
+      setTimeout(() => setDownloadState('idle'), 2000);
+    } catch (error) {
+      console.error('Download failed:', error);
+      setDownloadState('idle');
+    }
   };
 
   const handleWhatsAppShare = () => {

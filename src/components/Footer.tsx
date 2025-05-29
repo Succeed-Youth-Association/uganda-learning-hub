@@ -17,31 +17,31 @@ const Footer = () => {
     {
       name: 'X (Twitter)',
       icon: Twitter,
-      url: 'https://x.com/jesse_comedian',
+      url: 'https://x.com/freshteacher_ug',
       color: 'hover:text-blue-400'
     },
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com/share/18uh7arKyh',
+      url: 'https://facebook.com/freshteacher',
       color: 'hover:text-blue-600'
     },
     {
       name: 'YouTube',
       icon: Youtube,
-      url: 'https://www.youtube.com/@freshteacher5692',
+      url: 'https://youtube.com/@freshteacher',
       color: 'hover:text-red-600'
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/mutumbajessepaul',
+      url: 'https://instagram.com/freshteacher_ug',
       color: 'hover:text-pink-600'
     },
     {
       name: 'GitHub',
       icon: Github,
-      url: 'https://github.com/Fresh-Teacher',
+      url: 'https://github.com/freshteacher',
       color: 'hover:text-gray-600'
     }
   ];
