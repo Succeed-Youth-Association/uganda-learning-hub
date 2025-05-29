@@ -44,7 +44,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
     const fileName = extractFileName(document.pdfUrl);
     // Encode the URL to handle spaces and special characters
     const encodedUrl = encodeURI(document.pdfUrl);
-    const message = `Hello, I found this educational document useful and I decided to share it with you. ${fileName}\n\n Click this link to view it:${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    const message = `Hello, I found this educational document named ${fileName} useful so I decided to share it with you. \n\n Click this link to view it:${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -62,7 +62,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
         return (
           <>
             <Check className="h-4 w-4 mr-1" />
-            Downloaded
+            Downloaded!
           </>
         );
       default:
