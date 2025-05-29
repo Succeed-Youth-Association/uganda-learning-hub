@@ -13,7 +13,7 @@ import {
   SidebarHeader,
   SidebarFooter,
 } from './ui/sidebar';
-import { BookOpen, Home, Book, FileText, GraduationCap } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 const nurseryItems = [
   { title: "Baby Class", id: "baby" },
@@ -40,14 +40,6 @@ const secondaryItems = [
   { title: "Senior Six", id: "s6" },
 ];
 
-const resourceTypes = [
-  { title: "Lesson Notes", icon: FileText },
-  { title: "Schemes of Work", icon: Book },
-  { title: "Past Papers", icon: GraduationCap },
-  { title: "Holiday Packages", icon: BookOpen },
-  { title: "Textbooks", icon: Book },
-];
-
 export function AppSidebar() {
   const navigate = useNavigate();
 
@@ -63,7 +55,6 @@ export function AppSidebar() {
     <Sidebar className="border-r bg-background">
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center space-x-2">
-          
           <span className="font-semibold text-foreground">Quick Navigation</span>
         </div>
       </SidebarHeader>
@@ -134,24 +125,6 @@ export function AppSidebar() {
                     onClick={() => handleClassClick(item.id)}
                     className="text-foreground hover:text-orange-600"
                   >
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-orange-600 font-semibold">
-            Resource Types
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {resourceTypes.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton className="text-foreground hover:text-orange-600">
-                    <item.icon className="h-4 w-4" />
                     <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

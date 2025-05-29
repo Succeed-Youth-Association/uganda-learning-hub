@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from './button';
 import { Card, CardContent } from './card';
-import { Eye, Download, FileText } from 'lucide-react';
+import { Eye, Download, FileText, MessageCircle } from 'lucide-react';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { ResourceDocument } from '../../utils/dataLoader';
 
@@ -23,6 +23,13 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
   onPreview,
   onDownload
 }) => {
+  const handleWhatsAppShare = () => {
+    const fileName = extractFileName(document.pdfUrl);
+    const message = `Check out this ${resourceType} for ${subject} (${classTitle}): ${fileName}\n\nDownload: ${document.pdfUrl}\n\nShared from Fresh Teacher's Library`;
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <Card className="hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
       <div className="flex items-start justify-between mb-4">
@@ -57,6 +64,15 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
         >
           <Download className="h-4 w-4 mr-1" />
           Download
+        </Button>
+        <Button
+          onClick={handleWhatsAppShare}
+          variant="outline"
+          size="sm"
+          className="w-full text-green-600 border-green-600 hover:bg-green-50 hover:text-green-700"
+        >
+          <MessageCircle className="h-4 w-4 mr-1" />
+          Share on WhatsApp
         </Button>
       </div>
     </Card>

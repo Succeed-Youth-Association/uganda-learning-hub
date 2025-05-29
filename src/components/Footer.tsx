@@ -1,6 +1,7 @@
-// src/components/Footer.tsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Facebook, Github, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,16 +13,65 @@ const Footer = () => {
     });
   };
 
+  const socialLinks = [
+    {
+      name: 'X (Twitter)',
+      icon: Twitter,
+      url: 'https://x.com/freshteacher_ug',
+      color: 'hover:text-blue-400'
+    },
+    {
+      name: 'Facebook',
+      icon: Facebook,
+      url: 'https://facebook.com/freshteacher',
+      color: 'hover:text-blue-600'
+    },
+    {
+      name: 'YouTube',
+      icon: Youtube,
+      url: 'https://youtube.com/@freshteacher',
+      color: 'hover:text-red-600'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      url: 'https://instagram.com/freshteacher_ug',
+      color: 'hover:text-pink-600'
+    },
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/freshteacher',
+      color: 'hover:text-gray-600'
+    }
+  ];
+
   return (
     <footer className="bg-card border-t mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-         
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div>
+            <h4 className="text-md font-semibold text-foreground mb-4">Follow Us</h4>
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-muted-foreground transition-colors ${social.color}`}
+                  aria-label={`Follow us on ${social.name}`}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </div>
           
           <div>
             <h4 className="text-md font-semibold text-foreground mb-4">Quick Links</h4>
             <div className="space-y-2">
-
               <Link 
                 to="/about" 
                 onClick={scrollToTop}
