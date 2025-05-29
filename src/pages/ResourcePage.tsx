@@ -66,30 +66,9 @@ const ResourcePage = () => {
     window.open(document.pdfUrl, '_blank');
   };
 
-  const handleDownload = async (document: ResourceDocument) => {
-    console.log('Downloading:', extractFileName(document.pdfUrl));
-    try {
-      const response = await fetch(document.pdfUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = window.document.createElement('a');
-      link.href = url;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-      // Fallback to direct link method
-      const link = window.document.createElement('a');
-      link.href = document.pdfUrl;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-      link.target = '_blank';
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-    }
+  const handleDownload = (document: ResourceDocument) => {
+    console.log('Download initiated for:', extractFileName(document.pdfUrl));
+    // This is now handled by the native download in DocumentCard
   };
 
   const handleSubjectSelect = (subject: string) => {
