@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 import React, { useState } from 'react';
-=======
-import React from 'react';
->>>>>>> Stashed changes
 import { Button } from './button';
 import { Card, CardContent } from './card';
 import { Eye, Download, FileText, MessageCircle, Loader2, Check } from 'lucide-react';
@@ -26,7 +22,6 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
   onPreview,
   onDownload
 }) => {
-<<<<<<< Updated upstream
   const [downloadState, setDownloadState] = useState<'idle' | 'downloading' | 'success'>('idle');
 
   const handleDownload = () => {
@@ -58,14 +53,6 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
     // Encode the URL to handle spaces and special characters
     const encodedUrl = encodeURI(document.pdfUrl);
     const message = `Check out this ${resourceType} for ${subject} (${classTitle}): ${fileName}\n\nDownload: ${encodedUrl}\n\nShared from Fresh Teacher's Library`;
-=======
-  // Encode the PDF URL to replace spaces with %20
-  const encodedPdfUrl = document.pdfUrl.replace(/ /g, '%20');
-
-  const handleWhatsAppShare = () => {
-    const fileName = extractFileName(document.pdfUrl);
-    const message = `Check out this ${resourceType} for ${subject} (${classTitle}): ${fileName}\n\nDownload: ${encodedPdfUrl}\n\nShared from Fresh Teacher's Library`;
->>>>>>> Stashed changes
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -126,7 +113,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
 
       <div className="flex flex-col gap-2">
         <Button
-          onClick={() => onPreview({ ...document, pdfUrl: encodedPdfUrl })}
+          onClick={() => onPreview(document)}
           variant="outline"
           size="sm"
           className="w-full"
@@ -135,11 +122,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
           Preview
         </Button>
         <Button
-<<<<<<< Updated upstream
           onClick={handleDownload}
-=======
-          onClick={() => onDownload({ ...document, pdfUrl: encodedPdfUrl })}
->>>>>>> Stashed changes
           size="sm"
           className={getDownloadButtonStyle()}
           disabled={downloadState === 'downloading'}
