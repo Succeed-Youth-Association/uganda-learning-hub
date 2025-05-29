@@ -1,41 +1,15 @@
 
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar';
-import { AppSidebar } from '../components/AppSidebar';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package } from 'lucide-react';
-import ScrollToTop from '../components/ScrollToTop';
-import ThemeToggle from '../components/ThemeToggle';
-import Footer from '../components/Footer';
-import { getAvailableResourcesForClass } from '../utils/dataLoader';
+import PageLayout from '../components/layout/PageLayout';
+import ResourceCard from '../components/ui/resource-card';
+import { getAvailableResourcesForClass, getClassTitle, getResourceTypeTitle } from '../utils/dataLoader';
 
 const ClassPage = () => {
   const { classId } = useParams();
   const navigate = useNavigate();
-
-  const getClassTitle = (id: string) => {
-    const classMap: { [key: string]: string } = {
-      'baby': 'Baby Class',
-      'middle': 'Middle Class', 
-      'top': 'Top Class',
-      'p1': 'Primary One',
-      'p2': 'Primary Two',
-      'p3': 'Primary Three',
-      'p4': 'Primary Four',
-      'p5': 'Primary Five',
-      'p6': 'Primary Six',
-      'p7': 'Primary Seven',
-      's1': 'Senior One',
-      's2': 'Senior Two',
-      's3': 'Senior Three',
-      's4': 'Senior Four',
-      's5': 'Senior Five',
-      's6': 'Senior Six'
-    };
-    return classMap[id || ''] || 'Unknown Class';
-  };
 
   const allResourceTypes = [
     {
@@ -75,10 +49,7 @@ const ClassPage = () => {
     }
   ];
 
-  // Get available resources for this class
   const availableResources = getAvailableResourcesForClass(classId || '');
-  
-  // Filter resource types to only show available ones
   const resourceTypes = allResourceTypes.filter(resource => 
     availableResources.includes(resource.route)
   );
@@ -87,87 +58,51 @@ const ClassPage = () => {
     navigate(`/class/${classId}/resources/${route}`);
   };
 
-  return (
-    <SidebarProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 w-full flex">
-        <AppSidebar />
-        <main className="flex-1 overflow-x-hidden min-w-0">
-          <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b p-2 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <SidebarTrigger />
-              <div className="flex items-center space-x-2">
-                <h1 className="text-lg font-bold text-foreground hidden sm:block">
-                  Fresh Teacher's Library
-                </h1>
-                <h1 className="text-sm font-bold text-foreground sm:hidden">
-                Fresh Teacher's Library
-                </h1>
-              </div>
-            </div>
-            <ThemeToggle />
-          </div>
-          <div className="p-4 lg:p-8 min-w-0">
-            <div className="max-w-7xl mx-auto min-w-0">
-              <div className="mb-8">
-                <Link to="/">
-                  <Button variant="outline" className="mb-4">
-                    <ArrowLeft className="h-4 w-4 mr-2" />
-                    Back to Library
-                  </Button>
-                </Link>
-                <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-                  {getClassTitle(classId || '')}
-                </h1>
-                <p className="text-lg text-muted-foreground mb-6">
-                  {resourceTypes.length} resource types available
-                </p>
-              </div>
+  const classTitle = getClassTitle(classId || '');
 
-              {resourceTypes.length === 0 ? (
-                <div className="text-center py-12">
-                  <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-muted-foreground mb-2">No resources available</h3>
-                  <p className="text-muted-foreground">
-                    No resources have been configured for {getClassTitle(classId || '')} yet.
-                  </p>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                  {resourceTypes.map((resource) => (
-                    <Card 
-                      key={resource.route} 
-                      className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-105 min-w-0"
-                      onClick={() => handleResourceClick(resource.route)}
-                    >
-                      <CardHeader className="text-center pb-2">
-                        <resource.icon className={`h-12 w-12 mx-auto mb-4 ${resource.color}`} />
-                        <CardTitle className="text-xl font-bold break-words">{resource.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="text-center">
-                        <CardDescription className="text-sm break-words">
-                          {resource.description}
-                        </CardDescription>
-                        <Button 
-                          className="mt-4 w-full bg-orange-600 hover:bg-orange-700"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleResourceClick(resource.route);
-                          }}
-                        >
-                          Browse {resource.title}
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              )}
-            </div>
+  return (
+    <PageLayout className="min-w-0">
+      <div className="max-w-7xl mx-auto min-w-0">
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="outline" className="mb-4">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Library
+            </Button>
+          </Link>
+          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            {classTitle}
+          </h1>
+          <p className="text-lg text-muted-foreground mb-6">
+            {resourceTypes.length} resource types available
+          </p>
+        </div>
+
+        {resourceTypes.length === 0 ? (
+          <div className="text-center py-12">
+            <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-muted-foreground mb-2">No resources available</h3>
+            <p className="text-muted-foreground">
+              No resources have been configured for {classTitle} yet.
+            </p>
           </div>
-          <Footer />
-        </main>
-        <ScrollToTop />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            {resourceTypes.map((resource) => (
+              <ResourceCard
+                key={resource.route}
+                title={resource.title}
+                description={resource.description}
+                icon={resource.icon}
+                iconColor={resource.color}
+                onClick={() => handleResourceClick(resource.route)}
+                buttonText={`Browse ${resource.title}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
-    </SidebarProvider>
+    </PageLayout>
   );
 };
 

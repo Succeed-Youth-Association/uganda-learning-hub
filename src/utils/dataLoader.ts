@@ -1,21 +1,25 @@
-
 /**
  * Utility functions for loading resource data from JSON files
  */
 
 export interface ResourceDocument {
   pdfUrl: string;
+  title?: string;
+  description?: string;
+  price?: number;
 }
 
 /**
  * Configuration for resources and subjects available per class
  * Structure: class -> resource types -> subjects for that resource
  */
-const CLASS_RESOURCES_CONFIG: { 
+interface ClassResourcesConfig { 
   [classId: string]: { 
     [resourceType: string]: string[] 
   } 
-} = {
+}
+
+const CLASS_RESOURCES_CONFIG: ClassResourcesConfig = {
   // NURSERY SECTION
   'baby': {
     'lesson-notes': [
@@ -725,4 +729,50 @@ export const getSubjectsForClassAndResource = (classId: string, resourceType: st
   if (!classConfig) return [];
   
   return classConfig[resourceType] || [];
+};
+
+/**
+ * Gets all available classes
+ */
+export const getAvailableClasses = (): string[] => {
+  return Object.keys(CLASS_RESOURCES_CONFIG);
+};
+
+/**
+ * Gets formatted class title
+ */
+export const getClassTitle = (classId: string): string => {
+  const classMap: { [key: string]: string } = {
+    'baby': 'Baby Class',
+    'middle': 'Middle Class', 
+    'top': 'Top Class',
+    'p1': 'Primary One',
+    'p2': 'Primary Two',
+    'p3': 'Primary Three',
+    'p4': 'Primary Four',
+    'p5': 'Primary Five',
+    'p6': 'Primary Six',
+    'p7': 'Primary Seven',
+    's1': 'Senior One',
+    's2': 'Senior Two',
+    's3': 'Senior Three',
+    's4': 'Senior Four',
+    's5': 'Senior Five',
+    's6': 'Senior Six'
+  };
+  return classMap[classId] || 'Unknown Class';
+};
+
+/**
+ * Gets formatted resource type title
+ */
+export const getResourceTypeTitle = (resourceType: string): string => {
+  const typeMap: { [key: string]: string } = {
+    'lesson-notes': 'Lesson Notes',
+    'schemes-of-work': 'Schemes of Work',
+    'past-papers': 'Past Papers',
+    'holiday-packages': 'Holiday Packages',
+    'textbooks': 'Textbooks'
+  };
+  return typeMap[resourceType] || 'Resources';
 };

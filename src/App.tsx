@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,10 +13,16 @@ import DisclaimerPage from "./pages/DisclaimerPage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "@/components/ScrollToTop"; // Your existing component
-import ScrollOnNavigation from "@/components/ScrollOnNavigation"; // New component
+import ScrollOnNavigation from "@/components/ScrollOnNavigation";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -24,8 +31,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollOnNavigation /> {/* Handles scroll on route change */}
-          <ScrollToTop /> {/* Your existing arrow button */}
+          <ScrollOnNavigation />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassPage />} />
@@ -34,7 +40,6 @@ const App = () => (
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
