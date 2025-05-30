@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package } from 'lucide-react';
+import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package, Upload } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import { getAvailableResourcesForClass, getClassTitle, getResourceTypeTitle } from '../utils/dataLoader';
@@ -49,13 +49,29 @@ const ClassPage = () => {
     }
   ];
 
+  // Add NEW UPLOADS card for all classes
+  const newUploadsCard = {
+    title: 'NEW UPLOADS',
+    description: 'Latest educational materials and resources',
+    icon: Upload,
+    route: 'new-uploads',
+    color: 'text-red-600'
+  };
+
   const availableResources = getAvailableResourcesForClass(classId || '');
   const resourceTypes = allResourceTypes.filter(resource => 
     availableResources.includes(resource.route)
   );
 
+  // Always add NEW UPLOADS card at the beginning
+  const allCards = [newUploadsCard, ...resourceTypes];
+
   const handleResourceClick = (route: string) => {
-    navigate(`/class/${classId}/resources/${route}`);
+    if (route === 'new-uploads') {
+      navigate(`/class/${classId}/new-uploads`);
+    } else {
+      navigate(`/class/${classId}/resources/${route}`);
+    }
   };
 
   const classTitle = getClassTitle(classId || '');
@@ -74,33 +90,24 @@ const ClassPage = () => {
             {classTitle}
           </h1>
           <p className="text-lg text-muted-foreground mb-6">
-            {resourceTypes.length} resource types available
+            {allCards.length} resource types available
           </p>
         </div>
 
-        {resourceTypes.length === 0 ? (
-          <div className="text-center py-12">
-            <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-muted-foreground mb-2">No resources available</h3>
-            <p className="text-muted-foreground">
-              No resources have been configured for {classTitle} yet.
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            {resourceTypes.map((resource) => (
-              <ResourceCard
-                key={resource.route}
-                title={resource.title}
-                description={resource.description}
-                icon={resource.icon}
-                iconColor={resource.color}
-                onClick={() => handleResourceClick(resource.route)}
-                buttonText={`Browse ${resource.title}`}
-              />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          {allCards.map((resource) => (
+            <ResourceCard
+              key={resource.route}
+              title={resource.title}
+              description={resource.description}
+              icon={resource.icon}
+              iconColor={resource.color}
+              onClick={() => handleResourceClick(resource.route)}
+              buttonText={resource.route === 'new-uploads' ? 'View New Uploads' : `Browse ${resource.title}`}
+              buttonColor={resource.route === 'new-uploads' ? 'bg-red-600 hover:bg-red-700' : undefined}
+            />
+          ))}
+        </div>
       </div>
     </PageLayout>
   );

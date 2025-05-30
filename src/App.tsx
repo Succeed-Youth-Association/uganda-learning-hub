@@ -1,40 +1,29 @@
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./providers/ThemeProvider";
-import Index from "./pages/Index";
-import ClassPage from "./pages/ClassPage";
-import ResourcePage from "./pages/ResourcePage";
-import AboutPage from "./pages/AboutPage";
-import DisclaimerPage from "./pages/DisclaimerPage";
-import TermsPage from "./pages/TermsPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import NotFound from "./pages/NotFound";
-import ScrollOnNavigation from "@/components/ScrollOnNavigation";
+import { ThemeProvider } from '@/components/ui/theme-provider'
+import Index from '@/pages'
+import ClassPage from '@/pages/ClassPage'
+import ResourcePage from '@/pages/ResourcePage'
+import AboutPage from '@/pages/AboutPage'
+import DisclaimerPage from '@/pages/DisclaimerPage'
+import TermsPage from '@/pages/TermsPage'
+import PrivacyPage from '@/pages/PrivacyPage'
+import NotFound from '@/pages/NotFoundPage'
+import Footer from '@/components/Footer'
+import ScrollOnRouteChange from '@/components/ScrollOnRouteChange'
+import NewUploadsPage from './pages/NewUploadsPage'
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="dark">
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollOnNavigation />
+function App() {
+  return (
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <Router>
+        <div className="min-h-screen flex flex-col bg-background text-foreground">
+          <ScrollOnRouteChange />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassPage />} />
+            <Route path="/class/:classId/new-uploads" element={<NewUploadsPage />} />
             <Route path="/class/:classId/resources/:resourceType" element={<ResourcePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
@@ -42,10 +31,11 @@ const App = () => (
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+          <Footer />
+        </div>
+      </Router>
     </ThemeProvider>
-  </QueryClientProvider>
-);
+  );
+}
 
 export default App;
