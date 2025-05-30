@@ -75,7 +75,8 @@ const WhatsAppChat = () => {
 
   return (
     <>
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         #africavotes-chat {
           box-sizing: border-box !important;
           outline: none !important;
@@ -318,7 +319,8 @@ const WhatsAppChat = () => {
         .africavotes-name {
           font-weight: bold;
         }
-      `}</style>
+        `
+      }} />
 
       <div className='hide' id='africavotes-chat'>
         <div className='header-chat'>
