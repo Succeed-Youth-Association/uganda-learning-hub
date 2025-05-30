@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from './button';
 import { Card, CardContent } from './card';
-import { Eye, Download, FileText, MessageCircle, Loader2, Check } from 'lucide-react';
+import { Eye, Download, FileText, MessageCircle, Loader2, Check, HardDrive } from 'lucide-react';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { ResourceDocument } from '../../utils/dataLoader';
 
@@ -13,6 +13,7 @@ interface DocumentCardProps {
   classTitle: string;
   onPreview: (document: ResourceDocument) => void;
   onDownload: (document: ResourceDocument) => void;
+  fileSize?: string;
 }
 
 const DocumentCard: React.FC<DocumentCardProps> = ({
@@ -21,7 +22,8 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
   resourceType,
   classTitle,
   onPreview,
-  onDownload
+  onDownload,
+  fileSize
 }) => {
   const [downloadState, setDownloadState] = useState<'idle' | 'downloading' | 'success'>('idle');
 
@@ -90,7 +92,15 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
     <Card className="hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
       <div className="flex items-start justify-between mb-4">
         <FileText className="h-8 w-8 text-orange-600 flex-shrink-0" />
-        <span className="text-xs text-muted-foreground">{getFileExtension(document.pdfUrl)}</span>
+        <div className="flex flex-col items-end space-y-1">
+          <span className="text-xs text-muted-foreground">{getFileExtension(document.pdfUrl)}</span>
+          {fileSize && (
+            <div className="flex items-center space-x-1">
+              <HardDrive className="h-3 w-3 text-muted-foreground" />
+              <span className="text-xs text-muted-foreground">{fileSize}</span>
+            </div>
+          )}
+        </div>
       </div>
       
       <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-2 line-clamp-2 break-words">
