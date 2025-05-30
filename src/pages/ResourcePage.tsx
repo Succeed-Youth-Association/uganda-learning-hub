@@ -1,228 +1,144 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+
+import React, { useEffect, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, BookOpen, Loader2, FileText } from 'lucide-react';
-import PaginationWithJump from '../components/PaginationWithJump';
+import { ArrowLeft, Upload } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
-import ResourceCard from '../components/ui/resource-card';
 import DocumentCard from '../components/ui/document-card';
-import { extractFileName, getFileExtension } from '../utils/fileUtils';
 import { 
-  loadResourceData, 
-  getSubjectsForClassAndResource, 
-  ResourceDocument,
-  getClassTitle,
-  getResourceTypeTitle
+  getResourcesForClassAndType, 
+  getClassTitle, 
+  getResourceTypeTitle,
+  ResourceDocument 
 } from '../utils/dataLoader';
+import { getGitHubRepoUrl } from '../utils/githubRepoUtils';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
-  const [documents, setDocuments] = useState<ResourceDocument[]>([]);
-  const [loading, setLoading] = useState(false);
-  const itemsPerPage = 12;
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [resources, setResources] = useState<{ [subject: string]: ResourceDocument[] }>({});
 
-  const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
   const resourceTypeTitle = getResourceTypeTitle(resourceType || '');
+  const githubRepoUrl = getGitHubRepoUrl(classId || '', resourceType || '');
 
-  // Load documents when subject is selected
   useEffect(() => {
-    const loadDocuments = async () => {
-      if (!selectedSubject || !classId || !resourceType) return;
-      
+    const loadResources = async () => {
       setLoading(true);
       try {
-        const data = await loadResourceData(classId, selectedSubject, resourceType);
-        setDocuments(data);
-        console.log(`Loaded ${data.length} documents for ${selectedSubject}`);
+        const data = await getResourcesForClassAndType(classId || '', resourceType || '');
+        setResources(data);
       } catch (error) {
-        console.error('Error loading documents:', error);
-        setDocuments([]);
+        console.error('Error loading resources:', error);
+        setResources({});
       } finally {
         setLoading(false);
       }
     };
 
-    loadDocuments();
-  }, [selectedSubject, classId, resourceType]);
-
-  const filteredDocuments = useMemo(() => {
-    if (!selectedSubject) return [];
-    return documents.filter(doc =>
-      extractFileName(doc.pdfUrl).toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [documents, searchTerm, selectedSubject]);
-
-  const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentDocuments = filteredDocuments.slice(startIndex, startIndex + itemsPerPage);
+    if (classId && resourceType) {
+      loadResources();
+    }
+  }, [classId, resourceType]);
 
   const handlePreview = (document: ResourceDocument) => {
-    console.log('Previewing:', extractFileName(document.pdfUrl));
-    window.open(document.pdfUrl, '_blank');
+    const pdfUrl = encodeURIComponent(document.pdfUrl);
+    const googleViewerUrl = `https://docs.google.com/viewerng/viewer?url=${pdfUrl}`;
+    window.open(googleViewerUrl, '_blank');
   };
 
   const handleDownload = async (document: ResourceDocument) => {
-    console.log('Downloading:', extractFileName(document.pdfUrl));
-    try {
-      const response = await fetch(document.pdfUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = window.document.createElement('a');
-      link.href = url;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-      // Fallback to direct link method
-      const link = window.document.createElement('a');
-      link.href = document.pdfUrl;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
-      link.target = '_blank';
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-    }
+    const link = document.createElement('a');
+    link.href = document.pdfUrl;
+    link.download = document.pdfUrl.split('/').pop() || 'document.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
-  const handleSubjectSelect = (subject: string) => {
-    setSelectedSubject(subject);
-    setCurrentPage(1);
-    setSearchTerm('');
+  const handleNewUploads = () => {
+    navigate(`/class/${classId}/resources/${resourceType}/new-uploads`);
   };
 
-  const handleBackToSubjects = () => {
-    setSelectedSubject(null);
-    setCurrentPage(1);
-    setSearchTerm('');
-    setDocuments([]);
-  };
+  const totalDocuments = Object.values(resources).reduce((total, docs) => total + docs.length, 0);
+
+  if (loading) {
+    return (
+      <PageLayout>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-12">
+            <div className="text-lg text-muted-foreground">Loading resources...</div>
+          </div>
+        </div>
+      </PageLayout>
+    );
+  }
 
   return (
     <PageLayout className="min-w-0">
       <div className="max-w-7xl mx-auto min-w-0">
         <div className="mb-8">
-          {selectedSubject ? (
-            <Button variant="outline" className="mb-4" onClick={handleBackToSubjects}>
+          <Link to={`/class/${classId}`}>
+            <Button variant="outline" className="mb-4">
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Subjects
+              Back to {classTitle}
             </Button>
-          ) : (
-            <Link to={`/class/${classId}`}>
-              <Button variant="outline" className="mb-4">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to {classTitle}
-              </Button>
-            </Link>
-          )}
+          </Link>
           
-          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-            {selectedSubject ? selectedSubject : resourceTypeTitle}
-          </h1>
-          <p className="text-lg text-muted-foreground mb-6">
-            {selectedSubject 
-              ? `${classTitle} - ${loading ? 'Loading...' : `${filteredDocuments.length} document(s) available`}`
-              : subjects.length === 0 
-                ? `No subject(s) available for ${resourceTypeTitle.toLowerCase()} in ${classTitle}`
-                : `${classTitle} - ${subjects.length} subject(s) available`
-            }
-          </p>
-
-          {selectedSubject && (
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-              <div className="relative flex-1 max-w-md w-full">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  type="search"
-                  placeholder="   Search documents..."
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setCurrentPage(1);
-                  }}
-                  className="pl-10"
-                  disabled={loading}
-                />
-              </div>
-            </div>
-          )}
-        </div>
-
-        {!selectedSubject ? (
-          // Show subjects
-          subjects.length === 0 ? (
-            <div className="text-center py-12">
-              <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-muted-foreground mb-2">No subjects available</h3>
-              <p className="text-muted-foreground">
-                No subjects have been configured for {resourceTypeTitle.toLowerCase()} in {classTitle}.
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div>
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                {resourceTypeTitle}
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                {classTitle} • {totalDocuments} documents available
               </p>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-              {subjects.map((subject) => (
-                <ResourceCard
-                  key={subject}
-                  title={subject}
-                  description={`View all ${resourceTypeTitle.toLowerCase()} for ${subject}`}
-                  icon={BookOpen}
-                  onClick={() => handleSubjectSelect(subject)}
-                  buttonText="View Resources"
-                />
-              ))}
-            </div>
-          )
-        ) : (
-          // Show documents or loading state
-          <>
-            {loading ? (
-              <div className="flex items-center justify-center py-12">
-                <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
-                <span className="ml-2 text-lg text-muted-foreground">Loading documents...</span>
-              </div>
-            ) : currentDocuments.length === 0 ? (
-              <div className="text-center py-12">
-                <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-muted-foreground mb-2">No documents found</h3>
-                <p className="text-muted-foreground">
-                  {searchTerm 
-                    ? `No documents match "${searchTerm}"`
-                    : `No ${resourceTypeTitle.toLowerCase()} available for ${selectedSubject}`
-                  }
-                </p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                {currentDocuments.map((document, index) => (
-                  <DocumentCard
-                    key={`${document.pdfUrl}-${index}`}
-                    document={document}
-                    subject={selectedSubject}
-                    resourceType={resourceTypeTitle}
-                    classTitle={classTitle}
-                    onPreview={handlePreview}
-                    onDownload={handleDownload}
-                  />
-                ))}
-              </div>
+            
+            {githubRepoUrl && (resourceType === 'lesson-notes' || resourceType === 'past-papers') && (
+              <Button 
+                onClick={handleNewUploads}
+                className="bg-red-600 hover:bg-red-700 text-white"
+              >
+                <Upload className="h-4 w-4 mr-2" />
+                NEW UPLOADS
+              </Button>
             )}
+          </div>
+        </div>
 
-            {totalPages > 1 && !loading && (
-              <PaginationWithJump
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-                className="mb-8"
-              />
-            )}
-          </>
+        {totalDocuments === 0 ? (
+          <div className="text-center py-12">
+            <div className="text-xl font-semibold text-muted-foreground mb-2">No documents found</div>
+            <p className="text-muted-foreground">
+              No {resourceTypeTitle.toLowerCase()} are currently available for {classTitle}.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-8">
+            {Object.entries(resources).map(([subject, documents]) => (
+              <div key={subject} className="space-y-4">
+                <h2 className="text-2xl font-bold text-foreground border-b pb-2">
+                  {subject} ({documents.length} documents)
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {documents.map((document, index) => (
+                    <DocumentCard
+                      key={`${subject}-${index}`}
+                      document={document}
+                      subject={subject}
+                      resourceType={resourceTypeTitle}
+                      classTitle={classTitle}
+                      onPreview={handlePreview}
+                      onDownload={handleDownload}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </PageLayout>

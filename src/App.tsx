@@ -24,8 +24,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassPage />} />
-            <Route path="/class/:classId/new-uploads" element={<NewUploadsPage />} />
             <Route path="/class/:classId/resources/:resourceType" element={<ResourcePage />} />
+            <Route path="/class/:classId/resources/:resourceType/new-uploads" element={<NewUploadsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/terms" element={<TermsPage />} />
