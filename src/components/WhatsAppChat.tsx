@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 
 const WhatsAppChat = () => {
@@ -29,12 +28,17 @@ const WhatsAppChat = () => {
 
     const handleSendClick = () => {
       if (chatInput && chatInput.value.trim() !== "") {
+        const phoneNumber = "+256750687790";
         const message = chatInput.value.trim();
-        const whatsappUrl = `https://wa.me/256750687790?text=${encodeURIComponent(message)}`;
         
-        // Check if mobile device
+        let url = "https://web.whatsapp.com/send";
+        
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const finalUrl = isMobile ? whatsappUrl.replace('https://wa.me/', 'whatsapp://send?phone=') : whatsappUrl;
+        if (isMobile) {
+          url = "whatsapp://send";
+        }
+        
+        const finalUrl = `${url}?phone=${encodeURIComponent(phoneNumber)}&text=${encodeURIComponent(message)}`;
         
         window.open(finalUrl, '_blank');
         chatInput.value = '';
