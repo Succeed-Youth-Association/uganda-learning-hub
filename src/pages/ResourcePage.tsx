@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -49,13 +48,13 @@ const ResourcePage = () => {
   };
 
   const handleDownload = async (document: ResourceDocument) => {
-    const link = document.createElement('a');
+    const link = window.document.createElement('a');
     link.href = document.pdfUrl;
     link.download = document.pdfUrl.split('/').pop() || 'document.pdf';
     link.target = '_blank';
-    document.body.appendChild(link);
+    window.document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    window.document.body.removeChild(link);
   };
 
   const handleNewUploads = () => {
