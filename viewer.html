@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Papers Repository</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --background-color: #f8f9fa;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --error-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .file-list-container {
+            margin-bottom: 30px;
+            min-height: 500px;
+        }
+
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .file-card {
+            background-color: var(--card-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-header {
+            display: flex;
+            padding: 15px;
+            flex: 1;
+        }
+
+        .file-icon {
+            transition: all 0.3s ease;
+    font-size: 32px;
+    margin-right: 15px;
+    color: var(--primary-color);
+}
+.file-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Add shadow */
+}
+.file-icon:active {
+    transform: scale(0.95); /* Shrink slightly when clicked */
+}
+/* Darker hover colors for better contrast */
+.file-icon.fa-file-pdf:hover { color: #c0392b; }
+.file-icon.fa-file-word:hover { color: #1e4e8c; }
+.file-icon.fa-file-excel:hover { color: #1a6339; }
+.file-icon.fa-file-powerpoint:hover { color: #b33d1e; }
+.file-icon.fa-file-image:hover { color: #8e44ad; }
+.file-icon.fa-file-alt:hover { color: #6c7a7b; }
+.file-icon.fa-file:hover { color: #7f8c8d; }
+/* PDF specific icon style */
+.file-icon.fa-file-pdf {
+    color: #e74c3c;
+    transition: color 0.2s ease;
+}
+
+.file-icon.fa-file-pdf:hover {
+    color: #c0392b; /* Darker red on hover */
+}
+
+        .file-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        .file-meta {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .meta-item {
+            margin-bottom: 5px;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .view-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .view-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .pagination-info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .pagination {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .page-item {
+            margin: 0;
+        }
+
+        .page-link {
+            display: block;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .page-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        .page-item.active .page-link {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-item.disabled .page-link {
+            color: #ccc;
+            pointer-events: none;
+        }
+
+        .loading, .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+        }
+
+        .error {
+            color: var(--error-color);
+        }
+
+        .jump-to-page {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            gap: 5px;
+        }
+
+        .jump-to-page input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .jump-btn {
+            padding: 8px 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .jump-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .file-list {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            .pagination-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .pagination {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .jump-to-page {
+                margin-left: 0;
+                margin-top: 10px;
+                justify-content: center;
+            }
+        }
+        /* Add these new styles */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        /* File Icon Colors */
+.file-icon.fa-file-pdf { color: #e74c3c; } /* PDF - Red */
+.file-icon.fa-file-word { color: #2b579a; } /* Word - Blue */
+.file-icon.fa-file-excel { color: #217346; } /* Excel - Green */
+.file-icon.fa-file-powerpoint { color: #d24726; } /* PowerPoint - Orange */
+.file-icon.fa-file-image { color: #9b59b6; } /* Images - Purple */
+.file-icon.fa-file-alt { color: #7f8c8d; } /* Text - Gray */
+.file-icon.fa-file { color: #95a5a6; } /* Other files - Light Gray */
+    </style>
+</head>
+<body>
+    <!-- Add scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <div class="container">
+        <header>
+            <h1>S.1 Past Papers Repository</h1>
+            <p>Access past examination papers for Senior 1 students</p>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="search">Search Papers</label>
+                <input type="text" id="search" placeholder="Search by paper name...">
+            </div>
+            <div class="filter-group">
+                <label for="file-type-filter">Filter by File Type</label>
+                <select id="file-type-filter">
+                    <option value="all">All File Types</option>
+                    <option value="pdf">PDF</option>
+                    <option value="doc">Word Documents</option>
+                    <option value="xls">Excel Files</option>
+                    <option value="ppt">PowerPoint Files</option>
+                    <option value="image">Images</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="file-list-container" class="file-list-container">
+            <div class="loading">Loading files...</div>
+        </div>
+
+        <div class="pagination-container">
+            <div id="pagination-info" class="pagination-info"></div>
+            <ul id="pagination" class="pagination"></ul>
+        </div>
+    </div>
+
+    <script>
+            // Add scroll to top button functionality
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const repoUrl = 'https://api.github.com/repos/Fresh-Teacher/s1-past-papers/contents/';
+            const fileListContainer = document.getElementById('file-list-container');
+            const searchInput = document.getElementById('search');
+            const fileTypeFilter = document.getElementById('file-type-filter');
+            const paginationContainer = document.getElementById('pagination');
+            const paginationInfo = document.getElementById('pagination-info');
+            
+            // Configuration
+            const itemsPerPage = 20;
+            let allFiles = [];
+            let filteredFiles = [];
+            let currentPage = 1;
+            let totalPages = 1;
+            let searchTimeout = null;
+            
+            // Initialize current page from URL if available
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageParam = urlParams.get('page');
+            if (pageParam && !isNaN(pageParam) && pageParam > 0) {
+                currentPage = parseInt(pageParam);
+            }
+            
+            // File type to icon mapping
+            const fileTypeIcons = {
+                'pdf': 'file-pdf',
+                'doc': 'file-word',
+                'docx': 'file-word',
+                'xls': 'file-excel',
+                'xlsx': 'file-excel',
+                'ppt': 'file-powerpoint',
+                'pptx': 'file-powerpoint',
+                'jpg': 'file-image',
+                'jpeg': 'file-image',
+                'png': 'file-image',
+                'gif': 'file-image',
+                'txt': 'file-alt',
+                'default': 'file'
+            };
+            
+            // File type categories for filtering
+            const fileTypeCategories = {
+                'pdf': ['pdf'],
+                'doc': ['doc', 'docx'],
+                'xls': ['xls', 'xlsx'],
+                'ppt': ['ppt', 'pptx'],
+                'image': ['jpg', 'jpeg', 'png', 'gif'],
+                'other': ['txt']
+            };
+            
+            // Get file extension and type
+            function getFileType(filename) {
+                const extension = filename.split('.').pop().toLowerCase();
+                return {
+                    extension: extension,
+                    icon: fileTypeIcons[extension] || fileTypeIcons['default'],
+                    category: getFileCategory(extension)
+                };
+            }
+            
+            // Get file category for filtering
+            function getFileCategory(extension) {
+                for (const [category, exts] of Object.entries(fileTypeCategories)) {
+                    if (exts.includes(extension)) {
+                        return category;
+                    }
+                }
+                return 'other';
+            }
+            
+            // Function to sanitize and format filenames
+            function formatFileName(filename) {
+                // Remove file extension
+                const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+                
+                // Replace hyphens/underscores with spaces
+                let sanitized = nameWithoutExt.replace(/[-_]/g, " ");
+                
+                // Convert to uppercase
+                sanitized = sanitized.toUpperCase();
+                
+                return sanitized;
+            }
+            
+            // Fixed search matching function
+            function matchesSearch(text, searchTerm) {
+                if (!searchTerm.trim()) return true;
+                
+                const textLower = text.toLowerCase();
+                const searchWords = searchTerm.toLowerCase().split(/\s+/);
+                
+                // Remove very common words that might not be in filenames
+                const commonWords = ['past', 'papers', 'exam', 'examination', 'test', 'question'];
+                const filteredSearchWords = searchWords.filter(word => 
+                    word.length > 2 && !commonWords.includes(word)
+                );
+                
+                // If no meaningful words left after filtering, show all results
+                if (filteredSearchWords.length === 0) return true;
+                
+                // Split filename into searchable parts
+                const textParts = textLower.split(/[\s\-_\.]+/);
+                
+                // Check if any search word matches any part of the filename
+                return filteredSearchWords.some(searchWord => {
+                    // Exact match
+                    if (textLower.includes(searchWord)) return true;
+                    
+                    // Partial match (search word is beginning of a filename part)
+                    if (textParts.some(part => part.startsWith(searchWord))) return true;
+                    
+                    // Partial match in reverse (filename part is beginning of search word)
+                    if (textParts.some(part => searchWord.startsWith(part))) return true;
+                    
+                    // Number-to-word conversion
+                    const numberMap = {
+                        '1': 'one', '2': 'two', '3': 'three', '4': 'four',
+                        '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine'
+                    };
+                    const searchWithNumbersReplaced = searchWord.replace(
+                        /[1-9]/g, match => numberMap[match] || match
+                    );
+                    return textLower.includes(searchWithNumbersReplaced);
+                });
+            }
+            
+            // Improved file filter function
+            function filterFiles(searchTerm) {
+                if (!searchTerm.trim()) {
+                    filteredFiles = [...allFiles];
+                } else {
+                    filteredFiles = allFiles.filter(file => 
+                        matchesSearch(file.name, searchTerm) || 
+                        matchesSearch(file.path, searchTerm)
+                    );
+                }
+                
+                currentPage = 1;
+                updatePagination();
+                displayCurrentPage();
+            }
+            
+            // Apply all filters (search + file type)
+            function applyFilters() {
+                const searchTerm = searchInput.value.trim();
+                const fileType = fileTypeFilter.value;
+                
+                // First apply search filter
+                filterFiles(searchTerm);
+                
+                // Then apply file type filter if needed
+                if (fileType !== 'all') {
+                    filteredFiles = filteredFiles.filter(file => {
+                        const fileCategory = getFileType(file.name).category;
+                        return fileType === fileCategory;
+                    });
+                }
+                
+                updatePagination();
+                displayCurrentPage();
+            }
+            
+            // Fetch files from GitHub repository
+            async function fetchFiles() {
+                try {
+                    showLoading();
+                    const response = await fetch(repoUrl);
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch files. GitHub API rate limit may be exceeded.');
+                    }
+                    const data = await response.json();
+                    allFiles = data.filter(file => file.type === 'file');
+                    applyFilters();
+                } catch (error) {
+                    showError(error.message);
+                    console.error('Error:', error);
+                }
+            }
+            
+             // Modified displayCurrentPage function with smooth scroll
+             function displayCurrentPage() {
+                // Smooth scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const filesToDisplay = filteredFiles.slice(startIndex, endIndex);
+                
+                if (filesToDisplay.length === 0) {
+                    fileListContainer.innerHTML = '<div class="error">No S1 past papers found matching your criteria.</div>';
+                    return;
+                }
+                
+                fileListContainer.innerHTML = '<div class="file-list" id="file-list"></div>';
+                const fileList = document.getElementById('file-list');
+                
+                filesToDisplay.forEach(file => {
+                    const fileType = getFileType(file.name);
+                    const formattedName = formatFileName(file.name);
+                    
+                    const fileCard = document.createElement('div');
+                    fileCard.className = 'file-card';
+                    fileCard.innerHTML = `
+    <div class="file-header">
+        <i class="fas fa-${fileType.icon} file-icon" title="${fileType.extension.toUpperCase()} File"></i>
+        <div>
+            <div class="file-name">${formattedName}</div>
+            <div class="file-meta">
+                <div class="meta-item"><span class="meta-label">Class:</span> S.1</div>
+                <div class="meta-item"><span class="meta-label">Resource:</span> Past Papers</div>
+                <div class="meta-item"><span class="meta-label">Format:</span> ${fileType.extension.toUpperCase()}</div>
+            </div>
+        </div>
+    </div>
+    <button class="view-btn" data-url="${file.download_url}">
+        ${fileType.icon === 'file-pdf' ? 'View PDF' : 'Download'}
+    </button>
+`;
+                    fileList.appendChild(fileCard);
+                });
+                
+                // Add event listeners to view/download buttons
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const fileUrl = this.getAttribute('data-url');
+                        const fileType = getFileType(this.parentElement.querySelector('.file-name').textContent);
+                        
+                        if (fileType.icon === 'file-pdf') {
+                            // Open PDFs in Google Viewer
+                            const pdfUrl = encodeURIComponent(fileUrl);
+                            const googleViewerUrl = `https://docs.google.com/viewerng/viewer?url=${pdfUrl}`;
+                            window.open(googleViewerUrl, '_blank');
+                        } else {
+                            // Download other file types directly
+                            window.open(fileUrl, '_blank');
+                        }
+                    });
+                });
+                
+                updatePaginationInfo();
+            }
+            
+            // Update pagination controls
+// Update pagination controls
+function updatePagination() {
+    totalPages = Math.ceil(filteredFiles.length / itemsPerPage);
+    paginationContainer.innerHTML = '';
+    
+    if (totalPages <= 1) return;
+    
+    // Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
+    prevLi.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            updateUrl();
+            displayCurrentPage();
+            updatePagination(); // Add this line to regenerate pagination
+        }
+    });
+    paginationContainer.appendChild(prevLi);
+    
+    // Page numbers - completely rewritten logic
+    const maxVisiblePages = 5;
+    let startPage, endPage;
+    
+    if (totalPages <= maxVisiblePages) {
+        startPage = 1;
+        endPage = totalPages;
+    } else {
+        const maxPagesBeforeCurrent = Math.floor(maxVisiblePages / 2);
+        const maxPagesAfterCurrent = Math.ceil(maxVisiblePages / 2) - 1;
+        
+        if (currentPage <= maxPagesBeforeCurrent) {
+            startPage = 1;
+            endPage = maxVisiblePages;
+        } else if (currentPage + maxPagesAfterCurrent >= totalPages) {
+            startPage = totalPages - maxVisiblePages + 1;
+            endPage = totalPages;
+        } else {
+            startPage = currentPage - maxPagesBeforeCurrent;
+            endPage = currentPage + maxPagesAfterCurrent;
+        }
+    }
+    
+    // Always show first page button if not in range
+    if (startPage > 1) {
+        const firstLi = document.createElement('li');
+        firstLi.className = `page-item ${currentPage === 1 ? 'active' : ''}`;
+        firstLi.innerHTML = `<a class="page-link" href="#">1</a>`;
+        firstLi.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = 1;
+            updateUrl();
+            displayCurrentPage();
+            updatePagination(); // Add this line to regenerate pagination
+        });
+        paginationContainer.appendChild(firstLi);
+        
+        if (startPage > 2) {
+            const ellipsisLi = document.createElement('li');
+            ellipsisLi.className = 'page-item disabled';
+            ellipsisLi.innerHTML = `<span class="page-link">...</span>`;
+            paginationContainer.appendChild(ellipsisLi);
+        }
+    }
+    
+    // Generate page number buttons
+    for (let i = startPage; i <= endPage; i++) {
+        const pageLi = document.createElement('li');
+        pageLi.className = `page-item ${currentPage === i ? 'active' : ''}`;
+        pageLi.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+        pageLi.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = i;
+            updateUrl();
+            displayCurrentPage();
+            updatePagination(); // Add this line to regenerate pagination
+        });
+        paginationContainer.appendChild(pageLi);
+    }
+    
+    // Show last page button if not in range
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            const ellipsisLi = document.createElement('li');
+            ellipsisLi.className = 'page-item disabled';
+            ellipsisLi.innerHTML = `<span class="page-link">...</span>`;
+            paginationContainer.appendChild(ellipsisLi);
+        }
+        
+        const lastLi = document.createElement('li');
+        lastLi.className = `page-item ${currentPage === totalPages ? 'active' : ''}`;
+        lastLi.innerHTML = `<a class="page-link" href="#">${totalPages}</a>`;
+        lastLi.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = totalPages;
+            updateUrl();
+            displayCurrentPage();
+            updatePagination(); // Add this line to regenerate pagination
+        });
+        paginationContainer.appendChild(lastLi);
+    }
+    
+    // Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;
+    nextLi.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateUrl();
+            displayCurrentPage();
+            updatePagination(); // Add this line to regenerate pagination
+        }
+    });
+    paginationContainer.appendChild(nextLi);
+    
+    // Fixed jump to page functionality
+    const jumpContainer = document.createElement('div');
+    jumpContainer.className = 'jump-to-page';
+    jumpContainer.innerHTML = `
+        <input type="number" id="pageInput" min="1" max="${totalPages}" placeholder="Page" value="${currentPage}">
+        <button class="jump-btn">Go</button>
+    `;
+    
+    const jumpInput = jumpContainer.querySelector('#pageInput');
+    const jumpBtn = jumpContainer.querySelector('.jump-btn');
+    
+    jumpBtn.addEventListener('click', () => {
+        const page = parseInt(jumpInput.value);
+        if (!isNaN(page)) {
+            goToPage(page);
+        }
+    });
+    
+    jumpInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const page = parseInt(jumpInput.value);
+            if (!isNaN(page)) {
+                goToPage(page);
+            }
+        }
+    });
+    
+    paginationContainer.appendChild(jumpContainer);
+}
+            
+            // New function to handle page navigation
+            function goToPage(page) {
+                if (page >= 1 && page <= totalPages && page !== currentPage) {
+                    currentPage = page;
+                    updateUrl();
+                    displayCurrentPage();
+                }
+            }
+            // Update URL with current page
+            function updateUrl() {
+                const url = new URL(window.location);
+                if (currentPage === 1) {
+                    url.searchParams.delete('page');
+                } else {
+                    url.searchParams.set('page', currentPage);
+                }
+                window.history.pushState({}, '', url);
+            }
+            
+            function updatePaginationInfo() {
+                const startItem = (currentPage - 1) * itemsPerPage + 1;
+                const endItem = Math.min(currentPage * itemsPerPage, filteredFiles.length);
+                paginationInfo.textContent = `Showing ${startItem}-${endItem} of ${filteredFiles.length} items`;
+            }
+            
+            function showLoading() {
+                fileListContainer.innerHTML = '<div class="loading">Loading files...</div>';
+            }
+            
+            function showError(message) {
+                fileListContainer.innerHTML = `<div class="error">${message}</div>`;
+            }
+            
+            // Event listeners
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    applyFilters();
+                }, 300);
+            });
+            
+            fileTypeFilter.addEventListener('change', applyFilters);
+            
+            // Initialize
+            fetchFiles();
+            
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const pageParam = urlParams.get('page');
+                const newPage = pageParam ? parseInt(pageParam) : 1;
+                if (newPage !== currentPage) {
+                    currentPage = newPage;
+                    displayCurrentPage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
