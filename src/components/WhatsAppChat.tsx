@@ -326,7 +326,7 @@ const WhatsAppChat = () => {
         <div className='header-chat'>
           <div className='head-home'>
             <div className='info-avatar'>
-              <img src='https://via.placeholder.com/50/095e54/ffffff?text=FT' alt="Fresh Teacher" />
+              <img src='https://fresh-teacher.github.io/dp.jpeg' alt="Fresh Teacher" />
             </div>
             <p>
               <span className="africavotes-name">Fresh Teacher</span><br />
