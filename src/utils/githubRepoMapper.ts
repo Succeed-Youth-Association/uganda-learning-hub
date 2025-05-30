@@ -13,55 +13,55 @@ const GITHUB_REPO_MAPPING: GitHubRepoMapping = {
   // Example mappings - you can add more as needed
   'p1': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p1-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p1-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p1-past-papers'
   },
   'p2': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p2-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p2-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p2-past-papers'
   },
   'p3': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p3-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p3-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p3-past-papers'
   },
   'p4': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p4-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p4-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p4-past-papers'
   },
   'p5': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p5-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p5-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p5-past-papers'
   },
   'p6': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p6-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p6-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p6-past-papers'
   },
   'p7': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/p7-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/p7-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/p7-past-papers'
   },
   's1': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s1-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s1-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s1-past-papers'
   },
   's2': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s2-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s2-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s2-past-papers'
   },
   's3': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s3-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s3-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s3-past-papers'
   },
   's4': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s4-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s4-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s4-past-papers'
   },
   's5': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s5-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s5-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s5-past-papers'
   },
   's6': {
     'lesson-notes': 'https://github.com/Fresh-Teacher/s6-notes',
-    'past-papers': 'https://github.com/Fresh-Teacher/s6-papers'
+    'past-past-papers': 'https://github.com/Fresh-Teacher/s6-past-papers'
   }
 };
 
