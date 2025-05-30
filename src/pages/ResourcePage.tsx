@@ -2,12 +2,13 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, BookOpen, Loader2, FileText } from 'lucide-react';
+import { ArrowLeft, Search, BookOpen, Loader2, FileText, Upload } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import DocumentCard from '../components/ui/document-card';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
+import { hasGitHubRepo } from '../utils/githubRepoMapper';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -28,6 +29,7 @@ const ResourcePage = () => {
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
   const resourceTypeTitle = getResourceTypeTitle(resourceType || '');
+  const hasNewUploads = hasGitHubRepo(classId || '', resourceType || '');
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -151,6 +153,17 @@ const ResourcePage = () => {
                   disabled={loading}
                 />
               </div>
+            </div>
+          )}
+
+          {!selectedSubject && hasNewUploads && (resourceType === 'lesson-notes' || resourceType === 'past-papers') && (
+            <div className="mb-6">
+              <Link to={`/class/${classId}/resources/${resourceType}/new-uploads`}>
+                <Button className="bg-green-600 hover:bg-green-700 text-white">
+                  <Upload className="h-4 w-4 mr-2" />
+                  NEW UPLOADS
+                </Button>
+              </Link>
             </div>
           )}
         </div>

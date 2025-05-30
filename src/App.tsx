@@ -8,6 +8,7 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 import Index from "./pages/Index";
 import ClassPage from "./pages/ClassPage";
 import ResourcePage from "./pages/ResourcePage";
+import NewUploadsPage from "./pages/NewUploadsPage";
 import AboutPage from "./pages/AboutPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
 import TermsPage from "./pages/TermsPage";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassPage />} />
             <Route path="/class/:classId/resources/:resourceType" element={<ResourcePage />} />
+            <Route path="/class/:classId/resources/:resourceType/new-uploads" element={<NewUploadsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/terms" element={<TermsPage />} />
