@@ -714,26 +714,6 @@ export const loadResourceData = async (
 };
 
 /**
- * Gets all resources for a specific class and resource type, organized by subject
- */
-export const getResourcesForClassAndType = async (
-  classId: string,
-  resourceType: string
-): Promise<{ [subject: string]: ResourceDocument[] }> => {
-  const subjects = getSubjectsForClassAndResource(classId, resourceType);
-  const resources: { [subject: string]: ResourceDocument[] } = {};
-
-  for (const subject of subjects) {
-    const subjectResources = await loadResourceData(classId, subject, resourceType);
-    if (subjectResources.length > 0) {
-      resources[subject] = subjectResources;
-    }
-  }
-
-  return resources;
-};
-
-/**
  * Gets the available resource types for a specific class
  */
 export const getAvailableResourcesForClass = (classId: string): string[] => {

@@ -5,7 +5,7 @@ import { Button } from '../components/ui/button';
 import { ArrowLeft, FileText, Book, GraduationCap, BookOpen, Package } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
-import { getAvailableResourcesForClass, getClassTitle } from '../utils/dataLoader';
+import { getAvailableResourcesForClass, getClassTitle, getResourceTypeTitle } from '../utils/dataLoader';
 
 const ClassPage = () => {
   const { classId } = useParams();
@@ -78,19 +78,29 @@ const ClassPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {resourceTypes.map((resource) => (
-            <ResourceCard
-              key={resource.route}
-              title={resource.title}
-              description={resource.description}
-              icon={resource.icon}
-              iconColor={resource.color}
-              onClick={() => handleResourceClick(resource.route)}
-              buttonText={`Browse ${resource.title}`}
-            />
-          ))}
-        </div>
+        {resourceTypes.length === 0 ? (
+          <div className="text-center py-12">
+            <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-muted-foreground mb-2">No resources available</h3>
+            <p className="text-muted-foreground">
+              No resources have been configured for {classTitle} yet.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            {resourceTypes.map((resource) => (
+              <ResourceCard
+                key={resource.route}
+                title={resource.title}
+                description={resource.description}
+                icon={resource.icon}
+                iconColor={resource.color}
+                onClick={() => handleResourceClick(resource.route)}
+                buttonText={`Browse ${resource.title}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </PageLayout>
   );
