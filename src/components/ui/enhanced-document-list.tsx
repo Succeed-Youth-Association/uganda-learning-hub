@@ -313,9 +313,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                     type={fileInfo.extension}
                     className="transition-transform hover:scale-110" 
                   />
-                  <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                    {fileInfo.label}
-                  </span>
+
                 </div>
                 
                 <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 line-clamp-2 break-words">
