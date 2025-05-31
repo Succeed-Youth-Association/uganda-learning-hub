@@ -21,30 +21,98 @@ interface EnhancedDocumentListProps {
   selectedSubject: string;
 }
 
-// File type mapping for icons and colors
-const FILE_TYPE_CONFIG = {
-  'pdf': { icon: FileText, color: '#e74c3c', label: 'PDF' },
-  'doc': { icon: FileText, color: '#2b579a', label: 'Word' },
-  'docx': { icon: FileText, color: '#2b579a', label: 'Word' },
-  'xls': { icon: FileText, color: '#217346', label: 'Excel' },
-  'xlsx': { icon: FileText, color: '#217346', label: 'Excel' },
-  'ppt': { icon: FileText, color: '#d24726', label: 'PowerPoint' },
-  'pptx': { icon: FileText, color: '#d24726', label: 'PowerPoint' },
-  'jpg': { icon: FileImage, color: '#9b59b6', label: 'Image' },
-  'jpeg': { icon: FileImage, color: '#9b59b6', label: 'Image' },
-  'png': { icon: FileImage, color: '#9b59b6', label: 'Image' },
-  'gif': { icon: FileImage, color: '#9b59b6', label: 'Image' },
-  'txt': { icon: File, color: '#7f8c8d', label: 'Text' },
-  'default': { icon: File, color: '#95a5a6', label: 'File' }
+// Custom SVG icons for file types with realistic colors
+const FileTypeIcon = ({ type, className }: { type: string; className?: string }) => {
+  const baseClass = `w-8 h-8 ${className}`;
+  
+  switch (type) {
+    case 'pdf':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#e74c3c" stroke="#c0392b" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#e74c3c"/>
+          <path d="M12 2v5h5" fill="none" stroke="#c0392b" strokeWidth="1"/>
+          <text x="12" y="16" textAnchor="middle" fontSize="6" fill="white" fontWeight="bold">PDF</text>
+        </svg>
+      );
+    case 'doc':
+    case 'docx':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#2b579a" stroke="#1e4e8c" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#2b579a"/>
+          <path d="M12 2v5h5" fill="none" stroke="#1e4e8c" strokeWidth="1"/>
+          <text x="12" y="16" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">W</text>
+        </svg>
+      );
+    case 'xls':
+    case 'xlsx':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#217346" stroke="#1a6339" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#217346"/>
+          <path d="M12 2v5h5" fill="none" stroke="#1a6339" strokeWidth="1"/>
+          <text x="12" y="16" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">X</text>
+        </svg>
+      );
+    case 'ppt':
+    case 'pptx':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#d24726" stroke="#b33d1e" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#d24726"/>
+          <path d="M12 2v5h5" fill="none" stroke="#b33d1e" strokeWidth="1"/>
+          <text x="12" y="16" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">P</text>
+        </svg>
+      );
+    case 'jpg':
+    case 'jpeg':
+    case 'png':
+    case 'gif':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#9b59b6" stroke="#8e44ad" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#9b59b6"/>
+          <path d="M12 2v5h5" fill="none" stroke="#8e44ad" strokeWidth="1"/>
+          <circle cx="9" cy="10" r="1" fill="white"/>
+          <path d="M8 14l2-2 3 3 2-2 2 2v2H8v-3z" fill="white"/>
+        </svg>
+      );
+    case 'txt':
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#7f8c8d" stroke="#6c7a7b" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#7f8c8d"/>
+          <path d="M12 2v5h5" fill="none" stroke="#6c7a7b" strokeWidth="1"/>
+          <path d="M7 10h6M7 12h6M7 14h4" stroke="white" strokeWidth="1"/>
+        </svg>
+      );
+    default:
+      return (
+        <svg className={baseClass} viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="2" width="14" height="20" rx="2" fill="#95a5a6" stroke="#7f8c8d" strokeWidth="1"/>
+          <path d="M17 7L12 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="#95a5a6"/>
+          <path d="M12 2v5h5" fill="none" stroke="#7f8c8d" strokeWidth="1"/>
+        </svg>
+      );
+  }
 };
 
-const FILE_TYPE_CATEGORIES = {
-  'pdf': ['pdf'],
-  'doc': ['doc', 'docx'],
-  'xls': ['xls', 'xlsx'],
-  'ppt': ['ppt', 'pptx'],
-  'image': ['jpg', 'jpeg', 'png', 'gif'],
-  'other': ['txt']
+// File type mapping for categories and labels
+const FILE_TYPE_CONFIG = {
+  'pdf': { label: 'PDF', category: 'pdf' },
+  'doc': { label: 'Word', category: 'doc' },
+  'docx': { label: 'Word', category: 'doc' },
+  'xls': { label: 'Excel', category: 'xls' },
+  'xlsx': { label: 'Excel', category: 'xls' },
+  'ppt': { label: 'PowerPoint', category: 'ppt' },
+  'pptx': { label: 'PowerPoint', category: 'ppt' },
+  'jpg': { label: 'Image', category: 'image' },
+  'jpeg': { label: 'Image', category: 'image' },
+  'png': { label: 'Image', category: 'image' },
+  'gif': { label: 'Image', category: 'image' },
+  'txt': { label: 'Text', category: 'other' },
+  'default': { label: 'File', category: 'other' }
 };
 
 const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
@@ -67,20 +135,9 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
     const config = FILE_TYPE_CONFIG[extension] || FILE_TYPE_CONFIG['default'];
     return {
       extension,
-      icon: config.icon,
-      color: config.color,
       label: config.label,
-      category: getFileCategory(extension)
+      category: config.category
     };
-  };
-
-  const getFileCategory = (extension: string): string => {
-    for (const [category, exts] of Object.entries(FILE_TYPE_CATEGORIES)) {
-      if (exts.includes(extension)) {
-        return category;
-      }
-    }
-    return 'other';
   };
 
   const formatFileName = (filename: string): string => {
@@ -117,6 +174,15 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
       );
       return textLower.includes(searchWithNumbersReplaced);
     });
+  };
+
+  const handleWhatsAppShare = (document: ResourceDocument | GitHubDocument) => {
+    const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
+    const url = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
+    const encodedUrl = encodeURI(url);
+    const message = `Hello, I found this educational document named ${name} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const filteredDocuments = useMemo(() => {
@@ -221,7 +287,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
             const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
             const fileInfo = getFileInfo(name);
             const formattedName = formatFileName(name);
-            const IconComponent = fileInfo.icon;
             const size = isGitHub ? (document as GitHubDocument).size : undefined;
 
             return (
@@ -230,9 +295,9 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                 className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1 p-4 lg:p-6 border"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <IconComponent 
-                    className="h-8 w-8 flex-shrink-0 transition-transform hover:scale-110" 
-                    style={{ color: fileInfo.color }}
+                  <FileTypeIcon 
+                    type={fileInfo.extension}
+                    className="transition-transform hover:scale-110" 
                   />
                   <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
                     {fileInfo.label}
@@ -266,6 +331,23 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                     className="w-full bg-orange-600 hover:bg-orange-700"
                   >
                     Download
+                  </Button>
+                  <Button
+                    onClick={() => handleWhatsAppShare(document)}
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-green-600 border-green-600 hover:bg-green-50 hover:text-green-700"
+                  >
+                    <div className="flex items-center">
+                      <svg 
+                        className="h-4 w-4 mr-1" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor"
+                      >
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382z"/>
+                      </svg>
+                      Share on WhatsApp
+                    </div>
                   </Button>
                 </div>
               </Card>
