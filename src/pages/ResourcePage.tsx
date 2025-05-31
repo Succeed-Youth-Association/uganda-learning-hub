@@ -1,12 +1,14 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, BookOpen, Loader2, FileText } from 'lucide-react';
+import { ArrowLeft, Search, BookOpen, Loader2, FileText, Globe } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import DocumentCard from '../components/ui/document-card';
+import GitHubDocumentCard from '../components/ui/github-document-card';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
 import { 
   loadResourceData, 
@@ -15,6 +17,7 @@ import {
   getClassTitle,
   getResourceTypeTitle
 } from '../utils/dataLoader';
+import { loadGitHubData, hasGitHubRepo, GitHubDocument } from '../utils/githubLoader';
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
@@ -22,12 +25,17 @@ const ResourcePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
+  const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
   const itemsPerPage = 12;
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
   const resourceTypeTitle = getResourceTypeTitle(resourceType || '');
+
+  // Check if GitHub repo is available for "All Subjects"
+  const showAllSubjects = hasGitHubRepo(classId || '', resourceType || '') && 
+    (resourceType === 'lesson-notes' || resourceType === 'past-papers');
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -36,12 +44,23 @@ const ResourcePage = () => {
       
       setLoading(true);
       try {
-        const data = await loadResourceData(classId, selectedSubject, resourceType);
-        setDocuments(data);
-        console.log(`Loaded ${data.length} documents for ${selectedSubject}`);
+        if (selectedSubject === 'All Subjects') {
+          // Load from GitHub
+          const data = await loadGitHubData(classId, resourceType);
+          setGithubDocuments(data);
+          setDocuments([]);
+          console.log(`Loaded ${data.length} documents from GitHub for All Subjects`);
+        } else {
+          // Load from local JSON
+          const data = await loadResourceData(classId, selectedSubject, resourceType);
+          setDocuments(data);
+          setGithubDocuments([]);
+          console.log(`Loaded ${data.length} documents for ${selectedSubject}`);
+        }
       } catch (error) {
         console.error('Error loading documents:', error);
         setDocuments([]);
+        setGithubDocuments([]);
       } finally {
         setLoading(false);
       }
@@ -52,39 +71,51 @@ const ResourcePage = () => {
 
   const filteredDocuments = useMemo(() => {
     if (!selectedSubject) return [];
+    
+    if (selectedSubject === 'All Subjects') {
+      return githubDocuments.filter(doc =>
+        doc.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
     return documents.filter(doc =>
       extractFileName(doc.pdfUrl).toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [documents, searchTerm, selectedSubject]);
+  }, [documents, githubDocuments, searchTerm, selectedSubject]);
 
   const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentDocuments = filteredDocuments.slice(startIndex, startIndex + itemsPerPage);
 
-  const handlePreview = (document: ResourceDocument) => {
-    console.log('Previewing:', extractFileName(document.pdfUrl));
-    window.open(document.pdfUrl, '_blank');
+  const handlePreview = (document: ResourceDocument | GitHubDocument) => {
+    const url = 'download_url' in document ? document.download_url : document.pdfUrl;
+    const name = 'name' in document ? document.name : extractFileName(document.pdfUrl);
+    console.log('Previewing:', name);
+    window.open(url, '_blank');
   };
 
-  const handleDownload = async (document: ResourceDocument) => {
-    console.log('Downloading:', extractFileName(document.pdfUrl));
+  const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
+    const url = 'download_url' in document ? document.download_url : document.pdfUrl;
+    const name = 'name' in document ? document.name : extractFileName(document.pdfUrl);
+    
+    console.log('Downloading:', name);
     try {
-      const response = await fetch(document.pdfUrl);
+      const response = await fetch(url);
       const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const downloadUrl = window.URL.createObjectURL(blob);
       const link = window.document.createElement('a');
-      link.href = url;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
+      link.href = downloadUrl;
+      link.download = name;
       window.document.body.appendChild(link);
       link.click();
       window.document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
+      window.URL.revokeObjectURL(downloadUrl);
     } catch (error) {
       console.error('Download failed:', error);
       // Fallback to direct link method
       const link = window.document.createElement('a');
-      link.href = document.pdfUrl;
-      link.download = `${extractFileName(document.pdfUrl)}.${getFileExtension(document.pdfUrl).toLowerCase()}`;
+      link.href = url;
+      link.download = name;
       link.target = '_blank';
       window.document.body.appendChild(link);
       link.click();
@@ -103,7 +134,11 @@ const ResourcePage = () => {
     setCurrentPage(1);
     setSearchTerm('');
     setDocuments([]);
+    setGithubDocuments([]);
   };
+
+  // Combine subjects with "All Subjects" if GitHub repo is available
+  const allSubjects = showAllSubjects ? ['All Subjects', ...subjects] : subjects;
 
   return (
     <PageLayout className="min-w-0">
@@ -129,9 +164,9 @@ const ResourcePage = () => {
           <p className="text-lg text-muted-foreground mb-6">
             {selectedSubject 
               ? `${classTitle} - ${loading ? 'Loading...' : `${filteredDocuments.length} document(s) available`}`
-              : subjects.length === 0 
+              : allSubjects.length === 0 
                 ? `No subject(s) available for ${resourceTypeTitle.toLowerCase()} in ${classTitle}`
-                : `${classTitle} - ${subjects.length} subject(s) available`
+                : `${classTitle} - ${allSubjects.length} subject(s) available`
             }
           </p>
 
@@ -157,7 +192,7 @@ const ResourcePage = () => {
 
         {!selectedSubject ? (
           // Show subjects
-          subjects.length === 0 ? (
+          allSubjects.length === 0 ? (
             <div className="text-center py-12">
               <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-muted-foreground mb-2">No subjects available</h3>
@@ -167,12 +202,17 @@ const ResourcePage = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-              {subjects.map((subject) => (
+              {allSubjects.map((subject) => (
                 <ResourceCard
                   key={subject}
                   title={subject}
-                  description={`View all ${resourceTypeTitle.toLowerCase()} for ${subject}`}
-                  icon={BookOpen}
+                  description={
+                    subject === 'All Subjects' 
+                      ? `Browse all ${resourceTypeTitle.toLowerCase()} from GitHub repository`
+                      : `View all ${resourceTypeTitle.toLowerCase()} for ${subject}`
+                  }
+                  icon={subject === 'All Subjects' ? Globe : BookOpen}
+                  iconColor={subject === 'All Subjects' ? 'text-blue-600' : 'text-orange-600'}
                   onClick={() => handleSubjectSelect(subject)}
                   buttonText="View Resources"
                 />
@@ -201,15 +241,26 @@ const ResourcePage = () => {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
                 {currentDocuments.map((document, index) => (
-                  <DocumentCard
-                    key={`${document.pdfUrl}-${index}`}
-                    document={document}
-                    subject={selectedSubject}
-                    resourceType={resourceTypeTitle}
-                    classTitle={classTitle}
-                    onPreview={handlePreview}
-                    onDownload={handleDownload}
-                  />
+                  selectedSubject === 'All Subjects' ? (
+                    <GitHubDocumentCard
+                      key={`github-${(document as GitHubDocument).path}-${index}`}
+                      document={document as GitHubDocument}
+                      resourceType={resourceTypeTitle}
+                      classTitle={classTitle}
+                      onPreview={handlePreview}
+                      onDownload={handleDownload}
+                    />
+                  ) : (
+                    <DocumentCard
+                      key={`local-${(document as ResourceDocument).pdfUrl}-${index}`}
+                      document={document as ResourceDocument}
+                      subject={selectedSubject}
+                      resourceType={resourceTypeTitle}
+                      classTitle={classTitle}
+                      onPreview={handlePreview}
+                      onDownload={handleDownload}
+                    />
+                  )
                 ))}
               </div>
             )}
