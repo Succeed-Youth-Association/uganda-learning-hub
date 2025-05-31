@@ -9,6 +9,7 @@ import { FileText, File, FileImage, Search, Loader2 } from 'lucide-react';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { ResourceDocument } from '../../utils/dataLoader';
 import { GitHubDocument } from '../../utils/githubLoader';
+import PaginationWithJump from '../PaginationWithJump';
 
 interface EnhancedDocumentListProps {
   documents: (ResourceDocument | GitHubDocument)[];
@@ -130,14 +131,28 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
-  const getFileInfo = (filename: string) => {
-    const extension = getFileExtension(filename).toLowerCase().replace('.', '');
-    const config = FILE_TYPE_CONFIG[extension] || FILE_TYPE_CONFIG['default'];
-    return {
-      extension,
-      label: config.label,
-      category: config.category
-    };
+  const getFileInfo = (document: ResourceDocument | GitHubDocument) => {
+    // For GitHub documents, use the name property
+    if (isGitHub) {
+      const filename = (document as GitHubDocument).name;
+      const extension = getFileExtension(filename).toLowerCase().replace('.', '');
+      const config = FILE_TYPE_CONFIG[extension] || FILE_TYPE_CONFIG['default'];
+      return {
+        extension,
+        label: config.label,
+        category: config.category
+      };
+    } else {
+      // For JSON documents, extract extension from pdfUrl
+      const pdfUrl = (document as ResourceDocument).pdfUrl;
+      const extension = getFileExtension(pdfUrl).toLowerCase().replace('.', '');
+      const config = FILE_TYPE_CONFIG[extension] || FILE_TYPE_CONFIG['default'];
+      return {
+        extension,
+        label: config.label,
+        category: config.category
+      };
+    }
   };
 
   const formatFileName = (filename: string): string => {
@@ -193,9 +208,8 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
 
     if (fileTypeFilter !== 'all') {
       filtered = filtered.filter(doc => {
-        const name = isGitHub ? (doc as GitHubDocument).name : extractFileName((doc as ResourceDocument).pdfUrl);
-        const fileCategory = getFileInfo(name).category;
-        return fileTypeFilter === fileCategory;
+        const fileInfo = getFileInfo(doc);
+        return fileTypeFilter === fileInfo.category;
       });
     }
 
@@ -285,7 +299,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {currentDocuments.map((document, index) => {
             const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
-            const fileInfo = getFileInfo(name);
+            const fileInfo = getFileInfo(document);
             const formattedName = formatFileName(name);
             const size = isGitHub ? (document as GitHubDocument).size : undefined;
 
@@ -356,50 +370,14 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
         </div>
       )}
 
-      {/* Pagination */}
+      {/* Pagination with Jump */}
       {totalPages > 1 && (
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
-          <div className="text-sm text-muted-foreground">
-            Showing {startIndex + 1}-{Math.min(startIndex + itemsPerPage, filteredDocuments.length)} of {filteredDocuments.length} items
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </Button>
-            
-            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-              const page = i + Math.max(1, currentPage - 2);
-              if (page > totalPages) return null;
-              
-              return (
-                <Button
-                  key={page}
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => handlePageChange(page)}
-                  className="min-w-[2rem]"
-                >
-                  {page}
-                </Button>
-              );
-            })}
-            
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </Button>
-          </div>
-        </div>
+        <PaginationWithJump
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          className="pt-6"
+        />
       )}
     </div>
   );
