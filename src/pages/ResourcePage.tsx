@@ -1,16 +1,13 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { ArrowLeft, Search, BookOpen, Loader2, FileText, Upload } from 'lucide-react';
+import { ArrowLeft, Search, BookOpen, Loader2, FileText } from 'lucide-react';
 import PaginationWithJump from '../components/PaginationWithJump';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import DocumentCard from '../components/ui/document-card';
 import { extractFileName, getFileExtension } from '../utils/fileUtils';
-import { hasGitHubRepo } from '../utils/githubRepoMapper';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -26,32 +23,11 @@ const ResourcePage = () => {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const [documentsWithSizes, setDocumentsWithSizes] = useState<Array<ResourceDocument & { fileSize?: string }>>([]);
   const itemsPerPage = 12;
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
   const resourceTypeTitle = getResourceTypeTitle(resourceType || '');
-  const hasNewUploads = hasGitHubRepo(classId || '', resourceType || '');
-
-  // Function to get file size
-  const getFileSize = async (url: string): Promise<string> => {
-    try {
-      const response = await fetch(url, { method: 'HEAD' });
-      const contentLength = response.headers.get('content-length');
-      if (contentLength) {
-        const bytes = parseInt(contentLength);
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-      }
-      return 'Size unknown';
-    } catch (error) {
-      return 'Size unknown';
-    }
-  };
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -63,19 +39,9 @@ const ResourcePage = () => {
         const data = await loadResourceData(classId, selectedSubject, resourceType);
         setDocuments(data);
         console.log(`Loaded ${data.length} documents for ${selectedSubject}`);
-        
-        // Load file sizes for each document
-        const documentsWithSizeInfo = await Promise.all(
-          data.map(async (doc) => {
-            const fileSize = await getFileSize(doc.pdfUrl);
-            return { ...doc, fileSize };
-          })
-        );
-        setDocumentsWithSizes(documentsWithSizeInfo);
       } catch (error) {
         console.error('Error loading documents:', error);
         setDocuments([]);
-        setDocumentsWithSizes([]);
       } finally {
         setLoading(false);
       }
@@ -86,10 +52,10 @@ const ResourcePage = () => {
 
   const filteredDocuments = useMemo(() => {
     if (!selectedSubject) return [];
-    return documentsWithSizes.filter(doc =>
+    return documents.filter(doc =>
       extractFileName(doc.pdfUrl).toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [documentsWithSizes, searchTerm, selectedSubject]);
+  }, [documents, searchTerm, selectedSubject]);
 
   const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -137,7 +103,6 @@ const ResourcePage = () => {
     setCurrentPage(1);
     setSearchTerm('');
     setDocuments([]);
-    setDocumentsWithSizes([]);
   };
 
   return (
@@ -186,31 +151,6 @@ const ResourcePage = () => {
                   disabled={loading}
                 />
               </div>
-            </div>
-          )}
-
-          {!selectedSubject && hasNewUploads && (resourceType === 'lesson-notes' || resourceType === 'past-papers') && (
-            <div className="mb-6">
-              <Link to={`/class/${classId}/resources/${resourceType}/new-uploads`}>
-                <Card className="group hover:shadow-lg transition-all duration-200 border-2 border-green-500 bg-green-50 dark:bg-green-900/20 animate-pulse cursor-pointer">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <Upload className="h-8 w-8 text-green-600 animate-bounce" />
-                        <CardTitle className="text-xl font-bold text-green-700 dark:text-green-400">
-                          NEW UPLOADS
-                        </CardTitle>
-                      </div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-green-600 dark:text-green-300 font-medium">
-                      Fresh documents uploaded from GitHub repository - Click to explore!
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
             </div>
           )}
         </div>
@@ -269,7 +209,6 @@ const ResourcePage = () => {
                     classTitle={classTitle}
                     onPreview={handlePreview}
                     onDownload={handleDownload}
-                    fileSize={document.fileSize}
                   />
                 ))}
               </div>
