@@ -45,11 +45,11 @@ const WhatsAppChat: React.FC = () => {
       let greetingMessage;
       
       if (currentHour >= 5 && currentHour < 12) {
-        greetingMessage = "Hello, good morning! ☀️";
+        greetingMessage = "Good morning! ☀️";
       } else if (currentHour >= 12 && currentHour < 18) {
-        greetingMessage = "Hello, good afternoon! 🌤️";
+        greetingMessage = "Good afternoon! 🌤️";
       } else {
-        greetingMessage = "Hello, good evening! 🌙";
+        greetingMessage = "Good evening! 🌙";
       }
       
       const greetingElement = document.getElementById("greeting");
@@ -374,7 +374,7 @@ const WhatsAppChat: React.FC = () => {
         <div className='header-chat'>
           <div className='head-home'>
             <div className='info-avatar'>
-              <img src='https://via.placeholder.com/50x50/009688/ffffff?text=FT' alt="Fresh Teacher" />
+              <img src='https://fresh-teacher.github.io/dp.jpeg' alt="Fresh Teacher" />
             </div>
             <p>
               <span className="africavotes-name">Fresh Teacher</span>
