@@ -80,14 +80,22 @@ export const loadGitHubData = async (classId: string, resourceType: string): Pro
     
     const data = await response.json();
     
-    // Filter for PDF files only
-    const pdfFiles = data.filter((file: any) => 
-      file.type === 'file' && 
-      file.name.toLowerCase().endsWith('.pdf')
-    );
+    // Filter for common document files (not just PDFs)
+    const documentFiles = data.filter((file: any) => {
+      if (file.type !== 'file') return false;
+      
+      const fileName = file.name.toLowerCase();
+      const supportedExtensions = [
+        '.pdf', '.doc', '.docx', '.xls', '.xlsx', 
+        '.ppt', '.pptx', '.txt', '.jpg', '.jpeg', 
+        '.png', '.gif'
+      ];
+      
+      return supportedExtensions.some(ext => fileName.endsWith(ext));
+    });
     
-    console.log(`Found ${pdfFiles.length} PDF files in GitHub repository`);
-    return pdfFiles;
+    console.log(`Found ${documentFiles.length} document files in GitHub repository`);
+    return documentFiles;
   } catch (error) {
     console.error('Error fetching GitHub data:', error);
     return [];

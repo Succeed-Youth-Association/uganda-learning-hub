@@ -1,15 +1,11 @@
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { ArrowLeft, Search, BookOpen, Loader2, FileText, Globe } from 'lucide-react';
-import PaginationWithJump from '../components/PaginationWithJump';
+import { ArrowLeft, BookOpen, Loader2, Globe } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
-import DocumentCard from '../components/ui/document-card';
-import GitHubDocumentCard from '../components/ui/github-document-card';
-import { extractFileName, getFileExtension } from '../utils/fileUtils';
+import EnhancedDocumentList from '../components/ui/enhanced-document-list';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -21,13 +17,10 @@ import { loadGitHubData, hasGitHubRepo, GitHubDocument } from '../utils/githubLo
 
 const ResourcePage = () => {
   const { classId, resourceType } = useParams();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const itemsPerPage = 12;
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -69,34 +62,16 @@ const ResourcePage = () => {
     loadDocuments();
   }, [selectedSubject, classId, resourceType]);
 
-  const filteredDocuments = useMemo(() => {
-    if (!selectedSubject) return [];
-    
-    if (selectedSubject === 'All Subjects') {
-      return githubDocuments.filter(doc =>
-        doc.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-    
-    return documents.filter(doc =>
-      extractFileName(doc.pdfUrl).toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [documents, githubDocuments, searchTerm, selectedSubject]);
-
-  const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentDocuments = filteredDocuments.slice(startIndex, startIndex + itemsPerPage);
-
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
-    const name = 'name' in document ? document.name : extractFileName(document.pdfUrl);
+    const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
     console.log('Previewing:', name);
     window.open(url, '_blank');
   };
 
   const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
-    const name = 'name' in document ? document.name : extractFileName(document.pdfUrl);
+    const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
     
     console.log('Downloading:', name);
     try {
@@ -125,20 +100,20 @@ const ResourcePage = () => {
 
   const handleSubjectSelect = (subject: string) => {
     setSelectedSubject(subject);
-    setCurrentPage(1);
-    setSearchTerm('');
   };
 
   const handleBackToSubjects = () => {
     setSelectedSubject(null);
-    setCurrentPage(1);
-    setSearchTerm('');
     setDocuments([]);
     setGithubDocuments([]);
   };
 
   // Combine subjects with "All Subjects" if GitHub repo is available
   const allSubjects = showAllSubjects ? ['All Subjects', ...subjects] : subjects;
+
+  // Get current documents to display
+  const currentDocuments = selectedSubject === 'All Subjects' ? githubDocuments : documents;
+  const isGitHub = selectedSubject === 'All Subjects';
 
   return (
     <PageLayout className="min-w-0">
@@ -163,31 +138,12 @@ const ResourcePage = () => {
           </h1>
           <p className="text-lg text-muted-foreground mb-6">
             {selectedSubject 
-              ? `${classTitle} - ${loading ? 'Loading...' : `${filteredDocuments.length} document(s) available`}`
+              ? `${classTitle} - ${loading ? 'Loading...' : `${currentDocuments.length} document(s) available`}`
               : allSubjects.length === 0 
                 ? `No subject(s) available for ${resourceTypeTitle.toLowerCase()} in ${classTitle}`
                 : `${classTitle} - ${allSubjects.length} subject(s) available`
             }
           </p>
-
-          {selectedSubject && (
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-              <div className="relative flex-1 max-w-md w-full">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  type="search"
-                  placeholder="   Search documents..."
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setCurrentPage(1);
-                  }}
-                  className="pl-10"
-                  disabled={loading}
-                />
-              </div>
-            </div>
-          )}
         </div>
 
         {!selectedSubject ? (
@@ -220,60 +176,17 @@ const ResourcePage = () => {
             </div>
           )
         ) : (
-          // Show documents or loading state
-          <>
-            {loading ? (
-              <div className="flex items-center justify-center py-12">
-                <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
-                <span className="ml-2 text-lg text-muted-foreground">Loading documents...</span>
-              </div>
-            ) : currentDocuments.length === 0 ? (
-              <div className="text-center py-12">
-                <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-muted-foreground mb-2">No documents found</h3>
-                <p className="text-muted-foreground">
-                  {searchTerm 
-                    ? `No documents match "${searchTerm}"`
-                    : `No ${resourceTypeTitle.toLowerCase()} available for ${selectedSubject}`
-                  }
-                </p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-                {currentDocuments.map((document, index) => (
-                  selectedSubject === 'All Subjects' ? (
-                    <GitHubDocumentCard
-                      key={`github-${(document as GitHubDocument).path}-${index}`}
-                      document={document as GitHubDocument}
-                      resourceType={resourceTypeTitle}
-                      classTitle={classTitle}
-                      onPreview={handlePreview}
-                      onDownload={handleDownload}
-                    />
-                  ) : (
-                    <DocumentCard
-                      key={`local-${(document as ResourceDocument).pdfUrl}-${index}`}
-                      document={document as ResourceDocument}
-                      subject={selectedSubject}
-                      resourceType={resourceTypeTitle}
-                      classTitle={classTitle}
-                      onPreview={handlePreview}
-                      onDownload={handleDownload}
-                    />
-                  )
-                ))}
-              </div>
-            )}
-
-            {totalPages > 1 && !loading && (
-              <PaginationWithJump
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-                className="mb-8"
-              />
-            )}
-          </>
+          // Show enhanced document list
+          <EnhancedDocumentList
+            documents={currentDocuments}
+            loading={loading}
+            onPreview={handlePreview}
+            onDownload={handleDownload}
+            isGitHub={isGitHub}
+            resourceType={resourceTypeTitle}
+            classTitle={classTitle}
+            selectedSubject={selectedSubject}
+          />
         )}
       </div>
     </PageLayout>
