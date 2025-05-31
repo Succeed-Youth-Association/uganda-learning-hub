@@ -208,7 +208,7 @@ const ResourcePage = () => {
                   title={subject}
                   description={
                     subject === 'All Subjects' 
-                      ? `Browse all ${resourceTypeTitle.toLowerCase()} from GitHub repository`
+                      ? `Browse all ${resourceTypeTitle.toLowerCase()}`
                       : `View all ${resourceTypeTitle.toLowerCase()} for ${subject}`
                   }
                   icon={subject === 'All Subjects' ? Globe : BookOpen}
