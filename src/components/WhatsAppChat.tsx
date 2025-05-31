@@ -45,11 +45,11 @@ const WhatsAppChat: React.FC = () => {
       let greetingMessage;
       
       if (currentHour >= 5 && currentHour < 12) {
-        greetingMessage = "Good morning! ☀️";
+        greetingMessage = "Hello, good morning! ☀️";
       } else if (currentHour >= 12 && currentHour < 18) {
-        greetingMessage = "Good afternoon! 🌤️";
+        greetingMessage = "Hello, good afternoon! 🌤️";
       } else {
-        greetingMessage = "Good evening! 🌙";
+        greetingMessage = "Hello, good evening! 🌙";
       }
       
       const greetingElement = document.getElementById("greeting");
