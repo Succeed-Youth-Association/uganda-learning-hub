@@ -4,7 +4,7 @@ import { SidebarProvider, SidebarTrigger } from '../ui/sidebar';
 import { AppSidebar } from '../AppSidebar';
 import ThemeToggle from '../ThemeToggle';
 import Footer from '../Footer';
-import ScrollToTop from '../ScrollToTop';
+import WhatsAppChat from '../WhatsAppChat';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -45,7 +45,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
           </div>
           <Footer />
         </main>
-        <ScrollToTop />
+        <WhatsAppChat />
       </div>
     </SidebarProvider>
   );
