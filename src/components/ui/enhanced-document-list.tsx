@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from './button';
 import { Input } from './input';
@@ -9,7 +10,6 @@ import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { ResourceDocument } from '../../utils/dataLoader';
 import { GitHubDocument } from '../../utils/githubLoader';
 import PaginationWithJump from '../PaginationWithJump';
-import FilePreviewModal from './file-preview-modal';
 
 interface EnhancedDocumentListProps {
   documents: (ResourceDocument | GitHubDocument)[];
@@ -129,8 +129,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [fileTypeFilter, setFileTypeFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [previewDocument, setPreviewDocument] = useState<ResourceDocument | GitHubDocument | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const itemsPerPage = 20;
 
   const getFileInfo = (document: ResourceDocument | GitHubDocument) => {
@@ -200,16 +198,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
     const message = `Hello, I found this educational document named ${name} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
-  };
-
-  const handlePreview = (document: ResourceDocument | GitHubDocument) => {
-    setPreviewDocument(document);
-    setIsPreviewOpen(true);
-  };
-
-  const handleClosePreview = () => {
-    setIsPreviewOpen(false);
-    setPreviewDocument(null);
   };
 
   const filteredDocuments = useMemo(() => {
@@ -325,6 +313,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                     type={fileInfo.extension}
                     className="transition-transform hover:scale-110" 
                   />
+
                 </div>
                 
                 <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 line-clamp-2 break-words">
@@ -341,7 +330,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
 
                 <div className="flex flex-col gap-2">
                   <Button
-                    onClick={() => handlePreview(document)}
+                    onClick={() => onPreview(document)}
                     variant="outline"
                     size="sm"
                     className="w-full"
@@ -388,15 +377,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
           className="pt-6"
         />
       )}
-
-      {/* File Preview Modal */}
-      <FilePreviewModal
-        isOpen={isPreviewOpen}
-        onClose={handleClosePreview}
-        document={previewDocument}
-        isGitHub={isGitHub}
-        onDownload={onDownload}
-      />
     </div>
   );
 };
