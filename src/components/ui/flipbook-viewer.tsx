@@ -3,8 +3,18 @@ import React, { useEffect, useRef } from 'react';
 
 // Declare the jQuery flipBook plugin
 declare global {
+  interface Window {
+    jQuery?: JQueryStatic;
+  }
+  
+  interface JQueryStatic {
+    (selector: string | HTMLElement): JQuery;
+    fn: any;
+  }
+  
   interface JQuery {
     flipBook(options: FlipBookOptions): JQuery;
+    off(): JQuery;
   }
 }
 
