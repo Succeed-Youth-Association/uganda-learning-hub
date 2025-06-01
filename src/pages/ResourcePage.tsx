@@ -6,8 +6,6 @@ import { ArrowLeft, BookOpen, Loader2, Globe } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import EnhancedDocumentList from '../components/ui/enhanced-document-list';
-import FlipBookViewer from '../components/FlipBookViewer';
-import { useFlipBookViewer } from '../hooks/useFlipBookViewer';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -23,7 +21,6 @@ const ResourcePage = () => {
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const { isOpen, pdfUrl, openFlipBook, closeFlipBook } = useFlipBookViewer();
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -68,15 +65,8 @@ const ResourcePage = () => {
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
     const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
-    console.log('Opening FlipBook for:', name);
-    
-    // Check if it's a PDF file
-    if (url.toLowerCase().endsWith('.pdf')) {
-      openFlipBook(url);
-    } else {
-      // For non-PDF files, open in new tab
-      window.open(url, '_blank');
-    }
+    console.log('Previewing:', name);
+    window.open(url, '_blank');
   };
 
   const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
@@ -196,14 +186,6 @@ const ResourcePage = () => {
             resourceType={resourceTypeTitle}
             classTitle={classTitle}
             selectedSubject={selectedSubject}
-          />
-        )}
-
-        {/* FlipBook Viewer Modal */}
-        {isOpen && (
-          <FlipBookViewer
-            pdfUrl={pdfUrl}
-            onClose={closeFlipBook}
           />
         )}
       </div>
