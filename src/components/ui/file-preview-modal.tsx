@@ -2,14 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './dialog';
 import { Button } from './button';
-import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
-import { Document, Page, pdfjs } from 'react-pdf';
+import { X, Download, ZoomIn, ZoomOut, RotateCw, Loader2 } from 'lucide-react';
 import { ResourceDocument } from '../../utils/dataLoader';
 import { GitHubDocument } from '../../utils/githubLoader';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
-
-// Set up PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+import FlipBookViewer from './flipbook-viewer';
 
 interface FilePreviewModalProps {
   isOpen: boolean;
@@ -27,18 +24,12 @@ const FilePreviewModal: React.FC<FilePreviewModalProps> = ({
   onDownload
 }) => {
   const [scale, setScale] = useState(1.0);
-  const [rotation, setRotation] = useState(0);
-  const [numPages, setNumPages] = useState<number>(0);
-  const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (isOpen) {
       setScale(1.0);
-      setRotation(0);
-      setPageNumber(1);
-      setNumPages(0);
       setLoading(true);
       setError(null);
     }
@@ -50,93 +41,18 @@ const FilePreviewModal: React.FC<FilePreviewModalProps> = ({
   const fileName = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
   const fileExtension = getFileExtension(fileUrl).toLowerCase().replace('.', '');
 
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-    setLoading(false);
-  };
-
-  const onDocumentLoadError = (error: Error) => {
-    console.error('Error loading PDF:', error);
-    setError('Failed to load PDF document');
-    setLoading(false);
-  };
-
   const handleZoomIn = () => setScale(prev => Math.min(prev + 0.2, 3.0));
   const handleZoomOut = () => setScale(prev => Math.max(prev - 0.2, 0.5));
-  const handleRotate = () => setRotation(prev => (prev + 90) % 360);
-
-  const handlePrevPage = () => setPageNumber(prev => Math.max(prev - 1, 1));
-  const handleNextPage = () => setPageNumber(prev => Math.min(prev + 1, numPages));
 
   const renderPreviewContent = () => {
     if (fileExtension === 'pdf') {
       return (
         <div className="flex flex-col h-full">
-          {/* PDF Controls */}
-          <div className="flex items-center justify-between p-4 border-b bg-muted/50">
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={handleZoomOut}>
-                <ZoomOut className="h-4 w-4" />
-              </Button>
-              <span className="text-sm font-medium">{Math.round(scale * 100)}%</span>
-              <Button variant="outline" size="sm" onClick={handleZoomIn}>
-                <ZoomIn className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="sm" onClick={handleRotate}>
-                <RotateCw className="h-4 w-4" />
-              </Button>
-            </div>
-            
-            {numPages > 0 && (
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" onClick={handlePrevPage} disabled={pageNumber <= 1}>
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-                <span className="text-sm">
-                  Page {pageNumber} of {numPages}
-                </span>
-                <Button variant="outline" size="sm" onClick={handleNextPage} disabled={pageNumber >= numPages}>
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </div>
-            )}
-          </div>
-
-          {/* PDF Viewer */}
-          <div className="flex-1 overflow-auto p-4 bg-gray-100">
-            <div className="flex justify-center">
-              {loading && (
-                <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
-                  <span className="ml-2">Loading PDF...</span>
-                </div>
-              )}
-              
-              {error && (
-                <div className="text-center py-12">
-                  <p className="text-red-600 mb-4">{error}</p>
-                  <Button onClick={() => window.open(fileUrl, '_blank')}>
-                    Open in New Tab
-                  </Button>
-                </div>
-              )}
-
-              {!error && (
-                <Document
-                  file={fileUrl}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  onLoadError={onDocumentLoadError}
-                  loading=""
-                >
-                  <Page
-                    pageNumber={pageNumber}
-                    scale={scale}
-                    rotate={rotation}
-                    loading=""
-                  />
-                </Document>
-              )}
-            </div>
+          <div className="flex-1 min-h-0 p-4">
+            <FlipBookViewer 
+              pdfUrl={fileUrl}
+              className="w-full h-full"
+            />
           </div>
         </div>
       );
@@ -225,6 +141,9 @@ const FilePreviewModal: React.FC<FilePreviewModalProps> = ({
               <DialogTitle className="text-lg font-semibold">{fileName}</DialogTitle>
               <DialogDescription>
                 {fileExtension.toUpperCase()} File Preview
+                {fileExtension === 'pdf' && (
+                  <span className="ml-2 text-orange-600 font-medium">• Interactive Flipbook</span>
+                )}
               </DialogDescription>
             </div>
             <div className="flex items-center gap-2">
