@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -63,10 +62,8 @@ const ResourcePage = () => {
   }, [selectedSubject, classId, resourceType]);
 
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
-    const url = 'download_url' in document ? document.download_url : document.pdfUrl;
-    const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
-    console.log('Previewing:', name);
-    window.open(url, '_blank');
+    // This is now handled by the FilePreviewModal in EnhancedDocumentList
+    console.log('Preview handled by custom modal');
   };
 
   const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
