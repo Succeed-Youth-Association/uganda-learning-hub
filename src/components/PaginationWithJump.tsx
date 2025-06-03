@@ -77,23 +77,23 @@ const PaginationWithJump: React.FC<PaginationWithJumpProps> = ({
         </Button>
 
         <div className="flex items-center gap-1">
-          {getVisiblePages().map((page, index) => (
-            <React.Fragment key={index}>
-              {page === '...' ? (
-                <span className="px-2 py-1 text-sm text-muted-foreground">...</span>
-              ) : (
-                <Button
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => handlePageChange(page as number)}
-                  className="min-w-[2rem]"
-                >
-                  {page}
-                </Button>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+  {getVisiblePages().map((page, index) => (
+    <span key={index}>
+      {page === '...' ? (
+        <span className="px-2 py-1 text-sm text-muted-foreground">...</span>
+      ) : (
+        <Button
+          variant={currentPage === page ? "default" : "outline"}
+          size="sm"
+          onClick={() => handlePageChange(page as number)}
+          className="min-w-[2rem]"
+        >
+          {page}
+        </Button>
+      )}
+    </span>
+  ))}
+</div>
 
         <Button
           variant="outline"

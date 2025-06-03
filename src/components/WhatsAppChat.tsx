@@ -1,82 +1,46 @@
-
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const WhatsAppChat: React.FC = () => {
-  useEffect(() => {
-    // Add event listeners for WhatsApp chat functionality
-    const handleSendMessage = () => {
-      const chatInput = document.getElementById("chat-input") as HTMLTextAreaElement;
-      if (chatInput && chatInput.value !== "") {
-        const message = chatInput.value;
-        const phoneNumber = "+256750687790";
-        const whatsappUrl = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-          ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`
-          : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-        
-        window.open(whatsappUrl, "_blank");
-        chatInput.value = "";
-      }
-    };
+  const [isChatVisible, setIsChatVisible] = useState(false);
+  const [message, setMessage] = useState('');
+  const chatElementRef = useRef<HTMLDivElement>(null);
+  
+  const getGreeting = () => {
+    const currentHour = new Date().getHours();
+    if (currentHour >= 5 && currentHour < 12) {
+      return "Hello, good morning! ☀️";
+    } else if (currentHour >= 12 && currentHour < 18) {
+      return "Hello, good afternoon! 🌤️";
+    }
+    return "Hello, good evening! 🌙";
+  };
 
-    const handleCloseChat = () => {
-      const chatElement = document.getElementById("africavotes-chat");
-      if (chatElement) {
-        chatElement.classList.add("hide");
-        chatElement.classList.remove("show");
-      }
-    };
+  const handleSendMessage = () => {
+    if (message.trim() === "") return;
+    
+    const phoneNumber = "+256750687790";
+    const whatsappUrl = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
+    setMessage("");
+  };
 
-    const handleToggleChat = () => {
-      const chatElement = document.getElementById("africavotes-chat");
-      if (chatElement) {
-        if (chatElement.classList.contains("show")) {
-          chatElement.classList.add("hide");
-          chatElement.classList.remove("show");
-        } else {
-          chatElement.classList.add("show");
-          chatElement.classList.remove("hide");
-        }
-      }
-    };
+  const handleCloseChat = () => {
+    setIsChatVisible(false);
+  };
 
-    // Set greeting message based on current time
-    const setGreeting = () => {
-      const currentHour = new Date().getHours();
-      let greetingMessage;
-      
-      if (currentHour >= 5 && currentHour < 12) {
-        greetingMessage = "Hello, good morning! ☀️";
-      } else if (currentHour >= 12 && currentHour < 18) {
-        greetingMessage = "Hello, good afternoon! 🌤️";
-      } else {
-        greetingMessage = "Hello, good evening! 🌙";
-      }
-      
-      const greetingElement = document.getElementById("greeting");
-      if (greetingElement) {
-        greetingElement.innerText = greetingMessage;
-      }
-    };
+  const handleToggleChat = () => {
+    setIsChatVisible(!isChatVisible);
+  };
 
-    // Set up event listeners
-    const sendButton = document.getElementById("send-it");
-    const closeButton = document.querySelector(".close-chat");
-    const toggleButton = document.querySelector(".africaVotesChat");
-
-    if (sendButton) sendButton.addEventListener("click", handleSendMessage);
-    if (closeButton) closeButton.addEventListener("click", handleCloseChat);
-    if (toggleButton) toggleButton.addEventListener("click", handleToggleChat);
-
-    // Set greeting on mount
-    setGreeting();
-
-    // Cleanup event listeners
-    return () => {
-      if (sendButton) sendButton.removeEventListener("click", handleSendMessage);
-      if (closeButton) closeButton.removeEventListener("click", handleCloseChat);
-      if (toggleButton) toggleButton.removeEventListener("click", handleToggleChat);
-    };
-  }, []);
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   return (
     <>
@@ -370,7 +334,11 @@ const WhatsAppChat: React.FC = () => {
         `
       }} />
 
-      <div className='hide' id='africavotes-chat'>
+      <div 
+        ref={chatElementRef}
+        className={isChatVisible ? 'show' : 'hide'} 
+        id='africavotes-chat'
+      >
         <div className='header-chat'>
           <div className='head-home'>
             <div className='info-avatar'>
@@ -386,6 +354,23 @@ const WhatsAppChat: React.FC = () => {
             <div id='get-label'></div>
             <div id='get-nama'></div>
           </div>
+          <button 
+            className='close-chat' 
+            onClick={handleCloseChat}
+            style={{
+              position: 'absolute',
+              top: '5px',
+              right: '15px',
+              color: '#fff',
+              fontSize: '30px',
+              cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              padding: 0
+            }}
+          >
+            ×
+          </button>
         </div>
         <div className='home-chat'></div>
         <div className='start-chat'>
@@ -399,7 +384,7 @@ const WhatsAppChat: React.FC = () => {
                 </div>
               </div>
               <div className="kAZgZq" style={{opacity: 1}}>
-                <div className="iSpIQi" id="greeting"></div>
+                <div className="iSpIQi">{getGreeting()}</div>
               </div>
             </div>
           </div>
@@ -408,19 +393,53 @@ const WhatsAppChat: React.FC = () => {
               id='chat-input' 
               maxLength={120} 
               placeholder='Message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
             ></textarea>
-            <a href='javascript:void(0)' id='send-it'>
-              <svg viewBox="0 0 448 448">
+            <button 
+              id='send-it'
+              onClick={handleSendMessage}
+              style={{
+                width: '30px',
+                fontWeight: '700',
+                padding: '7px 7px 0',
+                background: '#eee',
+                cursor: 'pointer',
+                border: 'none'
+              }}
+            >
+              <svg viewBox="0 0 448 448" width="24" height="24">
                 <path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"></path>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
         <div id='get-number'></div>
-        <a className='close-chat' href='javascript:void(0)'>×</a>
       </div>
       
-      <a className='africaVotesChat' href='javascript:void(0)' title='Show Chat'>
+      <button 
+        className='africaVotesChat' 
+        onClick={handleToggleChat}
+        title='Show Chat'
+        style={{
+          background: '#fff',
+          color: '#404040',
+          position: 'fixed',
+          display: 'flex',
+          fontWeight: '400',
+          justifyContent: 'space-between',
+          zIndex: '98',
+          bottom: '25px',
+          right: '30px',
+          fontSize: '15px',
+          padding: '10px 20px',
+          borderRadius: '30px',
+          boxShadow: '0 1px 15px rgba(32, 33, 36, .28)',
+          cursor: 'pointer',
+          border: 'none'
+        }}
+      >
         <svg width="20" viewBox="0 0 24 24">
           <defs />
           <path fill="#eceff1" d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z" />
@@ -428,7 +447,7 @@ const WhatsAppChat: React.FC = () => {
           <path fill="#fafafa" d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z" />
         </svg> 
         Chat
-      </a>
+      </button>
     </>
   );
 };
