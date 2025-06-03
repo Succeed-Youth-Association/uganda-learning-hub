@@ -7,6 +7,7 @@ import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import EnhancedDocumentList from '../components/ui/enhanced-document-list';
 import PDFViewer from '../components/PDFViewer';
+import PDFModal from '../components/PDFModal';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -23,6 +24,7 @@ const ResourcePage = () => {
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
   const [usePDFViewer, setUsePDFViewer] = useState(false);
+  const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null);
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -68,7 +70,9 @@ const ResourcePage = () => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
     const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
     console.log('Previewing:', name);
-    window.open(url, '_blank');
+    
+    // Open in custom PDF modal instead of new tab
+    setSelectedPdfUrl(url);
   };
 
   const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
@@ -109,10 +113,16 @@ const ResourcePage = () => {
     setDocuments([]);
     setGithubDocuments([]);
     setUsePDFViewer(false);
+    setSelectedPdfUrl(null);
   };
 
   const toggleViewMode = () => {
     setUsePDFViewer(!usePDFViewer);
+    setSelectedPdfUrl(null);
+  };
+
+  const closePdfModal = () => {
+    setSelectedPdfUrl(null);
   };
 
   // Combine subjects with "All Subjects" if GitHub repo is available
@@ -218,6 +228,14 @@ const ResourcePage = () => {
               selectedSubject={selectedSubject}
             />
           )
+        )}
+
+        {/* PDF Modal */}
+        {selectedPdfUrl && (
+          <PDFModal
+            pdfUrl={selectedPdfUrl}
+            onClose={closePdfModal}
+          />
         )}
       </div>
     </PageLayout>
