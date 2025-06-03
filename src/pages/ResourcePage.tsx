@@ -6,6 +6,7 @@ import { ArrowLeft, BookOpen, Loader2, Globe } from 'lucide-react';
 import PageLayout from '../components/layout/PageLayout';
 import ResourceCard from '../components/ui/resource-card';
 import EnhancedDocumentList from '../components/ui/enhanced-document-list';
+import PDFViewer from '../components/PDFViewer';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -21,6 +22,7 @@ const ResourcePage = () => {
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
+  const [usePDFViewer, setUsePDFViewer] = useState(false);
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -106,6 +108,11 @@ const ResourcePage = () => {
     setSelectedSubject(null);
     setDocuments([]);
     setGithubDocuments([]);
+    setUsePDFViewer(false);
+  };
+
+  const toggleViewMode = () => {
+    setUsePDFViewer(!usePDFViewer);
   };
 
   // Combine subjects with "All Subjects" if GitHub repo is available
@@ -115,15 +122,32 @@ const ResourcePage = () => {
   const currentDocuments = selectedSubject === 'All Subjects' ? githubDocuments : documents;
   const isGitHub = selectedSubject === 'All Subjects';
 
+  // Convert documents to PDFViewer format
+  const pdfDocuments = currentDocuments.map(doc => ({
+    pdfUrl: 'download_url' in doc ? doc.download_url : doc.pdfUrl,
+    title: 'name' in doc ? doc.name : doc.pdfUrl.split('/').pop()?.replace('.pdf', '')
+  }));
+
   return (
     <PageLayout className="min-w-0">
       <div className="max-w-7xl mx-auto min-w-0">
         <div className="mb-8">
           {selectedSubject ? (
-            <Button variant="outline" className="mb-4" onClick={handleBackToSubjects}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Subjects
-            </Button>
+            <div className="flex items-center justify-between mb-4">
+              <Button variant="outline" onClick={handleBackToSubjects}>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Subjects
+              </Button>
+              
+              {/* View Mode Toggle */}
+              <Button
+                onClick={toggleViewMode}
+                variant="outline"
+                className="ml-auto"
+              >
+                {usePDFViewer ? 'Switch to List View' : 'Switch to Grid View'}
+              </Button>
+            </div>
           ) : (
             <Link to={`/class/${classId}`}>
               <Button variant="outline" className="mb-4">
@@ -176,17 +200,24 @@ const ResourcePage = () => {
             </div>
           )
         ) : (
-          // Show enhanced document list
-          <EnhancedDocumentList
-            documents={currentDocuments}
-            loading={loading}
-            onPreview={handlePreview}
-            onDownload={handleDownload}
-            isGitHub={isGitHub}
-            resourceType={resourceTypeTitle}
-            classTitle={classTitle}
-            selectedSubject={selectedSubject}
-          />
+          // Show documents in selected view mode
+          usePDFViewer ? (
+            <PDFViewer
+              documents={pdfDocuments}
+              title={`${selectedSubject} - ${resourceTypeTitle}`}
+            />
+          ) : (
+            <EnhancedDocumentList
+              documents={currentDocuments}
+              loading={loading}
+              onPreview={handlePreview}
+              onDownload={handleDownload}
+              isGitHub={isGitHub}
+              resourceType={resourceTypeTitle}
+              classTitle={classTitle}
+              selectedSubject={selectedSubject}
+            />
+          )
         )}
       </div>
     </PageLayout>
