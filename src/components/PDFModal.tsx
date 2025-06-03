@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { X, ChevronLeft, ChevronRight, Printer, Loader2, ZoomIn, ZoomOut, RotateCw, Download } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Printer, Loader2, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import * as pdfjsLib from 'pdfjs-dist';
@@ -19,23 +19,15 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
   const [totalPages, setTotalPages] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [scale, setScale] = useState(1.0);
+  const [scale, setScale] = useState(1.2);
   const [rotation, setRotation] = useState(0);
   const [jumpToPage, setJumpToPage] = useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const viewerRef = useRef<HTMLDivElement>(null);
 
   // Touch handling for mobile swipe
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
-
-  // Prevent body scroll when modal is open
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
 
   useEffect(() => {
     loadPdf();
@@ -70,27 +62,21 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
   };
 
   const renderPage = async (pageNum: number) => {
-    if (!currentPdf || !canvasRef.current || !containerRef.current) return;
+    if (!currentPdf || !canvasRef.current) return;
 
     try {
       const page = await currentPdf.getPage(pageNum);
-      
-      // Calculate optimal scale based on container width
-      const containerWidth = containerRef.current.clientWidth - 40; // Account for padding
-      const viewport = page.getViewport({ scale: 1, rotation });
-      const optimalScale = Math.min(containerWidth / viewport.width, scale);
-      
-      const scaledViewport = page.getViewport({ scale: optimalScale, rotation });
+      const viewport = page.getViewport({ scale, rotation });
       
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
       
-      canvas.height = scaledViewport.height;
-      canvas.width = scaledViewport.width;
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
 
       const renderContext = {
         canvasContext: context,
-        viewport: scaledViewport
+        viewport: viewport
       };
 
       await page.render(renderContext).promise;
@@ -133,15 +119,11 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
   };
 
   const zoomIn = () => {
-    setScale(prev => Math.min(prev + 0.25, 4));
+    setScale(prev => Math.min(prev + 0.2, 3));
   };
 
   const zoomOut = () => {
-    setScale(prev => Math.max(prev - 0.25, 0.5));
-  };
-
-  const resetZoom = () => {
-    setScale(1.0);
+    setScale(prev => Math.max(prev - 0.2, 0.5));
   };
 
   const rotate = () => {
@@ -172,27 +154,10 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
     
     if (Math.abs(deltaX) > swipeThreshold) {
       if (deltaX > 0) {
-        goToPreviousPage();
+        goToPreviousPage(); // Swipe right, go to previous page
       } else {
-        goToNextPage();
+        goToNextPage(); // Swipe left, go to next page
       }
-    }
-  };
-
-  const handleDownload = async () => {
-    try {
-      const response = await fetch(pdfUrl);
-      const blob = await response.blob();
-      const downloadUrl = window.URL.createObjectURL(blob);
-      const link = window.document.createElement('a');
-      link.href = downloadUrl;
-      link.download = `document-page-${currentPage}.pdf`;
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-      window.URL.revokeObjectURL(downloadUrl);
-    } catch (error) {
-      console.error('Download failed:', error);
     }
   };
 
@@ -200,217 +165,215 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
     window.print();
   };
 
-  return (
-    <div className="fixed inset-0 bg-black/95 z-50 flex flex-col">
-      {/* Header Toolbar */}
-      <div className="flex items-center justify-between bg-white/95 backdrop-blur-sm border-b px-4 py-3 shadow-lg">
-        {/* Left Section - Navigation & Page Info */}
-        <div className="flex items-center gap-3">
-          <Button
-            onClick={onClose}
-            variant="ghost"
-            size="sm"
-            className="text-gray-700 hover:bg-gray-100"
-          >
-            <X className="h-5 w-5" />
-          </Button>
-          
-          <div className="hidden sm:flex items-center gap-2">
-            <Button
-              onClick={goToPreviousPage}
-              disabled={currentPage <= 1}
-              variant="ghost"
-              size="sm"
-              className="text-gray-700 hover:bg-gray-100"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            
-            <span className="text-sm font-medium text-gray-800 bg-gray-100 px-3 py-1.5 rounded-md min-w-[80px] text-center">
-              {currentPdf ? `${currentPage} / ${totalPages}` : ''}
-            </span>
-            
-            <Button
-              onClick={goToNextPage}
-              disabled={currentPage >= totalPages}
-              variant="ghost"
-              size="sm"
-              className="text-gray-700 hover:bg-gray-100"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
-          {/* Jump to Page */}
-          <form onSubmit={handleJumpToPage} className="hidden md:flex items-center gap-2">
+  return (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-95 flex flex-col z-50"
+      onClick={handleModalClick}
+    >
+      {/* Top Header */}
+      <div className="flex justify-between items-center p-2 md:p-4 bg-white border-b shadow-md">
+        <div className="flex items-center space-x-2 md:space-x-4">
+          {/* Page Info */}
+          <span className="text-sm md:text-base font-semibold text-gray-800 bg-gray-100 px-2 md:px-3 py-1 md:py-2 rounded-md">
+            {currentPdf ? `${currentPage} / ${totalPages}` : ''}
+          </span>
+          
+          {/* Jump to Page - Hidden on small screens */}
+          <form onSubmit={handleJumpToPage} className="hidden sm:flex items-center space-x-1">
             <Input
               type="number"
               min="1"
               max={totalPages}
               value={jumpToPage}
               onChange={(e) => setJumpToPage(e.target.value)}
-              placeholder="Go to page"
-              className="w-24 h-8 text-sm"
+              placeholder="Page"
+              className="w-16 md:w-20 h-6 md:h-8 text-xs md:text-sm"
             />
-            <Button type="submit" size="sm" variant="outline" className="h-8 px-3 text-sm">
+            <Button type="submit" size="sm" variant="outline" className="h-6 md:h-8 px-2 md:px-3 text-xs md:text-sm">
               Go
             </Button>
           </form>
         </div>
 
-        {/* Right Section - Tools */}
-        <div className="flex items-center gap-2">
-          {/* Zoom Controls */}
-          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
-            <Button
-              onClick={zoomOut}
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0 hover:bg-white"
-              disabled={scale <= 0.5}
-            >
-              <ZoomOut className="h-4 w-4" />
-            </Button>
-            
-            <Button
-              onClick={resetZoom}
-              variant="ghost"
-              size="sm"
-              className="h-8 px-2 text-xs font-medium hover:bg-white min-w-[50px]"
-            >
-              {Math.round(scale * 100)}%
-            </Button>
-            
-            <Button
-              onClick={zoomIn}
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0 hover:bg-white"
-              disabled={scale >= 4}
-            >
-              <ZoomIn className="h-4 w-4" />
-            </Button>
-          </div>
+        {/* Zoom and Tools */}
+        <div className="flex items-center space-x-1 md:space-x-2">
+          <Button
+            onClick={zoomOut}
+            variant="outline"
+            size="sm"
+            className="h-8 md:h-10 w-8 md:w-10 p-0"
+            disabled={scale <= 0.5}
+          >
+            <ZoomOut className="h-3 md:h-4 w-3 md:w-4" />
+          </Button>
+          
+          <span className="text-xs md:text-sm font-semibold text-gray-800 bg-gray-100 px-2 md:px-3 py-1 md:py-2 rounded-md min-w-[40px] md:min-w-[60px] text-center">
+            {Math.round(scale * 100)}%
+          </span>
+          
+          <Button
+            onClick={zoomIn}
+            variant="outline"
+            size="sm"
+            className="h-8 md:h-10 w-8 md:w-10 p-0"
+            disabled={scale >= 3}
+          >
+            <ZoomIn className="h-3 md:h-4 w-3 md:w-4" />
+          </Button>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-2">
-            <Button
-              onClick={rotate}
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0 text-gray-700 hover:bg-gray-100"
-            >
-              <RotateCw className="h-4 w-4" />
-            </Button>
+          <Button
+            onClick={rotate}
+            variant="outline"
+            size="sm"
+            className="h-8 md:h-10 w-8 md:w-10 p-0"
+          >
+            <RotateCw className="h-3 md:h-4 w-3 md:w-4" />
+          </Button>
 
-            <Button
-              onClick={handleDownload}
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0 text-gray-700 hover:bg-gray-100"
-            >
-              <Download className="h-4 w-4" />
-            </Button>
-
-            <Button
-              onClick={handlePrint}
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0 text-gray-700 hover:bg-gray-100"
-            >
-              <Printer className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button
+            onClick={onClose}
+            variant="outline"
+            size="sm"
+            className="h-8 md:h-10 w-8 md:w-10 p-0 text-red-600 hover:text-red-800 hover:bg-red-50"
+          >
+            <X className="h-4 md:h-5 w-4 md:w-5" />
+          </Button>
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 bg-gray-100 relative overflow-hidden">
-        {/* Mobile Navigation - Bottom positioned */}
-        <div className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg px-4 py-2">
+      {/* Main Content Area with Side Navigation */}
+      <div className="flex-1 flex items-center justify-center bg-gray-200 relative">
+        {/* Left Navigation Arrow */}
+        <Button
+          onClick={goToPreviousPage}
+          disabled={currentPage <= 1}
+          variant="outline"
+          className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 h-12 md:h-16 w-12 md:w-16 rounded-full bg-white/90 hover:bg-white shadow-lg disabled:opacity-50"
+        >
+          <ChevronLeft className="h-6 md:h-8 w-6 md:w-8 text-gray-800" />
+        </Button>
+
+        {/* PDF Content */}
+        <div 
+          ref={viewerRef}
+          className="flex-1 overflow-auto flex justify-center items-center p-4 mx-16 md:mx-20"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {isLoading && (
+            <div className="flex items-center justify-center">
+              <div className="text-center">
+                <Loader2 className="h-12 md:h-16 w-12 md:w-16 animate-spin text-orange-500 mx-auto mb-4" />
+                <p className="text-white text-base md:text-lg font-medium">Loading PDF...</p>
+              </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="flex items-center justify-center">
+              <div className="text-center bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                <p className="text-red-600 text-base md:text-lg mb-4 font-medium">{error}</p>
+                <Button onClick={loadPdf} variant="outline">
+                  Try Again
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {!isLoading && !error && (
+            <div className="max-w-full max-h-full overflow-auto">
+              <canvas
+                ref={canvasRef}
+                className="max-w-full max-h-full shadow-2xl bg-white rounded-lg"
+                style={{ 
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  display: 'block',
+                  margin: '0 auto'
+                }}
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Right Navigation Arrow */}
+        <Button
+          onClick={goToNextPage}
+          disabled={currentPage >= totalPages}
+          variant="outline"
+          className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 h-12 md:h-16 w-12 md:w-16 rounded-full bg-white/90 hover:bg-white shadow-lg disabled:opacity-50"
+        >
+          <ChevronRight className="h-6 md:h-8 w-6 md:w-8 text-gray-800" />
+        </Button>
+      </div>
+
+      {/* Bottom Controls */}
+      <div className="bg-white border-t p-2 md:p-4">
+        <div className="flex justify-between items-center">
+          {/* Mobile Navigation (only on small screens) */}
+          <div className="flex sm:hidden items-center space-x-2">
             <Button
               onClick={goToPreviousPage}
               disabled={currentPage <= 1}
-              variant="ghost"
+              variant="outline"
               size="sm"
-              className="h-8 w-8 p-0 rounded-full"
+              className="flex-1"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              Prev
             </Button>
             
-            <span className="text-sm font-medium px-2">
+            <div className="text-xs font-semibold text-gray-800 px-2">
               {currentPage}/{totalPages}
-            </span>
+            </div>
             
             <Button
               onClick={goToNextPage}
               disabled={currentPage >= totalPages}
-              variant="ghost"
+              variant="outline"
               size="sm"
-              className="h-8 w-8 p-0 rounded-full"
+              className="flex-1"
             >
-              <ChevronRight className="h-4 w-4" />
+              Next
+              <ChevronRight className="h-4 w-4 ml-1" />
+            </Button>
+          </div>
+
+          {/* Jump to Page (mobile) */}
+          <form onSubmit={handleJumpToPage} className="flex sm:hidden items-center space-x-1">
+            <Input
+              type="number"
+              min="1"
+              max={totalPages}
+              value={jumpToPage}
+              onChange={(e) => setJumpToPage(e.target.value)}
+              placeholder="Page"
+              className="w-16 h-6 text-xs"
+            />
+            <Button type="submit" size="sm" variant="outline" className="h-6 px-2 text-xs">
+              Go
+            </Button>
+          </form>
+
+          {/* Print Button */}
+          <div className="flex justify-center flex-1 sm:flex-none">
+            <Button
+              onClick={handlePrint}
+              variant="outline"
+              size="sm"
+              className="bg-orange-500 hover:bg-orange-600 text-white border-orange-500 px-3 md:px-4 py-1 md:py-2"
+            >
+              <Printer className="h-3 md:h-4 w-3 md:w-4 mr-1 md:mr-2" />
+              <span className="text-xs md:text-sm font-medium">Print</span>
             </Button>
           </div>
         </div>
-
-        {/* PDF Display Area */}
-        <div 
-          ref={containerRef}
-          className="h-full w-full overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className="min-h-full flex items-center justify-center p-4">
-            {isLoading && (
-              <div className="flex flex-col items-center justify-center">
-                <Loader2 className="h-12 w-12 animate-spin text-blue-600 mb-4" />
-                <p className="text-white text-lg font-medium">Loading PDF...</p>
-              </div>
-            )}
-
-            {error && (
-              <div className="bg-white p-8 rounded-lg shadow-lg max-w-md">
-                <p className="text-red-600 text-lg mb-4 font-medium text-center">{error}</p>
-                <Button onClick={loadPdf} className="w-full">
-                  Try Again
-                </Button>
-              </div>
-            )}
-
-            {!isLoading && !error && (
-              <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
-                <canvas
-                  ref={canvasRef}
-                  className="block max-w-full max-h-full"
-                  style={{ 
-                    maxWidth: '100%',
-                    height: 'auto'
-                  }}
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Jump to Page - Hidden panel */}
-      <div className="sm:hidden bg-white/95 backdrop-blur-sm border-t px-4 py-2">
-        <form onSubmit={handleJumpToPage} className="flex items-center justify-center gap-2">
-          <Input
-            type="number"
-            min="1"
-            max={totalPages}
-            value={jumpToPage}
-            onChange={(e) => setJumpToPage(e.target.value)}
-            placeholder="Page number"
-            className="w-32 h-8 text-sm"
-          />
-          <Button type="submit" size="sm" variant="outline" className="h-8 px-3 text-sm">
-            Go to Page
-          </Button>
-        </form>
       </div>
     </div>
   );
