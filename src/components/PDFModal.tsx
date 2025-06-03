@@ -153,7 +153,65 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
   };
 
   const rotate = () => setRotation(prev => (prev + 90) % 360);
-  const handlePrint = () => window.print();
+
+  const handlePrint = () => {
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+
+    // Get all the canvas elements
+    const canvases = Array.from(document.querySelectorAll('canvas'));
+    
+    // Create HTML with all canvas images
+    const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>${displayFileName}</title>
+          <style>
+            body { margin: 0; padding: 0; }
+            img { 
+              width: 100%; 
+              height: auto; 
+              display: block; 
+              margin-bottom: 20px; 
+              page-break-after: always;
+            }
+            img:last-child {
+              page-break-after: auto;
+            }
+            @page { 
+              size: auto; 
+              margin: 0mm;
+            }
+            @media print {
+              body { 
+                background-color: white;
+                margin: 0;
+                padding: 0;
+              }
+            }
+          </style>
+        </head>
+        <body>
+          ${canvases.map(canvas => `
+            <img src="${canvas.toDataURL('image/png')}">
+          `).join('')}
+        </body>
+      </html>
+    `;
+
+    printWindow.document.open();
+    printWindow.document.write(html);
+    printWindow.document.close();
+
+    // Wait for images to load
+    printWindow.onload = () => {
+      setTimeout(() => {
+        printWindow.print();
+      }, 500);
+    };
+  };
+
   const handleModalClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) onClose();
   };

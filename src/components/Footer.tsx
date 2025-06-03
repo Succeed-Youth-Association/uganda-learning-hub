@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Github, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -68,7 +70,33 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
+          <div>
+  <h4 className="text-md font-semibold text-foreground mb-4">Contact Us</h4>
+  <div className="space-y-2">
+    <a 
+      href="tel:+256750687790"
+      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-green-600 transition-colors"
+    >
+      <FaWhatsapp className="w-4 h-4" />
+      +256750687790
+    </a>
+    <a 
+      href="tel:+256786812837"
+      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-green-600 transition-colors"
+    >
+      <Phone className="w-4 h-4" />
+      +256786812837
+    </a>
+    <a 
+      href="mailto:freshteacheruganda256@gmail.com"
+      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-blue-600 transition-colors"
+    >
+      <Mail className="w-4 h-4" />
+      freshteacheruganda256@gmail.com
+    </a>
+  </div>
+</div>
+
           <div>
             <h4 className="text-md font-semibold text-foreground mb-4">Quick Links</h4>
             <div className="space-y-2">
