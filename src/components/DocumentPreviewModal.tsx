@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { X, Download, Loader2, FileText, Grid, Presentation } from 'lucide-react';
 import { Button } from './ui/button';
-import mammoth from 'mammoth';
-import * as XLSX from 'xlsx';
+import DocxProcessor from './document/DocxProcessor';
+import { processDocxFile } from './document/DocxProcessor';
+import { processExcelFile, ExcelSheet } from './document/ExcelProcessor';
 
 interface DocumentPreviewModalProps {
   documentUrl: string;
@@ -18,7 +19,7 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [documentContent, setDocumentContent] = useState<string>('');
-  const [excelData, setExcelData] = useState<any>(null);
+  const [excelData, setExcelData] = useState<ExcelSheet[] | null>(null);
   const [activeSheet, setActiveSheet] = useState(0);
 
   const getFileType = (url: string) => {
@@ -55,14 +56,9 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
 
   const handleDocxFile = async (blob: Blob) => {
     try {
-      const arrayBuffer = await blob.arrayBuffer();
-      const result = await mammoth.convertToHtml({ arrayBuffer });
-      setDocumentContent(result.value);
+      const htmlContent = await processDocxFile(blob);
+      setDocumentContent(htmlContent);
       setExcelData(null);
-      
-      if (result.messages.length > 0) {
-        console.log('DOCX conversion messages:', result.messages);
-      }
     } catch (error) {
       console.error('Error processing DOCX file:', error);
       throw new Error('Failed to process DOCX file');
@@ -70,25 +66,15 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
   };
 
   const handleExcelFile = async (blob: Blob) => {
-    const arrayBuffer = await blob.arrayBuffer();
-    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-    
-    const sheetsData = workbook.SheetNames.map(sheetName => {
-      const worksheet = workbook.Sheets[sheetName];
-      const jsonData = XLSX.utils.sheet_to_json(worksheet, { 
-        header: 1, 
-        defval: '',
-        raw: false 
-      });
-      return {
-        name: sheetName,
-        data: jsonData
-      };
-    });
-    
-    setExcelData(sheetsData);
-    setActiveSheet(0);
-    setDocumentContent('');
+    try {
+      const sheetsData = await processExcelFile(blob);
+      setExcelData(sheetsData);
+      setActiveSheet(0);
+      setDocumentContent('');
+    } catch (error) {
+      console.error('Error processing Excel file:', error);
+      throw new Error('Failed to process Excel file');
+    }
   };
 
   const handlePdfFile = (url: string) => {
@@ -152,6 +138,9 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
   const exportExcelSheet = () => {
     if (!excelData || !excelData[activeSheet]) return;
     
+    const { processExcelFile } = require('./document/ExcelProcessor');
+    const XLSX = require('xlsx');
+    
     const worksheet = XLSX.utils.aoa_to_sheet(excelData[activeSheet].data);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, excelData[activeSheet].name);
@@ -176,7 +165,7 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
         {excelData.length > 1 && (
           <div className="bg-gray-50 border-b border-gray-200 px-6 py-3">
             <div className="flex gap-2 overflow-x-auto">
-              {excelData.map((sheet: any, index: number) => (
+              {excelData.map((sheet: ExcelSheet, index: number) => (
                 <button
                   key={index}
                   onClick={() => setActiveSheet(index)}
@@ -293,15 +282,8 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
           {!loading && !error && (
             <div className="h-full overflow-auto">
               {fileType === 'docx' && documentContent && (
-                <div className="p-8 max-w-none">
-                  <div 
-                    className="prose prose-lg max-w-none"
-                    dangerouslySetInnerHTML={{ __html: documentContent }}
-                    style={{
-                      lineHeight: '1.6',
-                      fontFamily: 'system-ui, -apple-system, sans-serif'
-                    }}
-                  />
+                <div className="p-8">
+                  <DocxProcessor content={documentContent} title={documentTitle} />
                 </div>
               )}
 
