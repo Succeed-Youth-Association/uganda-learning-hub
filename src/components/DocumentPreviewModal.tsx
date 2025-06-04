@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { X, Download, Loader2, FileText, Grid, Presentation } from 'lucide-react';
 import { Button } from './ui/button';
-import * as mammoth from 'mammoth';
+import mammoth from 'mammoth';
 import * as XLSX from 'xlsx';
 
 interface DocumentPreviewModalProps {
@@ -55,13 +54,18 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
   };
 
   const handleDocxFile = async (blob: Blob) => {
-    const arrayBuffer = await blob.arrayBuffer();
-    const result = await mammoth.convertToHtml({ arrayBuffer });
-    setDocumentContent(result.value);
-    setExcelData(null);
-    
-    if (result.messages.length > 0) {
-      console.log('DOCX conversion messages:', result.messages);
+    try {
+      const arrayBuffer = await blob.arrayBuffer();
+      const result = await mammoth.convertToHtml({ arrayBuffer });
+      setDocumentContent(result.value);
+      setExcelData(null);
+      
+      if (result.messages.length > 0) {
+        console.log('DOCX conversion messages:', result.messages);
+      }
+    } catch (error) {
+      console.error('Error processing DOCX file:', error);
+      throw new Error('Failed to process DOCX file');
     }
   };
 
