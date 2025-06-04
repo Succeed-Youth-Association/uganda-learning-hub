@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Download, Loader2, FileText, Grid, Presentation } from 'lucide-react';
 import { Button } from './ui/button';
 import DocxProcessor from './document/DocxProcessor';
-import { processDocxFile } from './document/DocxProcessor';
+import processDocxFile from './document/DocxProcessor';
 import { processExcelFile, ExcelSheet } from './document/ExcelProcessor';
 
 interface DocumentPreviewModalProps {
@@ -56,12 +56,16 @@ const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
 
   const handleDocxFile = async (blob: Blob) => {
     try {
+      console.log('Processing DOCX file, blob size:', blob.size);
       const htmlContent = await processDocxFile(blob);
+      console.log('DOCX processing successful, content length:', htmlContent.length);
       setDocumentContent(htmlContent);
       setExcelData(null);
     } catch (error) {
       console.error('Error processing DOCX file:', error);
-      throw new Error('Failed to process DOCX file');
+      // Set a fallback message instead of throwing
+      setDocumentContent('<p>Unable to display document content. Please try downloading the file instead.</p>');
+      setExcelData(null);
     }
   };
 
