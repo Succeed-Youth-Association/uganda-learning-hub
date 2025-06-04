@@ -1,8 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { X, Download, Loader2, FileText, Grid, Presentation } from 'lucide-react';
 import { Button } from './ui/button';
 import DocxProcessor from './document/DocxProcessor';
-import processDocxFile from './document/DocxProcessor';
+import { processDocxFile } from './document/DocxProcessor';
 import { processExcelFile, ExcelSheet } from './document/ExcelProcessor';
 
 interface DocumentPreviewModalProps {

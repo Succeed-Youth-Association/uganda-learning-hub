@@ -5,14 +5,10 @@ export const processDocxFile = async (blob: Blob): Promise<string> => {
   try {
     const arrayBuffer = await blob.arrayBuffer();
     
-    // Try with different options to handle potentially corrupted files
+    // Use basic conversion options without the invalid images property
     const options = {
       arrayBuffer,
-      // Add options to handle potential format issues
-      includeDefaultStyleMap: true,
-      convertImage: mammoth.images.imgElement(function() {
-        return { src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" };
-      })
+      includeDefaultStyleMap: true
     };
     
     const result = await mammoth.convertToHtml(options);
