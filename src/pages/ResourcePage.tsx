@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -7,7 +8,6 @@ import ResourceCard from '../components/ui/resource-card';
 import EnhancedDocumentList from '../components/ui/enhanced-document-list';
 import PDFViewer from '../components/PDFViewer';
 import PDFModal from '../components/PDFModal';
-import DocumentPreviewModal from '../components/DocumentPreviewModal';
 import { 
   loadResourceData, 
   getSubjectsForClassAndResource, 
@@ -25,8 +25,6 @@ const ResourcePage = () => {
   const [loading, setLoading] = useState(false);
   const [usePDFViewer, setUsePDFViewer] = useState(false);
   const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null);
-  const [selectedDocumentUrl, setSelectedDocumentUrl] = useState<string | null>(null);
-  const [selectedDocumentTitle, setSelectedDocumentTitle] = useState<string>('');
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -68,33 +66,13 @@ const ResourcePage = () => {
     loadDocuments();
   }, [selectedSubject, classId, resourceType]);
 
-  const getFileType = (url: string) => {
-    const extension = url.toLowerCase().split('.').pop();
-    if (extension === 'docx') return 'docx';
-    if (['xlsx', 'xls'].includes(extension || '')) return 'excel';
-    if (['pptx', 'ppt'].includes(extension || '')) return 'powerpoint';
-    if (extension === 'pdf') return 'pdf';
-    return 'unknown';
-  };
-
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
     const name = 'name' in document ? document.name : document.pdfUrl.split('/').pop() || 'document';
-    const fileType = getFileType(url);
+    console.log('Previewing:', name);
     
-    console.log('Previewing:', name, 'Type:', fileType);
-    
-    if (fileType === 'pdf') {
-      // Use existing PDF modal for PDF files
-      setSelectedPdfUrl(url);
-    } else if (fileType === 'docx' || fileType === 'excel') {
-      // Use new document preview modal for DOCX and Excel files
-      setSelectedDocumentUrl(url);
-      setSelectedDocumentTitle(name);
-    } else {
-      // Fallback to opening in new tab for other file types
-      window.open(url, '_blank');
-    }
+    // Open in custom PDF modal instead of new tab
+    setSelectedPdfUrl(url);
   };
 
   const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
@@ -145,11 +123,6 @@ const ResourcePage = () => {
 
   const closePdfModal = () => {
     setSelectedPdfUrl(null);
-  };
-
-  const closeDocumentModal = () => {
-    setSelectedDocumentUrl(null);
-    setSelectedDocumentTitle('');
   };
 
   // Combine subjects with "All Subjects" if GitHub repo is available
@@ -262,15 +235,6 @@ const ResourcePage = () => {
           <PDFModal
             pdfUrl={selectedPdfUrl}
             onClose={closePdfModal}
-          />
-        )}
-
-        {/* Document Preview Modal for DOCX and Excel */}
-        {selectedDocumentUrl && (
-          <DocumentPreviewModal
-            documentUrl={selectedDocumentUrl}
-            documentTitle={selectedDocumentTitle}
-            onClose={closeDocumentModal}
           />
         )}
       </div>
