@@ -1,12 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { ArrowLeft, BookOpen, Loader2, Globe } from 'lucide-react';
+import { useParams } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
-import ResourceCard from '../components/ui/resource-card';
-import EnhancedDocumentList from '../components/ui/enhanced-document-list';
-import PDFViewer from '../components/PDFViewer';
+import ResourcePageHeader from '../components/resource/ResourcePageHeader';
+import ResourceSubjectSelector from '../components/resource/ResourceSubjectSelector';
+import ResourceDocumentViewer from '../components/resource/ResourceDocumentViewer';
 import PDFModal from '../components/PDFModal';
 import { 
   loadResourceData, 
@@ -132,102 +130,40 @@ const ResourcePage = () => {
   const currentDocuments = selectedSubject === 'All Subjects' ? githubDocuments : documents;
   const isGitHub = selectedSubject === 'All Subjects';
 
-  // Convert documents to PDFViewer format
-  const pdfDocuments = currentDocuments.map(doc => ({
-    pdfUrl: 'download_url' in doc ? doc.download_url : doc.pdfUrl,
-    title: 'name' in doc ? doc.name : doc.pdfUrl.split('/').pop()?.replace('.pdf', '')
-  }));
-
   return (
     <PageLayout className="min-w-0">
       <div className="max-w-7xl mx-auto min-w-0">
-        <div className="mb-8">
-          {selectedSubject ? (
-            <div className="flex items-center justify-between mb-4">
-              <Button variant="outline" onClick={handleBackToSubjects}>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Subjects
-              </Button>
-              
-              {/* View Mode Toggle */}
-              <Button
-                onClick={toggleViewMode}
-                variant="outline"
-                className="ml-auto"
-              >
-                {usePDFViewer ? 'Switch to List View' : 'Switch to Grid View'}
-              </Button>
-            </div>
-          ) : (
-            <Link to={`/class/${classId}`}>
-              <Button variant="outline" className="mb-4">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to {classTitle}
-              </Button>
-            </Link>
-          )}
-          
-          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-            {selectedSubject ? selectedSubject : resourceTypeTitle}
-          </h1>
-          <p className="text-lg text-muted-foreground mb-6">
-            {selectedSubject 
-              ? `${classTitle} - ${loading ? 'Loading...' : `${currentDocuments.length} document(s) available`}`
-              : allSubjects.length === 0 
-                ? `No subject(s) available for ${resourceTypeTitle.toLowerCase()} in ${classTitle}`
-                : `${classTitle} - ${allSubjects.length} subject(s) available`
-            }
-          </p>
-        </div>
+        <ResourcePageHeader
+          selectedSubject={selectedSubject}
+          classId={classId || ''}
+          classTitle={classTitle}
+          resourceTypeTitle={resourceTypeTitle}
+          currentDocumentsLength={currentDocuments.length}
+          loading={loading}
+          usePDFViewer={usePDFViewer}
+          onBackToSubjects={handleBackToSubjects}
+          onToggleViewMode={toggleViewMode}
+        />
 
         {!selectedSubject ? (
-          // Show subjects
-          allSubjects.length === 0 ? (
-            <div className="text-center py-12">
-              <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-muted-foreground mb-2">No subjects available</h3>
-              <p className="text-muted-foreground">
-                No subjects have been configured for {resourceTypeTitle.toLowerCase()} in {classTitle}.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
-              {allSubjects.map((subject) => (
-                <ResourceCard
-                  key={subject}
-                  title={subject}
-                  description={
-                    subject === 'All Subjects' 
-                      ? `Browse all ${resourceTypeTitle.toLowerCase()}`
-                      : `View all ${resourceTypeTitle.toLowerCase()} for ${subject}`
-                  }
-                  icon={subject === 'All Subjects' ? Globe : BookOpen}
-                  iconColor={subject === 'All Subjects' ? 'text-blue-600' : 'text-orange-600'}
-                  onClick={() => handleSubjectSelect(subject)}
-                  buttonText="View Resources"
-                />
-              ))}
-            </div>
-          )
+          <ResourceSubjectSelector
+            allSubjects={allSubjects}
+            resourceTypeTitle={resourceTypeTitle}
+            classTitle={classTitle}
+            onSubjectSelect={handleSubjectSelect}
+          />
         ) : (
-          // Show documents in selected view mode
-          usePDFViewer ? (
-            <PDFViewer
-              documents={pdfDocuments}
-              title={`${selectedSubject} - ${resourceTypeTitle}`}
-            />
-          ) : (
-            <EnhancedDocumentList
-              documents={currentDocuments}
-              loading={loading}
-              onPreview={handlePreview}
-              onDownload={handleDownload}
-              isGitHub={isGitHub}
-              resourceType={resourceTypeTitle}
-              classTitle={classTitle}
-              selectedSubject={selectedSubject}
-            />
-          )
+          <ResourceDocumentViewer
+            usePDFViewer={usePDFViewer}
+            currentDocuments={currentDocuments}
+            selectedSubject={selectedSubject}
+            resourceTypeTitle={resourceTypeTitle}
+            classTitle={classTitle}
+            loading={loading}
+            isGitHub={isGitHub}
+            onPreview={handlePreview}
+            onDownload={handleDownload}
+          />
         )}
 
         {/* PDF Modal */}
