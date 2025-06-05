@@ -38,8 +38,8 @@ const GitHubDocumentCard: React.FC<GitHubDocumentCardProps> = ({
   };
 
   const handleWhatsAppShare = () => {
-    const encodedUrl = encodeURI(document.download_url);
-    const message = `Hello, I found this educational document named ${document.name} useful so I decided to share it with you. \n\n Click this link to view it:${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    // Fix the WhatsApp link encoding - use the URL directly without double encoding
+    const message = `Hello, I found this educational document named ${document.name} useful so I decided to share it with you. \n\n Click this link to view it: ${document.download_url}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -89,6 +89,9 @@ const GitHubDocumentCard: React.FC<GitHubDocumentCardProps> = ({
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
+  const fileExtension = getFileExtension(document.name).toLowerCase().replace('.', '');
+  const isPdf = fileExtension === 'pdf';
+
   return (
     <Card className="hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
       <div className="flex items-start justify-between mb-4">
@@ -108,15 +111,18 @@ const GitHubDocumentCard: React.FC<GitHubDocumentCardProps> = ({
       </div>
 
       <div className="flex flex-col gap-2">
-        <Button
-          onClick={() => onPreview(document)}
-          variant="outline"
-          size="sm"
-          className="w-full"
-        >
-          <Eye className="h-4 w-4 mr-1" />
-          Preview
-        </Button>
+        {/* Only show preview for PDF files */}
+        {isPdf && (
+          <Button
+            onClick={() => onPreview(document)}
+            variant="outline"
+            size="sm"
+            className="w-full"
+          >
+            <Eye className="h-4 w-4 mr-1" />
+            Preview
+          </Button>
+        )}
         <Button
           onClick={handleDownload}
           size="sm"

@@ -87,7 +87,7 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
     // Get all the canvas elements
     const canvases = Array.from(document.querySelectorAll('canvas'));
     
-    // Create HTML with all canvas images
+    // Create HTML with all canvas images - Fixed CSS to prevent extra blank pages
     const html = `
       <!DOCTYPE html>
       <html>
@@ -99,11 +99,10 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
               width: 100%; 
               height: auto; 
               display: block; 
-              margin-bottom: 20px; 
-              page-break-after: always;
+              margin-bottom: 10px;
             }
             img:last-child {
-              page-break-after: auto;
+              margin-bottom: 0;
             }
             @page { 
               size: auto; 
@@ -114,6 +113,10 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
                 background-color: white;
                 margin: 0;
                 padding: 0;
+              }
+              img {
+                margin-bottom: 0;
+                page-break-inside: avoid;
               }
             }
           </style>
