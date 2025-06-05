@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from './button';
 import { Input } from './input';
@@ -224,10 +223,22 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
 
   const handleWhatsAppShare = (document: ResourceDocument | GitHubDocument) => {
     const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
-    const url = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
+    const rawUrl = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
     
-    // Fix the WhatsApp link encoding - use the URL directly without double encoding
-    const message = `Hello, I found this educational document named ${name} useful so I decided to share it with you. \n\n Click this link to view it: ${url}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    // Properly encode the URL to handle spaces and special characters
+    // First decode any existing encoding, then re-encode properly
+    let encodedUrl: string;
+    try {
+      // Decode the URL first in case it's already partially encoded
+      const decodedUrl = decodeURIComponent(rawUrl);
+      // Re-encode the URL properly
+      encodedUrl = encodeURI(decodedUrl);
+    } catch (error) {
+      // If decoding fails, just encode the original URL
+      encodedUrl = encodeURI(rawUrl);
+    }
+    
+    const message = `Hello, I found this educational document named "${name}" useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
