@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from './button';
 import { Input } from './input';
@@ -128,7 +129,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [fileTypeFilter, setFileTypeFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [documentSizes, setDocumentSizes] = useState<Record<string, number>>({});
   const itemsPerPage = 20;
 
   const getFileInfo = (document: ResourceDocument | GitHubDocument) => {
@@ -191,54 +191,11 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
     });
   };
 
-  // Fetch file sizes for JSON documents
-  useEffect(() => {
-    const fetchFileSizes = async () => {
-      if (isGitHub) return; // GitHub documents already have size
-
-      const sizeFetches = documents.map(async (doc) => {
-        const url = (doc as ResourceDocument).pdfUrl;
-        try {
-          const response = await fetch(url, { method: 'HEAD' });
-          const size = parseInt(response.headers.get('content-length') || '0');
-          return { url, size };
-        } catch (error) {
-          console.error('Error fetching file size for', url, error);
-          return { url, size: 0 };
-        }
-      });
-
-      const results = await Promise.all(sizeFetches);
-      const sizeMap: Record<string, number> = {};
-      results.forEach(({ url, size }) => {
-        sizeMap[url] = size;
-      });
-      setDocumentSizes(sizeMap);
-    };
-
-    if (!isGitHub && documents.length > 0) {
-      fetchFileSizes();
-    }
-  }, [documents, isGitHub]);
-
   const handleWhatsAppShare = (document: ResourceDocument | GitHubDocument) => {
     const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
-    const rawUrl = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
-    
-    // Properly encode the URL to handle spaces and special characters
-    // First decode any existing encoding, then re-encode properly
-    let encodedUrl: string;
-    try {
-      // Decode the URL first in case it's already partially encoded
-      const decodedUrl = decodeURIComponent(rawUrl);
-      // Re-encode the URL properly
-      encodedUrl = encodeURI(decodedUrl);
-    } catch (error) {
-      // If decoding fails, just encode the original URL
-      encodedUrl = encodeURI(rawUrl);
-    }
-    
-    const message = `Hello, I found this educational document named "${name}" useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    const url = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
+    const encodedUrl = encodeURI(url);
+    const message = `Hello, I found this educational document named ${name} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -344,9 +301,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
             const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
             const fileInfo = getFileInfo(document);
             const formattedName = formatFileName(name);
-            const url = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
-            const size = isGitHub ? (document as GitHubDocument).size : documentSizes[url] || 0;
-            const isPdf = fileInfo.extension === 'pdf';
+            const size = isGitHub ? (document as GitHubDocument).size : undefined;
 
             return (
               <Card 
@@ -358,6 +313,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                     type={fileInfo.extension}
                     className="transition-transform hover:scale-110" 
                   />
+
                 </div>
                 
                 <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 line-clamp-2 break-words">
@@ -369,21 +325,18 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                   <div><span className="font-medium">Type:</span> {resourceType}</div>
                   <div><span className="font-medium">Class:</span> {classTitle}</div>
                   <div><span className="font-medium">Format:</span> {fileInfo.extension.toUpperCase()}</div>
-                  {size > 0 && <div><span className="font-medium">Size:</span> {formatFileSize(size)}</div>}
+                  {size && <div><span className="font-medium">Size:</span> {formatFileSize(size)}</div>}
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  {/* Only show preview for PDF files */}
-                  {isPdf && (
-                    <Button
-                      onClick={() => onPreview(document)}
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                    >
-                      View PDF
-                    </Button>
-                  )}
+                  <Button
+                    onClick={() => onPreview(document)}
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                  >
+                    {fileInfo.extension === 'pdf' ? 'View PDF' : 'Preview'}
+                  </Button>
                   <Button
                     onClick={() => onDownload(document)}
                     size="sm"
