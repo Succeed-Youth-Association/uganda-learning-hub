@@ -23,5 +23,6 @@ def create_file_list_in_each_folder(root_folder):
         print(f"✅ Created JSON in: {output_json_path}")
 
 # 🔄 Replace this with your root folder path
-root_folder_path = r"F:\docs\Notes\NUSERY\Top Class Lesson Notes"
+root_folder_path = r"F:\docs\Schemes\NUSERY SCHEME\top
+"
 create_file_list_in_each_folder(root_folder_path)
