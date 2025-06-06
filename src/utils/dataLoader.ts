@@ -26,6 +26,7 @@ const CLASS_RESOURCES_CONFIG: ClassResourcesConfig = {
       'All Baby Class Lesson Notes',
     ],
     'past-papers': [
+      'All Past Papers',
       'English Past Papers',
       'General Knowledge Past Papers',
       'Health Habits Past Papers',
@@ -72,6 +73,7 @@ const CLASS_RESOURCES_CONFIG: ClassResourcesConfig = {
       'All Lesson Notes'
     ],
     'past-papers': [
+      'All Past Papers',
       'English Past Papers',
       'Health Habits Past Papers',
       'Language Development Past Papers',
