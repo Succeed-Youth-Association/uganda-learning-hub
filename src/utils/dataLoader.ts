@@ -254,7 +254,12 @@ const CLASS_RESOURCES_CONFIG: ClassResourcesConfig = {
       
     ],
     'schemes-of-work': [
-      'All Schemes of Work'
+      'All Schemes of Work',
+      'English Schemes of Work',
+      'MTC Schemes of Work',
+      'RE Schemes of Work',
+      'Science Schemes of Work',
+      'SST Schemes of Work'
     ]
   },
   'p5': {
