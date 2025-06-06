@@ -232,7 +232,12 @@ const CLASS_RESOURCES_CONFIG: ClassResourcesConfig = {
   // UPPER PRIMARY
   'p4': {
     'lesson-notes': [
-      'All Lesson Notes',
+      'English Lesson Notes',
+      'MTC Lesson Notes',
+      'RE Lesson Notes',
+      'Science Lesson Notes',
+      'SST Lesson Notes',
+      'ICT Lesson Notes'
     ],
     'past-papers': [
       'English Past Papers',
