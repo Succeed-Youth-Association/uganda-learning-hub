@@ -37,7 +37,6 @@ const App = () => (
             <Route path="/class/:classId" element={<ClassPage />} />
             <Route path="/class/:classId/resources/:resourceType" element={<ResourcePage />} />
             <Route path="/class/:classId/resources/:resourceType/:subject" element={<ResourcePage />} />
-            <Route path="/class/:classId/resources/:resourceType/:subject/:page" element={<ResourcePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/terms" element={<TermsPage />} />

@@ -11,9 +11,7 @@ interface ResourcePageHeaderProps {
   resourceTypeTitle: string;
   currentDocumentsLength: number;
   loading: boolean;
-  usePDFViewer: boolean;
   onBackToSubjects: () => void;
-  onToggleViewMode: () => void;
 }
 
 const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({
@@ -23,9 +21,7 @@ const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({
   resourceTypeTitle,
   currentDocumentsLength,
   loading,
-  usePDFViewer,
-  onBackToSubjects,
-  onToggleViewMode
+  onBackToSubjects
 }) => {
   return (
     <div className="mb-8">
@@ -34,15 +30,6 @@ const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({
           <Button variant="outline" onClick={onBackToSubjects}>
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Subjects
-          </Button>
-          
-          {/* View Mode Toggle */}
-          <Button
-            onClick={onToggleViewMode}
-            variant="outline"
-            className="ml-auto"
-          >
-            {usePDFViewer ? 'Switch to List View' : 'Switch to Grid View'}
           </Button>
         </div>
       ) : (

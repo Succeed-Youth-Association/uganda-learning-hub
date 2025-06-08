@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import ResourcePageHeader from '../components/resource/ResourcePageHeader';
 import ResourceSubjectSelector from '../components/resource/ResourceSubjectSelector';
@@ -16,17 +16,16 @@ import {
 import { loadGitHubData, hasGitHubRepo, GitHubDocument } from '../utils/githubLoader';
 
 const ResourcePage = () => {
-  const { classId, resourceType, subject: urlSubject, page: urlPage } = useParams();
+  const { classId, resourceType, subject: urlSubject } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const [usePDFViewer, setUsePDFViewer] = useState(false);
   const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -36,6 +35,9 @@ const ResourcePage = () => {
   const showAllSubjects = hasGitHubRepo(classId || '', resourceType || '') && 
     (resourceType === 'lesson-notes' || resourceType === 'past-papers');
 
+  // Get current page from URL search params
+  const currentPage = parseInt(searchParams.get('page') || '1', 10);
+
   // Initialize from URL parameters
   useEffect(() => {
     if (urlSubject) {
@@ -44,14 +46,7 @@ const ResourcePage = () => {
         decodeURIComponent(urlSubject.replace(/-/g, ' '));
       setSelectedSubject(decodedSubject);
     }
-    
-    if (urlPage) {
-      const pageNum = parseInt(urlPage, 10);
-      if (!isNaN(pageNum) && pageNum > 0) {
-        setCurrentPage(pageNum);
-      }
-    }
-  }, [urlSubject, urlPage]);
+  }, [urlSubject]);
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -84,29 +79,6 @@ const ResourcePage = () => {
 
     loadDocuments();
   }, [selectedSubject, classId, resourceType]);
-
-  // Update URL when subject or page changes
-  const updateURL = (subject?: string, page?: number) => {
-    if (!classId || !resourceType) return;
-
-    let newPath = `/class/${classId}/resources/${resourceType}`;
-    
-    if (subject) {
-      // Encode subject for URL (replace spaces with hyphens and handle special cases)
-      const encodedSubject = subject === 'All Subjects' ? 'all-subjects' : 
-        encodeURIComponent(subject.toLowerCase().replace(/\s+/g, '-'));
-      newPath += `/${encodedSubject}`;
-      
-      if (page && page > 1) {
-        newPath += `/${page}`;
-      }
-    }
-
-    // Only navigate if the path has changed
-    if (location.pathname !== newPath) {
-      navigate(newPath, { replace: true });
-    }
-  };
 
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
@@ -148,31 +120,31 @@ const ResourcePage = () => {
 
   const handleSubjectSelect = (subject: string) => {
     setSelectedSubject(subject);
-    setCurrentPage(1);
-    updateURL(subject, 1);
+    
+    // Navigate to subject page and reset page to 1
+    const encodedSubject = subject === 'All Subjects' ? 'all-subjects' : 
+      encodeURIComponent(subject.toLowerCase().replace(/\s+/g, '-'));
+    navigate(`/class/${classId}/resources/${resourceType}/${encodedSubject}`);
   };
 
   const handleBackToSubjects = () => {
     setSelectedSubject(null);
     setDocuments([]);
     setGithubDocuments([]);
-    setUsePDFViewer(false);
     setSelectedPdfUrl(null);
-    setCurrentPage(1);
     // Navigate back to resource type page
-    navigate(`/class/${classId}/resources/${resourceType}`, { replace: true });
+    navigate(`/class/${classId}/resources/${resourceType}`);
   };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    if (selectedSubject) {
-      updateURL(selectedSubject, page);
+    // Update URL search params
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (page === 1) {
+      newSearchParams.delete('page');
+    } else {
+      newSearchParams.set('page', page.toString());
     }
-  };
-
-  const toggleViewMode = () => {
-    setUsePDFViewer(!usePDFViewer);
-    setSelectedPdfUrl(null);
+    setSearchParams(newSearchParams);
   };
 
   const closePdfModal = () => {
@@ -196,9 +168,7 @@ const ResourcePage = () => {
           resourceTypeTitle={resourceTypeTitle}
           currentDocumentsLength={currentDocuments.length}
           loading={loading}
-          usePDFViewer={usePDFViewer}
           onBackToSubjects={handleBackToSubjects}
-          onToggleViewMode={toggleViewMode}
         />
 
         {!selectedSubject ? (
@@ -210,7 +180,6 @@ const ResourcePage = () => {
           />
         ) : (
           <ResourceDocumentViewer
-            usePDFViewer={usePDFViewer}
             currentDocuments={currentDocuments}
             selectedSubject={selectedSubject}
             resourceTypeTitle={resourceTypeTitle}
