@@ -129,6 +129,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [fileTypeFilter, setFileTypeFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [documentSizes, setDocumentSizes] = useState<Record<string, number>>({});
   const itemsPerPage = 20;
 
   const getFileInfo = (document: ResourceDocument | GitHubDocument) => {
@@ -154,6 +155,34 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
       };
     }
   };
+
+  // Fetch file sizes for non-GitHub documents
+  useEffect(() => {
+    const fetchFileSizes = async () => {
+      if (isGitHub) return; // GitHub documents already have size
+
+      const sizes: Record<string, number> = {};
+      
+      for (const document of documents) {
+        const pdfUrl = (document as ResourceDocument).pdfUrl;
+        try {
+          const response = await fetch(pdfUrl, { method: 'HEAD' });
+          const contentLength = response.headers.get('content-length');
+          if (contentLength) {
+            sizes[pdfUrl] = parseInt(contentLength, 10);
+          }
+        } catch (error) {
+          console.error(`Failed to fetch size for ${pdfUrl}:`, error);
+        }
+      }
+      
+      setDocumentSizes(sizes);
+    };
+
+    if (!isGitHub && documents.length > 0) {
+      fetchFileSizes();
+    }
+  }, [documents, isGitHub]);
 
   const formatFileName = (filename: string): string => {
     const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
@@ -194,6 +223,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const handleWhatsAppShare = (document: ResourceDocument | GitHubDocument) => {
     const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
     const url = isGitHub ? (document as GitHubDocument).download_url : (document as ResourceDocument).pdfUrl;
+    // Use encodeURI to properly handle spaces and special characters
     const encodedUrl = encodeURI(url);
     const message = `Hello, I found this educational document named ${name} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
@@ -301,7 +331,9 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
             const name = isGitHub ? (document as GitHubDocument).name : extractFileName((document as ResourceDocument).pdfUrl);
             const fileInfo = getFileInfo(document);
             const formattedName = formatFileName(name);
-            const size = isGitHub ? (document as GitHubDocument).size : undefined;
+            const size = isGitHub 
+              ? (document as GitHubDocument).size 
+              : documentSizes[(document as ResourceDocument).pdfUrl];
 
             return (
               <Card 
@@ -313,7 +345,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                     type={fileInfo.extension}
                     className="transition-transform hover:scale-110" 
                   />
-
                 </div>
                 
                 <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 line-clamp-2 break-words">
@@ -329,19 +360,24 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <Button
-                    onClick={() => onPreview(document)}
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                  >
-                    {fileInfo.extension === 'pdf' ? 'View PDF' : 'Preview'}
-                  </Button>
+                  {/* Only show preview for PDF files */}
+                  {fileInfo.extension === 'pdf' && (
+                    <Button
+                      onClick={() => onPreview(document)}
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                    >
+                      <Eye className="h-4 w-4 mr-1" />
+                      Preview
+                    </Button>
+                  )}
                   <Button
                     onClick={() => onDownload(document)}
                     size="sm"
                     className="w-full bg-orange-600 hover:bg-orange-700"
                   >
+                    <Download className="h-4 w-4 mr-1" />
                     Download
                   </Button>
                   <Button

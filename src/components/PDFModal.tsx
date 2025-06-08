@@ -94,28 +94,29 @@ const PDFModal: React.FC<PDFModalProps> = ({ pdfUrl, onClose }) => {
         <head>
           <title>${displayFileName}</title>
           <style>
-            body { margin: 0; padding: 0; }
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            body { 
+              margin: 0; 
+              padding: 0; 
+              background-color: white;
+            }
             img { 
               width: 100%; 
               height: auto; 
               display: block; 
-              margin-bottom: 10px;
-            }
-            img:last-child {
-              margin-bottom: 0;
+              margin: 0;
             }
             @page { 
               size: auto; 
-              margin: 0mm;
+              margin: 10mm;
             }
             @media print {
-              body { 
-                background-color: white;
-                margin: 0;
-                padding: 0;
-              }
               img {
-                margin-bottom: 0;
+                break-inside: avoid;
                 page-break-inside: avoid;
               }
             }
