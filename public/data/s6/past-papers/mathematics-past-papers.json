@@ -1,5 +1,4381 @@
 [
     {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/10. The Circle.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/16 Calculus Functions 16.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/17 The Binomial Theorem 17.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1986 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1987 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1988 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1999 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2009 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2013 MATHS UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/66.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A complete proposed wakissha uce math guide by Nakabaale Samuel.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A comprehensive approach to Statistics(+10);  Mukose.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level Applied maths JJEBB 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level math 1 JJebb 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A Level Math P1 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATH P2 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level mathematics mechanics seminar.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATHEMATICS PAPER 1 SEMINAR QUESTIONS 20192.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATHEMATICS SEMINAR QUESTIONS .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level Maths 1 Revision booklet.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATHS P M.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level New curr. Maths Sylabus Draft (20).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL PURE MATH BACKHOUSE THIRD EDITION.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL PURE MATHEMATICS TEXT BOOK BY TRANTER.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL QUESTION BANK.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A'LEVEL MTC MECHANICS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A'level Statistics & Mechanics_023422.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-Continuous-probability-distributionfffffff.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-Math-curve-sketching.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Approximation-Maclaurins-theorem.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Complex-numbers.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Differentiation-A-level.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Equations-involving-indices-logarithms-and-others(0).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Equations-involving-indices-logarithms-and-others.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Inequalities.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Logarithms.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Mathematical-series.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Permutations-and-combinations.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Polynomials.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Quadratic-equations.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Simultaneous-equations.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Surds.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Trigonometry.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Binomial-distribution.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Centre-of-gravity.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Connected-particles.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Continuous-probability-distribution.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Coplanar-forces-rigid-bodies.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Correlation-and-scatter-diagrams.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-couple-of-forces.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Discrete-probability-distribution.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Equlibrium-of-forces.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Errors-in-mathematics.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Flow-Charts-in-mathematics.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Force-and-newtons-laws-of-motion.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Hookes-law-elastic-strings-and-Simple-harmonic-motion.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Index-numbers.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Linear-interpolation-and-extrapolation.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Linear-momentum.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Location-of-real-roots.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Moment-of-force.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Normal-distribution.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Probability-theory.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Resolution-of-forces.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Resolutions-of-forces-acting-on-a-polygon.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Resultant-of-forces.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Variable-acceleration-velocity-displacement-and-work.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Vector-mechanics-relative-velocities.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-work-energy-and-power.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-Mathematics-Virtual-Seminar-27th-Feb.-2021.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A. MATHS P.2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A.LEVEL MATH T.R.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A.LEVELMATHS FC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A.O.I Equations of lines.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ABREB O LEVEL MATHS 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACA.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACADEMIC ACHIEVERS MTC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/accounting equations.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2024_10_25.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2024_10_29.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2024_10_31.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2025_02_04.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2025_02_05.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2025_02_14.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACEITEKA 2024 PURE MTC GUIDE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka Applied Math paper 2 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka math1A 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka Pure math paper 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/aceiteka UACE MTC 2 proposed guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACOLLECTION OF MATHEMATICS SCENARIOS FROM B.PETER'S ACADEMIC PLATFORM 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ADV MATHS 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Level Subsidiary Mathematics By Kawuma Fahad First Edition (Extended 2013) TEXT BOOK.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ADVANCED LEVEL SUBSIDIARY MATHEMATICS NOTES.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ADVANCED LEVEL SUBSIDIARY MATHEMATICS TEXT BOOK.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Level Subsidiary Mathematics; Fahad.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Mathematic S.6 Learner's Book2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/AITEL S5 SUB MATH.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALevel  Backhouse Pure Math  Text Book.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MATH 2  2019 EDITION.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MATH 2 MOCK 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MTC2 KANUNGU 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Alevelpure.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Algebra-upper-primary.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALGEBRA.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Application of Integers one.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLICATION SOFTWARE COMPUTER NOTES.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATH S6.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS FACILITATION QUESTIONS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Applied mathematics proposed marking guide wakissha 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS SEMINAR QUESTIONS 2024  - NAMILYANGO COLLEGE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS SOLUTION - NAMILYANGO COLLEGE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS UMTA.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied mathematics.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS - Onyait.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS ONE (BOSTOCK) - 2022-09-24T164609.727.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS PAPER FINAL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS PRE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS QUESTIONS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied mtc2. asshu 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSEC UACE MTC 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSEC UACE MTC 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Borehole Well  Application.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 01-22-2025 12.06.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 01-28-2025 15.42.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-02-2025 21.11.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-04-2025 14.35.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-05-2025 12.13.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-06-2025 08.20.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-06-2025 08.33.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-06-2025 08.38.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-06-2025 13.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-06-2025 14.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-07-2025 20.51.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-09-2025 09.17.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-09-2025 09.39.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-10-2025 18.06.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-11-2025 16.52.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-12-2025 12.28.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-12-2025 14.01.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-13-2025 19.41.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-13-2025 23.55.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-14-2025 12.02.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-14-2025 13.36.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-14-2025 19.48.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-14-2025 19.53.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-14-2025 19.57.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-15-2025 15.06.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-17-2025 18.40.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 02-17-2025 18.53.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-09-2024 23.55.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-30-2024 16.13.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-31-2024 15.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-26-2024 18.43.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-28-2024 09.57.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-03-2024 17.25.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-03-2024 19.13.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-26-2024 08.40.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-26-2024 10.25.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-26-2024 18.30.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-26-2024 18.34.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-04-2024 07.26.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-04-2024 18.10.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-05-2024 14.41.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-07-2024 10.49.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-07-2024 15.22.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-07-2024 15.47.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-07-2024 16.44.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-07-2024 16.50.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-14-2024 10.53.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-15-2024 08.28.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-16-2024 15.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-17-2024 11.20.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-17-2024 11.30.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-18-2024 08.33.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-21-2024 08.03.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-21-2024 10.51.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-22-2024 06.37.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-24-2024 16.19.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-26-2024 16.03.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-28-2024 13.41.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 12.45.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 13.13.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 13.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 14.08.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 15.09.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 15.18.zip"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 15.53.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 16.00.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 16.04.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 16.16.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-29-2024 16.45.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 05.01.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 08.34.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 08.37.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 08.41.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 08.42.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 09.24.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-30-2024 17.21.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-31-2024 08.07.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-31-2024 10.56.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-31-2024 11.15.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-31-2024 14.00.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-31-2024 16.03.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-01-2024 10.11.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-07-2024 11.42.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 11 - Conic Section.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 3 - Differentiation I.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Circles@Emma.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/desktop.ini"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/F6 ADV MATHS  1 ISESE MS MONTHLY TEST AUGUST.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/F6 ADV MATHS 1 ISESE MONTHLY TEST AUGUST.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/F6 ADV MATHS S01 ISESE .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/F6 ADVANCED MATHS MS 01.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/F6 ADVANCED MATHS MS 02.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/file_list.json"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/jjeb math 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/jjeb math 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB Maths P4251.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB mtc 1 & Guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB mtc 2 & Guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB P1 UACE 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB P2 UACE 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB PURE MATH 2022_024718_023513.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/jjeb sub math 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB SUB-MATHS 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB submath.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB SUBMATHS-2022 .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS. UACE  MATH P1 GUIDE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS. UACE Math 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS. UACE MATH 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/M.G uace mtc2 Ashu 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Macadita mock UACE maths 2 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths 2 UACE .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths 2 UACE DRILL 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS 2 UACE-20244.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths P.3.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths p3.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths questions & answers.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MATH 2 UACE  GUIDE 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO UACE 2024; MTC 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO UACE MARKING MATH 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MEBU S.6 PURE MATHS 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MEBU SUB MATHS 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MS 2024 SET 1  UACE P2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC 1 UACE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NAMUGONGO.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NASE BIO3 CONF UACE 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NASE BIO3 UACE 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NDEJJE SSS ALEVEL MATH PAST PAPERS WITH GUIDES 2018.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NGS A'level MTC Seminar Qts.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NGS A'level Sub MTC Seminar Qts.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/P425 1 UACE 2024 MATHEMATICS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PROPOSED CBC ADVANCED LEVEL MATH SYLABUS 2025.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PROPOSED UTES MTC 2 A GUIDE ( GRANT K).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PROSPER MTC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Further Mathematics.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure math (BECO).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH A LEVEL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH HOLIDAY 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH NAALYA SS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH ONE GOOD.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH P1_024726_023653.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure math students book.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH UTEC 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS  SEMINAR QUESTIONS 2024  send.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics 1 (4th Edition 1985-Backhouse).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics for Advanced Level.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics MIDTERM 3 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS PAPER 1 A LEVEL AITEL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS SEMINAR QUESTIONS 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS INTERNAL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS PAPER.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS SOLUTIONS  2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS VECTORS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS- Alex Seed Senyonjo.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE mathssssssss pw.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC RESOURCE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC SEMINAR QUESTIONS 2022 _024431_023712.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE UACE AD.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure week 2 EXAM.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S 6 PURE MATHS MOCK EXT 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S-6 sub maths asshu 2024 06-Aug-2024 15-53-39.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 END OF YEAR.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 math 1 F.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 math 2 ET.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MATHEMATICS SEMINAR QUESTIONS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 Maths 1_111105.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MATHS BOT.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 Maths paper 2 .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MENGO SS ,HOLIDAY WORK_080835.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 mid term 2 2024.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MTC2 QOP.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 pure maths.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.5 sub math 2024.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 SUB MATH EOT.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 SUB MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 subsidiary maths .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 INTERNAL MOCK  MATH 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATH SEMINAR 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHS PAPER ONE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MTC 2 resource 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Pure Maths 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 PURE MATHS GUIDE SENTAMU.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 PURE MATHS PRE-REGISTRATION-2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUB MTC 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S1-intergration-test-TEST_022441.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 math1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MATHEMATICS( Vectors).pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MTC 1 EOT 2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 PAPER TWO MATH MID.docx"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 TRIGONOMETRY.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5MTC2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6  Maths P2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 APPLIED MATHEMATICS PAPER 2 RESOURCEFULL EXAMINATIONS 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATH PP 1 KAMOTA 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Mathematics  paper 1 BEGINNING OF TERM 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Mathematics  paper 2 beginnimg of term 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Maths P1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Maths P2.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6_MATHEMATICS_II_HOLIDAY_WORK_TERM_I_2020.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO  PURE MATHEMATICS SEMINARFONT 14 _024416_023626.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO MATHEMATICS_SEMINAR_QUESTIONS_2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO PURE MATHEMATICS SEMINAR 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOW S 1 TERM ONE BY FELIX.doc"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOW S2 MATHEMATICS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH  1 A.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub math EJEB 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH GUIDE 2022 TODAY3.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub math Jjeb.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub math proposed guide by sentamu .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH SEMINAR QUESTIONS 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub Math.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS BY KAWUMA - 2nd Edition with PP.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS BY KAWUMA - 2nd Edition with PP_080204.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS CLINIC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS PRE REGISTRATION SENTAMU.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS SEMINAR QUESTIONS 2023 - OLAN PRINTING.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub maths seminar.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS SENTAMU.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub maths uneb 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHSSSS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MTC SYLLABUS 2020 NEW EDITION.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB-ICT PAPER 2 UNEB 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB-ICT PAPER 3 UNEB 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB-MATH UTEC.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submath 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submath notes  by fahad.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBMATH UTEC 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submath.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBMATHS 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SubMaths UNEB QNS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Submaths.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submtca.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBSIDIARY MATHS SOLUTIONS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Success set vi mtc.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE 2024 APPLIED MATHEMATICS PROPOSED GUIDE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace applied maths 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE applied Maths 2024 Macadita.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE BECCO Applied math.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 ACEITEKA 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 APPLIED 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace math p1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Math QUESTION BANK 1993-2015.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Mathematics Paper 2-2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE maths 2 wakisha guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS QB 2020 final.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS.P.1. set.2 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Uace matigo sub maths 2022 guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC APPLIED AD.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC P1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC2 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE P425-2 APPLIED MATHS UNEB 2019.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Pure maths 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE STATISTICS BOOK SUB AND APPLIED MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE SUBMATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB 2008 No.3.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB MATHS 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB PURE MATH 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB PURE MATH GUIDE 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE uneb pure mathematics 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UTEC Math_2 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-1-2016-marking-guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-1-UNEB-2020.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-2-2013-marking-guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-2-2015-marking-guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-2-2019-marking-guide-UNEB.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-Mathematics-Physics.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE_maths_2_wakisha_guide.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/understanding-pure-mathematics-by-a-j-sadler-and-d-w-s-thorning.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2020 APPLIED MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2022 APPLIED MATHS_221122_173517.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2022 PURE MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2023 APPLIED MATH MARKING GUIDE BY OPELE DANIEL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2024 APPLIED MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB PHYSICS PAPER 2 UACE 2015 PAPER AND MARKING GUIDE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uneb uace mtc2 guide 2022.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC - Math 1 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC Applied Maths GUIDE_2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC Applied Math_2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC APPLIED MTC GUIDE 2024 .pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC MATH 2022 PAPER ONE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC MATH 2022 PAPER TWO.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC Mathematics 1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC MTC 2024 OLEVEL.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/utec p2 24.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/utec paper one.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC PURE MATHS 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utec Pure Mtc.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC UACE Applied Math 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC UCE MATH EMATICS PAPER 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC UCE MATHEMATICS PAPER ONE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTES 2023 O LEVEL MTC1.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTES MATH2, 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTES MTC 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utes uace Mtc 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/VECTORS SEMPALA.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/VECTORSSSSS letter.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakata Applied Math.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakata math.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKATA P7 MATH   END OF TERM ONE.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakata Pure Math.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakata uace applied maths guide2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA applied maths 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha Math Olevel Guide 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha Math Olevel Guide24.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha Math s3 end of year.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA MOCK UCE MTC 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha MTC 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha paper 1 UACE 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA pure mtc 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha sub maths 24.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISO DISTRICT P.7 MTC MID TERM 1 2024 @ PROF. MOSES VIP.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISO MOCK 2024 MATHS.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISO MTC BOT2  2024 @ PROF.MOSES VIP.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA 2024 PURE MATH.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA Applied Maths Guide 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT EXAMINATION UCE END OF YEAR ASSESSMENT S.3 MATHEMATICS PAPER 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA Pure Maths Guide 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA SUBMTC 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE APPLIED MATH 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE PP2 2023.pdf"
+    },
+    {
+        "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE PURE MATH 2024.pdf"
+    }
+,
+  {
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/-Index-numbers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1. UACE APPLIED MATHS - KAWUMA FAHAD.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/10. The Circle.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1300mathformulas.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/16 Calculus Functions 16.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/16. Integration-45pages.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/1709092852phpXNORHm.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/201-300 pure.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2017 UACE MARKING GUIDE UNEB 2017 PAPER 1.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2022 UACE APPLIED MATHS SEMINAR.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2023 Applied mtc by Emutu.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2023 UNNASE MATH P1 S6-2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2023 UNNASE MATH P1 S6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2023 wakissha applied math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2023 Wakissha pure.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2024 A level Mathematics seminar.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/2nd LATEST PURE MATHEMATICS FULL PAPER.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3  Descrete random variables 333 - Copy.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3  Descrete random variables 333.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3 topics STAT.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3. Differentiation.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3. PANZI NOTES, 2024-HIST F3.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/33 MTC JAN.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/3rv - Copy.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/4. DISCRET PROBABILITY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/4. Further Differentiation.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/5. Logarithms.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/5.Permutations and Combinations ( PDFDrive ).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/6.1 Linear Interpolation and Extrapolation.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/7 Topical Tests about Circles.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/7-surds.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A  LEVEL PURE MATHEMATICS  REVISON NOTES.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A comprehensive approach to Statistics(+10);  Mukose.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level Applied maths JJEBB 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level math 1 JJebb 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A Level Math P1 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATH P2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATHEMATICS PAPER 1 SEMINAR QUESTIONS 20192.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A LEVEL MATHEMATICS SEMINAR QUESTIONS .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level Maths 1 Revision booklet.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level MTC Paper one.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level mtc, ndejje past papers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A level subsidiary mathematics 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A'LEVEL BIOO-MACMILLAN.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A'LEVEL MECHANICS 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Application-of-Differentiation-A-level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Approximation-Maclaurins-theorem.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Differentiation-A-level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Inequalities.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Mathematical-series.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Permutations-and-combinations.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Polynomials.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Quadratic-equations.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Simultaneous-equations.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-1-Surds.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Binomial-distribution.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Centre-of-gravity.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Correlation-and-scatter-diagrams.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Discrete-probability-distribution.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Equlibrium-of-forces.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Flow-Charts-in-mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Index-numbers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Linear-interpolation-and-extrapolation.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Linear-momentum.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Location-of-real-roots.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Moment-of-force.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Normal-distribution.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Probability-theory.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Projectile-motion.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Resultant-of-forces.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Statistics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-Vector-mechanics-relative-velocities.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-math-paper-2-work-energy-and-power.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-Mathematics-Virtual-Seminar-27th-Feb.-2021.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A-level-Mock Excel(M.E.) Math 1 2023 QP.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A. MATHS P.1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A. MATHS P.2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A. MATHS P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A. SUB-MATHS P.1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/A.JJEB.Pure.Maths P.1. 2019.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACE Scanner_2024_08_19.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka Applied Math paper 2 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACEITEKA MOCK 2024 PURE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACEITEKA MOCK MTC 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACEITEKA MOCK MTC paper 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka Pure math paper 1 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka UACE BIO P2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ACEITEKA UACE math 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Aceiteka.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/acetika mock.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Activity of integration_Revised.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/activty new.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/adju mock.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ADVANCED LEVEL PURE MATHEMATICS; TRANTER.PDF"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Level Subsidiary Mathematics By Kawuma Fahad First Edition (Extended 2013) TEXT BOOK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ADVANCED LEVEL SUBSIDIARY MATHEMATICS TEXT BOOK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Level Subsidiary Mathematics; Fahad.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Level subsidiary Mathematics; Muhumuza.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Advanced Mathematic S.6 Learner's Book2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Alevel guide mtc 2 Asshu.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MATH 2 MOCK 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MATHS QUESTION BANKK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ALEVEL MTC2 KANUNGU 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/All BB.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/An Introduction to Pure Mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Angle-construction-upper-primary.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Ankole math1A 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Answer.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/AnyScanner_07_22_2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATH UTEC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Applied math utes 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Applied Mathematics 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS FACILITATION QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS FOR 17TH SEPTEMBER, 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS FOR ADVANCED LEVEL TEXT BOOK  BY BundayMulholland-.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS SEMINAR QUESTIONS 2024  - NAMILYANGO COLLEGE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS SEMINAR QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHEMATICS UMTA.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied mathematics-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Applied Mathematics-By Kawuma Fahad.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS - Onyait.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS 2 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied maths exam... Tr Tom.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS PAPER FINAL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS PRE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS QUESTIONS.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MATHS QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied mtc pre mock.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MTC SEMINAR.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/applied mtc2. asshu 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/APPLIED MTCS SEMINAR QUESTIONS EDITTED.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ARUA DIOCESE EXAM.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASHU APPLIED MATHS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Ashu pure 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ashu.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSEC UACE MTC 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSEC UACE MTC 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSECMOCK@2024_APPLIEDMATH_PaperTwo-1_120802.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU applied 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU APPLIED MATH GUIDE_2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU Bushenyi 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU mt2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU pure Mathematics 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ASSHU PURE MTC  GUIDE_2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Asshu pure mtc A level guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/asshu.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/assu applied math guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/assu submath 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BABAY 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Backhouse 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BASIC_STATISTICS_FOR_ADVANCED_LEVEL_MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BEB MOCKS 2024 APPLIED MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BEB MOCKS 2024 PURE MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BEB_MOCKS_2024_PURE_MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/BUGANDA UACE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/bushenyi applied mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/calculus 2....sub-module 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 04-13-2024 16.52.20.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 04-18-2024 11.03.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 05-04-2024 09.04.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 05-22-2024 21.30.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-03-2024 14.29.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-08-2024 09.16.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-09-2024 23.55.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-14-2024 15.08.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-14-2024 15.16.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 06-14-2024 17.29.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-05-2024 18.02.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-21-2024 15.51.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-26-2024 09.55.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-29-2024 12.02.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-29-2024 12.36.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-29-2024 13.58.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-29-2024 17.14.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-29-2024 22.37.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-30-2024 12.39.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 07-30-2024 15.47.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-05-2024 14.33.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-05-2024 17.47.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-05-2024 19.28.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-05-2024 19.33.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-07-2024 10.22.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 12.21.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 12.57.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 12.59.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 13.15.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 13.19.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-08-2024 13.27.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-09-2024 08.02.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-11-2024 08.06.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-13-2024 10.12.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-15-2024 07.30.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-30-2024 10.17.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 08-30-2024 18.35.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-12-2024 09.54.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-13-2024 17.50.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-16-2024 13.34.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-19-2024 10.24.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 09-22-2024 19.16.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-06-2024 12.32.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-09-2024 18.47.46.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-10-2024 17.33.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 10-11-2024 15.10.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-22-2024 18.34.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-22-2024 18.37.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-22-2024 18.40.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 11-22-2024 18.43.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-07-2024 17.12.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-10-2024 07.36.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-10-2024 09.21.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-11-2024 07.40.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-11-2024 07.44.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-11-2024 07.49.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-12-2024 16.58.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-23-2024 10.09.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-23-2024 11.44.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CamScanner 12-23-2024 11.47.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chain rule and rates of change.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 1 - Logs and Roots Polynomials.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 10 - Differential Equations.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 12 - Curve Sketching.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 2 - Binomial Theorem.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 3 - Differentiation I.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 4 - Circles.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 6 - Complex Numbers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 7 - Trigonometry.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapt 8 - Vectors.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CHAPTER 1 PURE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapter 10_ Permutations and combinations ( PDFDrive ).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Chapter 7 Factorising Algebraic Expressions pg_ 175 - 199.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Circles@Emma.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/circulartoUACEcentres-SubMath.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Cohea mock . mtc paper 1. 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/cohea mock . pure mathematics .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/COMBINED BREAK DOWN.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/combined guide for A level 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/COMPLEX NUMBERS-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Complex-numbers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/compressed_Wakissha 2024---- 01-Aug-2024 11-19-37.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CONFIDENTIAL MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/conics in small steps.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CONTENTS APPLIED MATHS oct 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Copy Applied Maths Collections 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Core Mathematics for A Level by L.Bostock and and S.Chandler.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CRV A LEVEL MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/CURVE SKETCHING.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Curve-sketching-A-level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/desktop.ini"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Dictionary_of_Mathematics_Terms_3rd_Ed.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DIFFERENTIAL EQUATIONS II.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DIFFERENTIATION TEST.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Discrete mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DISCRETE PROBABILITY DISTRIBUTION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DIVISIBILITY TESTS_240228_191319.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Doc AOI.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DOC-20240529-WA0002.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DOC-20240703-WA0002.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Document 58.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/DRILL ONE PURE MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EASTER BREAK PURE MATHEMATICS S.6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJEB applied math 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJEB MOCK CIRCULAR 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJEB MOCK CIRCULAR 24.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJEB pure Math 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJEB UACE Maths 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJJEB 2024 PURE MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EJJEB mock.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/END OF TERM 2 s5 PURE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/end of term three senior five pure maths 2024.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/END OF YR 2024 Pure Mathematics HCLVSS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EOT BIO 2 S.5 - 2023 Ogasim.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EOT II 2023; S.5 MTC 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EOT II 2023; S.6 SUB MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EOT II PURE MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Equationofstraightline.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ERETA PURE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EXAM[1] PRE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Excel in A level Pure Mathematics By Kyanda James.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/EXCEL IN MATH WITHOUT TEARS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/file_list.json"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/FORT PURE MTCS SEMINAR QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/FURTHER DIFFERENTIATION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/GRAPHICAL FUNCTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/GUIDE FOR S.5 BOT.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/GUIDE MTC2 2022 UACE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/GUIDE TO S6 MATH 2 FROM CHIEF 2023x.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/guide to wakisha o level 2024 mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/HeLP S6 Mathematics seminar.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/holiday applied  math 2 s6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Integration-A-level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Integration.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ITEMS NEW 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/jan 2023 pure mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JAN 2024 pure mtc exam.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/january 2025 applied maths test 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB APPLIED MATH 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB math paper 2 marking guide 2023).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB mtc s 6 qn n guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB Paper 1 SUBMATHS A Level 2014.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB PURE MATH 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB PURE MATH 2022_024718_023513.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB pure mathematics 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/jjeb sub math 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB submath.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB SUBMATHS-2022 .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/JJEB UACE SUB MATHS P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAMSA PAPER ONE MARKING GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAMSA uace Mtc1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAMSSA MOCK MTC 1 S.6 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAMSSA UACE MATH 1A 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAMSSA UACE MATH 2A  2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KANUNGU MOCK UACE MTC 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KASSEC A'LEVEL MATH.1, 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/kassec math1A 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KASSEC MOCK APPLIED MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Kasshpa Mock Applied Math PP2 -2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KAYUNGA SS MOCK UACE PURE MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KCSE MATHS PP1 REVISION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/KCSE MATHS PP2 REVISION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Kitende S5 Applied MTC HW.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Kitende S5 Pure MTC work.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Kitende S6 Applied MTC HW.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Kitende S6 Pure MTC work.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/leep203.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Linear_Algebra,_4th_Edition__(2009)Lipschutz-Lipson.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS EOT III 2023; S.5 MTC 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS EOT III 2023; S.5 PHY 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS. UACE Math 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LSS. UACE MATH 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Lubiri Sec Sch, A'level MTC Seminar 2022..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/LUSOGA 3 A LEVEL  AITEL MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MAAM- CONCEPT PAPERs ,  2024(S) combined.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Macadita mock UACE maths 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/macadita UACE maths 1 mock 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Macidita proposed guide UACE MATH -2-2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Marking guide 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MARKING GUIDE APPLIED MATHGEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Marking guide applied MTC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MARKING GUIDE MATH A LEVEL PAPER 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/marking guide MTC12023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MARKING GUIDE PURE MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MAT S3 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math  1 A level WESTERN JOINT MOCK EXAMINATIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH  PAPER SET 4 OF 4.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math & Physics Seminar 2024-INVITATION-FINAL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math & Physics Seminar 2024-INVITATION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math 1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 A.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 G A.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 MUKONO EXAMINATION COUNCIL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math 1 S.6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 UMTA 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 UTEC 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1 UTES 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math 2 .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 2 A G.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math 2 A level WESTERN JOINT MOCK EXAMINATIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math 2 a level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 2 A.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 2 A.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 2 MUKONO EXAMINATION COUNCIL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 2 UMTA 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 22.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH 3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math 42.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math academic buikwe.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math Be True .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH BIO.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH COFDT 3. 2023.0784032119..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH CONTEST REVISION WRK  PART THREE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH COVER PAGE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH F1 CLM 10 2024.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH II S.6 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math one revision booklet.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH PAPER2 A LEVEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH PP1 S.6 SET 2 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math PP1 S.6 ST. MARY'S KITENDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math PP1 S.6 ST. MARY_S KITENDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math Pp2 S.6 ST. MARY'S KITENDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math Pp2 S.6.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATH S5.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math SB 2.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math-country-ranking-olevel-2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math-up Differentiation Seminar (Introduction).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/math2412-right-angle-trigonometry.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Mathemathics.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATIC S.2.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Mathematic.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICAL DICTIONARY.pdf.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Mathematics 2 BUGANDA EXAMINATIONS COUNCIL MOCKS 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS CONTEST 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS CONTEST 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS EXERCISE 1 A LEVEL  KING'S COLLEGE, BUDO.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Mathematics O'Level book.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS PACKAGE 1 P2-BUDINI SS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS PAPER 1 UACE MARKING GUIDE WAKISSHA 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS PAPER 1.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS PRIMARY ONE LESSON NOTES.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS QUESTIONS S.3.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS SECONDARY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS SEMINAR.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHEMATICS.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Mathematics.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS 1 A LEVEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths 1 drill 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS 1 RESOURCE MOCK 2022 VHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths 1 wakisha guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS 2 2024 A LEVEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths 2 drill 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths 2 UACE .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths 2 UACE DRILL 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS 2 UACE-20244.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths applied pp2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS final.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths P.3.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS P5.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS PAPER 2 A'LEVEL EDITED.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS PAPER 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths prototype TG.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS SET 3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/maths set 6 nerds.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS SET2 NERDS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths Syllabus.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS TAAND BOT 1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS TEACHERS' INTERVIEW (UPPER).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS, PAPER 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Maths.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math_1 UTEC MARKING GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Math_2 UTEC MARKING GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO 2024 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MATH 2 UACE  GUIDE 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS 2022APPLIED MATHS.2docx.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS 2024 UACE MTC 2 FINAL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS APPLIED MTC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS PURE MTC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS PURE MTC1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS SUB MATH 1 UACE 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS SUB MATH GUIDE 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO MOCKS UACE MTC1 GUIDE 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO UACE 2024; MTC 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MATIGO UACE MARKING MATH 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MCS EOT III 2023; S.5 MTC 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MCS EOT III 2023; S.5 PHY 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MCS EOT III 2023; S.5 SUB MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MEBU S.6 PURE MATHS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MECHANICS EWE (1).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MENSURATION (AREA, SURFACE AREA AND VOLUME AND AREA OF CIRCLES.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MEPSA UACE MATH P1. 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MERGE PDF 310324 9.17.41.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MHS Senior 6 Pure Maths Revision Questions 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mid january pure mtc 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MSJ TOP LA 5 MID II.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MSS-GOEG.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MT II ENG P.5 2024.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MT II ENG P.6 24.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MT II SST P.4 22.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MT II SST P.5 2019.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mtc 1 pure.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC 1 UACE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC 1.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC by Tr. siliver.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC COURSEWORK ISLAMIC UNIVERSITY.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC P.1 term I - III lesson notes 2015.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC P4.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC s. 1.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC s. 3.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mtc.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mtc1a.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC2 PROVINCIAL 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTC2 qn bank_1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mtc2a.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MTH425_2 WAKISSHA MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MU MIREMBE GYA NAGADYA.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/mukono Applied math paper2 mock.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MUKONO EXAMINATION COUNCIL PURE MATHEMATICS PAPER ONE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Munaku Kaama.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MUST   JOB APPLICATION FORM.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/MWALIMU UACE Math-1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NAALYA S.S.B INTERNAL MOCK SET 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NAMIREMBE MOCK UACE PIRE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NDEJJE PURE MTC P1 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NDEJJE PURE MTC P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NDEJJE SSS ALEVEL MATH PAST PAPERS WITH GUIDES 2018.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/New Doc 07-09-2024 13.22.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/New Doc 2024-04-26 16.19.37.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/null-2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/NUMERICAL 1 COMBINED  gggggg.PDF"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/numerical anlaysis I.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/O LEVEL MATHEMATICS NOTES1.pdf  filename=UTF-8  O LEVEL MATHEMATICS NOTE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/O.JJEB.456-1 Math GUIDE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/OLAN MTC SEMINAR PAPER ONE QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/OLAN SEMINAR QUESTIONS PAPER TWO.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/P425 1 UACE 2024 MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/P425 MOCK D 2016 with guide pure math set2.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/p425-2 JJEB 2020 MG.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/p425-2 JJEB 2020 QP.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/P425_1 marking guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/paper one mtc contest 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Paper-1-A-level-Math-Virtual-Seminar-27th-Feb.-2021.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PAUL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/phelix.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Polymers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/poposed guide for applied math2023 by LMD.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/POST MOCK PURE MATHS 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/POST MOCK SUB MATHS 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PRE MOCK S6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pre uneb set 2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pre uneb test 1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pre-Xmas pure mathematics assessment.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/premock s.6 math 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PREP 1 MATHS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/preuneb test 3 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PREUNEB TEST 4.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Principles of Applied Mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/probability 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Probability and Statistics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Probability,Discrete random variables & Normal Distribution..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PROBABILITY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/profit and loss.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Proposed guide UACE mtc1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Proposed guide UACE mtc2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PROPOSED MARKING GUIDE FOR UTEC MATH 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure final 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure guide 2024 UNEB .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure math (BECO).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH A LEVEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH HOLIDAY 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH MWALIMU.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH NAALYA SS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH P.1.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH P1_024726_023653.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH S6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure math students book.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Math Test Series Six.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH UTEC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS  SEMINAR QUESTIONS 2024  send.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics -1 [Advance Level Maths] ( PDFDrive ).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics 1 (4th Edition 1985-Backhouse).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics 1 (4th Edition 1985-Backhouse).pdf.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics 2 (3rd Edition 1985-Backhouse).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics 2&3 [advaced Level Maths.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure mathematics 2024 uneb.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure mathematics END OF TERM ONE EXAMS 2013 S6(P4251).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics Facilitation Paper 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics for Advanced Level.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Mathematics MIDTERM 3 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS MOCK EXAMINATIONS 2017.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS PAPER 1 A LEVEL AITEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS SEMINAR QUESTIONS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS SEMINAR.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS BOT.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure Maths Collections 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS INTERNAL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS PAPER.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure maths set 10.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS VECTORS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MATHS WEC MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE mathssssssss pw.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure mtc asshu 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/pure mtc by Emutu Joseph.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC RESOURCE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC SEMINAR QUESTIONS 2022 .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC SEMINAR QUESTIONS 2022 _024431_023712.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/PURE TOPICAL QUESTIONS_024715_023812.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Pure-mathematics-Internal-mock.rtf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Qn.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/RECESS PURE MATHEMATICS TEST.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/relative velocity.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Repro plants.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Resource pure maths 2019 KINGS COLLEGE BUDDO 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/REVISED MATHEMATICS MODULE II.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Ronald 1996  1& 2ttttt.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S 6 PURE MATHS MOCK EXT 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s-5 subsidiary mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s-6 subsidiary mathematics 21-Mar-2020 13-39-30.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S. 5 Pure Mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.1 E.O.Y MATHS ASSESS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.1 MATHS.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.2 maths 2.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.3 MATHS 2023.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.4 2024  MATH PRE-REGISTRATION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.4 MATHS PRE REGISTRATION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.4 MATHS SCENARIO ITEMS COLLOECTION FROM MATHS CLINIC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.4 MATHS SCENARIO TEST.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5  ENTREPRENEURIAL  SKILLS COMBINED.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 Applied Maths 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 BIO1 EOY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 bio1 mot2 2023@SSEFF 0754958643.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 BOT 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 BOT3 (Emmar Mukisa).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 BOT3-1 EMMAR.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 CHEM 2 EOT 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 CHEM ONE EOT3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 CHEMY ONE EOT 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 E.O.T CHEMISTRY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 END OF TERM  II PURE MTC 2023 by Sanjoac.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.5 end of term 2 applied mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 ENT 1 PRINTED REVISION PAST PAPERS (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 ENT 3 REVISION PAST PAPERS (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 ENT end.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 ENTREPRENEURSHIP P2PRINTED REVISION PAST PAPERS (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 EOT 3 BIO3 KATIKAMU SDA.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 LIT3 QUESTIONS - UTES 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 LIT3 QUESTIONS - wakisha.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 Math 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MTC 2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.5 mtc mid 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MTC TWO TEST-2025.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 MTC.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 Pure Math 1 Exam End.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 PURE MATHEMATICS MID TERM III.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 pure MID 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 PURE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 puremath1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 SUB MATH HOLIDAY WORK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5 SUB-ICT MOT TWO P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.5 submath EOT III 2023.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.5-MTC-1-Test-2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6  MATHEMATICS SEMINAR QUESTIONS 2023..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 APPLIED MATHS WITH GUIDE REVISION PAST PAPERS (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Applied Maths.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 GEOG 1.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 INTERNAL MOCK  MATH 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Math Pp1 UNASE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Math Pp2 UNASE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHEMATICS 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHEMATICS 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHEMATICS P1 MOCK 1 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Mathematics Paper 1 Facilitation Term II 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Maths Exercises.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHS LADDER PROBLEMS NOTES GHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Maths LCB S6 P2 EXERCISE 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHS TEST - NUMERCIAL METHODS GHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MATHS TEST - VECTOR MECHAN GHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Maths Test KCB-S.6TEST1-2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MTC 1 ELITE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MTC 2 ELITE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.6 MTC 2.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 MTC 2TEST MOCK 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s.6 pure math 1 hour test 2 2023 CHECK - .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 pure math Internal.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 Pure Maths 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 PURE MATHS PRE-REGISTRATION-2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 RESOURCEFUL MOCKS CONFIDENTIAL CHEMISTRY.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SET-1-Sub Math-MOCK EXAM-2022-three.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUB MATH HOLIDAY WORK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUB MATH P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUB MATH REVISION PAST PAPERS (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUB MTC ELITE 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6 SUBMATH.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-APPLIED-MATHS-GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-Applied-Maths-Past-Paper.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-APPLIED-MATHS-WITH-A-GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-APPLIED-MATHS-WITH-GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-Mathematics-Paper-1-Past-paer.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-MTC-QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-PURE-MATHS-GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-PURE-MATHS-QUESTION-PAPER.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6-SUBMTH-HOLIDAY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6MathPaper 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.6Mock math P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S.S.T P.7 ALL YEAR 2023, #Creative printers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S1 MATHEMATICS PAPER END OF YEAR EXAMINATIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S1-S4 MTH LEARNER'S RESEARCH BOOK ( LBL).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S4 NLSC EOT 1 EXAMS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 Applied math qns.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 APPLIED MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 BIOLOGY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s5 EOT CHEM 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 EOT CHEM P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MATH CALCULUS - DIFFERENTIATION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MATHS PAPER 1 2020 TERM 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MATHS-MERRYLAND-ENTEBBE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 MTC 1.docx.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5 TERM III CHEMISTRY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5-INTRODUCTION-TO-ENTREPRENEURSHIP-PAPER3-1_231220_100725.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S5-MATHEMATICS-RECESS-WORK2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6  APPLIED MATHEMATICS PAPER 2 JOINT MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6  MATHEMATICS  PAPER 1 MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 5TH MATHS POST MOCK ANALYSIS SEMINAR.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 APPLIED MATHEMATIC BEGINNING OF TERM 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 APPLIED MATHEMATICS PAPER 2 KAMSSA JOINT MOCK EXAMINATIONS 2022..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 APPLIED MATHEMATICS PAPER 2 RESOURCEFULL EXAMINATIONS 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 APPLIED MATHS SEMINAR QUESTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Ext Math1A guide 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 HISTORY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Jinja College Applied  Math's Revision Work.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATH - ERRORS PART ONE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATH 2 MOCK SET 4 2017 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATH P2 EXERCISE 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Math Probability Revision Qns.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATH1 HOLIDAY WORK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Mathematics  paper 1 BEGINNING OF TERM 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATHEMATICS PAPER 1 AITEL JOINT MOCK EXAMINATIONS 2022..pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATHEMATICS PAPER 2 MOCK EXAMS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MATHS EXAM.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Maths P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Maths P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MOCK 1 2014 MATH P2 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 MOCK 1 2016 MATHS P2 (ecolebooks.com).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/s6 Numerical methods revision questions 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 PRE UNEB APPLIED MATHS 2024 (2).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 PURE MATH POST MOCK 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 pure math seminar questions all branc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 PURE MATHEMATICS  JJEB MOCK 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 PURE MATHEMATICS PAPER 1 ASSHU MBARARA JOINT MOCK EXAMINATIOINS 2022-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 S Mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 sub math END OF TERM  I.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 SUB MAthfinal.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 SUBMATHS SMATA POST MOCK ALEVEL SEMINAR 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/S6 Subsid Maths.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Saint_Joan_Study_Guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Scanned_20240722_102528.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Scanned_20240810_102137.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SEETA S6 SEMINAR QUESTIONS PDF.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SEMINAR 1 APPLIED MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SEMINAR QNS 2023-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Seminar Questions SubMath 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SENIOR 3  MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SENIOR FIVE EOT.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SENIOR six Applied mathematics .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SENIOR SIX.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Series questions & Answers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sesemat mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 10.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 11.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 12.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 13.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 3-Edited.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 4-Edited.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 5-Edited.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 7-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 8.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Set 9.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SET III (UACE) GUIDE RESOURCEFUL MOCK MARK SCHEME 02.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SIMPLIFYING PURE MATHEMATICS 1-2021.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMACO EOT 3 2022 S5 MTC 1 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA JOINT MOCK S6 P1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA JOINT MOCK S6 P1 2022_024852_023806.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA JOINT MOCK S6 P2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA JOINT MOCK S6 SUBMATHS 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA MTC 4TH ANNUAL POST MOCK SEMINAR 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SMATA UACE Math-1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO  PURE MATHEMATICS SEMINARFONT 14 .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO APPLIED MATHS SEMINAR 2023-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO MTC2 SEMINAR QUESTIONS print.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOLUTIONS TO PURE MATHEMATICS SEMINAR 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOW S1 MATHEMATICS1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SOW S2 MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ST JOSEPH OF NAZARETH HIGH SCH (2023 A'LEVEL MTC SEMINAR).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ST. HENRY\u2019S COLLEGE KITOVU A\u2019LEVEL APPLIED MATHEMATICS PAPER 2  SEMINAR QUESTIONS 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/ST. MARY_S KITENDE EXAMINATIONS 2020 PURE MATHEMATICS S.6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub D Captain JD.doc"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH GUIDE 2022 TODAY3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH MG.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH PAPER 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATH SAMPLE PAPER 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub Math ST. MARY'S KITENDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub Math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub maths 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS BY KAWUMA - 2nd Edition with PP.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS CLINIC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS PAPER 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/sub maths seminar qns 2019, ndejje.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS SEMINAR QUESTIONS 2023 - OLAN PRINTING.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MATHS.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MTC MUKONO EXAMINATION COUNCIL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB MTC.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB-MATHS NOTES.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Sub-MTC BUGANDA EXAMINATIONS COUNCIL MOCKS 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submath 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBMATH 2024 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBMATH REVISION QUESTIONS(MOCK COMBINATION).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submath WAKISSHA GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submaths by fahadd.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SubMaths UNEB QNS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Submaths UTEC MARKING GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/submtc UACE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Subsidiary Information BUGANDA EXAMINATIONS COUNCIL MOCKS 2019.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUBSIDIARY MATHS SOLUTIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Subsidiary maths WESTERN JOINT MOCK EXAMINATIONS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/SUB_MATHEMATICS_book.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Syllabus - UACE Phy & mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/term 2 maths assignment 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/TERM III S.5 APPLIED.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/TESSMEA Sub math 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Theory and Problems of Signals & Systems_Hsu_.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/THREE DIMENSIONS .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/TRANSFORMATION 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/TRICONA pure and Applied  Math seminar Questions 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Trig inverse.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Trigonometry 1 & Answers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Trigonometry 40pages.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/TRIGONOMETRY TEST 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE  MATH 2 MOCK MATIGO GUIDE 2024xx.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE  MATH P1 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE 2022  maths.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE applied math 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE applied Maths 2024 Macadita.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE APPLIED MATHS SEMINAR 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE APPLIED MATHS Set 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE applied maths.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace applied mtc 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE BECCO Applied math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Further Differentiation.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace jjeb mtc 1 guide 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE JJEB P425-1 GUIDE  2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE JJEB P425-2 GUIDE  2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE JJEB S475-1 GUIDE 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE KDM Math PP2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 ACEITEKA 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 APPLIED 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 JJEB MOCK 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH 2 UTEC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Math P1 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace math p1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH P_1 UTEC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Math QB 1993-2015.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Math QUESTION BANK 1993-2015.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE math1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATH2 WAKISSHA MOCK.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHEMATICS ONE 2022 22-Nov-2022 12-30-49.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Mathematics Paper 1-2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Mathematics Paper 2-2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHEMATICS TWO REVISION NOTESS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Mathematics1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Mathematics2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS 1 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE maths 2 wakisha guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS Differential Equations.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Maths Paper1 St. Mary's College- Kitende.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS QB 2020 final.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Maths Question Bank.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS.P.1. set.2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MATHS_2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Uace matigo sub maths 2022 guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/uace matigo sub maths 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE mocks.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC 1 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE MTC PAPER2 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Pre-UNEB Paper1 SET1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE PURE MATH P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE Pure maths 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE PURE MATHS P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE STEM MATH P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE SUBMATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB MATHS 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE UNEB Mtc P1 2024guide@yoweri.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE uneb pure mathematics 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-1-2016.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-2-2016.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-Mathematics-2-2017.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-1-2016-marking-guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-1-2018-marking-guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-1-2019-marking-guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MATHEMATICS-PAPER-2-2016-marking-guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MTC-1-Past-papers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-MTC-2-Past-papers.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-PURE-MATHEMATICS-POST-MOCK-SET-2-2014-P425-Paper-1-MARKING-GUIDE.docx"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-SUB-MTC-2016.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE-SUB-MTC-2017.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE_MATH-2_ASSHU-MOCK_2023-guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE_MATH-2_ASSHU-MOCK_2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE_MATH_1_MOCK_EXAM_2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UACE_MATH_2_MOCK_EXAM_2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/umta 2 marking guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA 2024 APPLIED MATHEMATICS .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA 2024 PURE MATHEMATICS .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA Applied 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/umta guide 2024 pure mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/umta guide pure math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/umta guide pure math_024733_023602.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA MATH 1 A LEVEL 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA MATH-1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA MATH-2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA mock Math guide S6 p1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/umta mock mtc pp1 s.6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA Pure Math 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UMTA, UACE MTC-1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/unanse 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNASE UACE MATH P.1-2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNASE UACE MATH P.2 -2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNDERSTANDING PURE MATHEMATICS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2020 APPLIED MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2022 APPLIED MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2022 APPLIED MATHS_221122_173517.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2022 PURE MATH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2024 APPLIED math 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2024 PURE MATH GUIDE BY TR. VAN ELIJAH.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB 2024 pure.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB GRADING SYSTEM FOR A-LEVEL.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB math 1 and 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB MTC 1 A 22.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB SUB MTC 23 GKMP.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE APPLIED MATHS 2023 P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE APPLIED MATHS P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE APPLIED MTC P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE MATHEMATICS QUESTION BANK 1993-2015.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE PURE MATHS P1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE PURE MATHS P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE PURE MTC 2023 P1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNEB UACE SUB MATHS 2023 P1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UNNASE MOCK PURE MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC - Math 1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC Applied Math_2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC GUIDE MATHS 2  2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC MARKING GUIDE PAPER 2 2023 .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC math 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC math1.4 guide 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utec math2.4  guide 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utec math2A 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC MATHS A' P245_2 GUIDE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC Mock 2024, Applied maths P4252.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC PURE MATHS 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utec Pure Mtc.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC UACE Applied Math 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC UACE PURE  MTC  PAPER 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTEC_A'LEVEL_PURE MATH_2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTES 2023 APPLIED MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Utes uace Mtc 1 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/UTES_MTC_2024 (3).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/VECTORS  TEST  2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Vectors' test marking guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Vectors-A-level-mathematics.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/w applied mtc g.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakata Applied Math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKATA MOCK MTC 1 A 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKATA PRE-MOCK S4 AGRICULTURE.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakata Pure Math.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKATA UACE Math-1 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKATA UACE Math-2, 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA APPLIED MATH 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wAKISHA applied mtc g.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha CST 840 Guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha Ent 1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha guide 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha Joint Mock Math 2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha Lit 1 s6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha lit1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA MAKING GUIDE MATHEMATICS QUESTION AND ANSWERS S.6.PDF"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha mathematics 2022.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha P2301.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA P4252.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakisha paper 1A 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha paper 3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha paper one.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha paper two.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISHA S.3 EOY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakisha S850-3.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakiso mock 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISO MOCK 2024 MATHS Mr. Mzei .pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISO MOCK 2024 MATHS-1.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakissa Eco 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissh 2023 Paper 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissha  all papers 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA 2023-GP Guide.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissha CST Paper 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA ENT 2 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA ENT 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA ENT MOCK JOINT.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA ENT1 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA GUIDE UACE MTC.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT CHEMISTRY S6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK BIOLOGY S4.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK ECONOMCS S6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK EXAMINATION 2023 MATHEMATICS   S.6.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK S6 CHEMISRTY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA JOINT MOCK S6 CHEMISTRY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissha Math2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA MATHS PAPER 2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissha Mock proposed guide UACE math -2-2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/Wakissha Mock proposed guide UACE Math-2-2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA MOCK S6 CHEMISRTY.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakissha mtc p2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakissha p1 mtc 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA P4251.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA PAPER 1 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA PURE MATH 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA S4  BIOLOGY PRACTICAL INSTRUCTION.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakissha sample solution for pure.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA Score Guide COMPUTER-2 (PRAC) S3 EOY 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE APPLIED MATH 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE APPLIED MATHS P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE APPLIED MATHS.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE APPLIED MTC P2.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE MATH 1 GUIDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE MATH 2 GUIDE 2020.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/wakissha uace math two.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE PP2 2023.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA UACE PURE MATH 2024.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKISSHA-Mocks-2023-Subsidiary-ICT-Paper-2-with-support-files.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WAKKISHA MOCK MTC 2024 @ 0767337537 ( QUESTION BANK GROUP).pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/why-is-vegetation-important.pdf"
+},
+{
+    "pdfUrl": "https://raw.githubusercontent.com/Fresh-Teacher/s6-past-papers/main/WORK, ENERGY AND POWER.pdf"
+}
+,
+    {
       "title": "",
       "description": "Senior Six",
       "price": 5000,
