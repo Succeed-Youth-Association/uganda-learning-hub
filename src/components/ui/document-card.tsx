@@ -42,9 +42,9 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
 
   const handleWhatsAppShare = () => {
     const fileName = extractFileName(document.pdfUrl);
-    // Encode the URL to handle spaces and special characters
+    // Use encodeURI to properly handle spaces and special characters
     const encodedUrl = encodeURI(document.pdfUrl);
-    const message = `Hello, I found this educational document named ${fileName} useful so I decided to share it with you. \n\n Click this link to view it:${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
+    const message = `Hello, I found this educational document named ${fileName} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -86,6 +86,9 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
     }
   };
 
+  const fileExtension = getFileExtension(document.pdfUrl).toLowerCase().replace('.', '');
+  const isPdf = fileExtension === 'pdf';
+
   return (
     <Card className="hover:shadow-lg transition-shadow duration-200 p-4 lg:p-6 border min-w-0">
       <div className="flex items-start justify-between mb-4">
@@ -104,15 +107,18 @@ const DocumentCard: React.FC<DocumentCardProps> = ({
       </div>
 
       <div className="flex flex-col gap-2">
-        <Button
-          onClick={() => onPreview(document)}
-          variant="outline"
-          size="sm"
-          className="w-full"
-        >
-          <Eye className="h-4 w-4 mr-1" />
-          Preview
-        </Button>
+        {/* Only show preview for PDF files */}
+        {isPdf && (
+          <Button
+            onClick={() => onPreview(document)}
+            variant="outline"
+            size="sm"
+            className="w-full"
+          >
+            <Eye className="h-4 w-4 mr-1" />
+            Preview
+          </Button>
+        )}
         <Button
           onClick={handleDownload}
           size="sm"

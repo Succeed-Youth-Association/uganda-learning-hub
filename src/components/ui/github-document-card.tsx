@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from './button';
 import { Card, CardContent } from './card';
@@ -37,7 +38,7 @@ const GitHubDocumentCard: React.FC<GitHubDocumentCardProps> = ({
   };
 
   const handleWhatsAppShare = () => {
-    // Properly encode the URL to handle spaces and special characters
+    // Use encodeURI to properly handle spaces and special characters
     const encodedUrl = encodeURI(document.download_url);
     const message = `Hello, I found this educational document named ${document.name} useful so I decided to share it with you. \n\n Click this link to view it: ${encodedUrl}\n\n For more resources like this, go to Google and search for *Fresh Teacher's Library*.`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;

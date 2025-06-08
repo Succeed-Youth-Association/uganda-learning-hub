@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import ResourcePageHeader from '../components/resource/ResourcePageHeader';
 import ResourceSubjectSelector from '../components/resource/ResourceSubjectSelector';
@@ -16,12 +16,15 @@ import {
 import { loadGitHubData, hasGitHubRepo, GitHubDocument } from '../utils/githubLoader';
 
 const ResourcePage = () => {
-  const { classId, resourceType } = useParams();
+  const { classId, resourceType, subject: urlSubject } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
-  const [usePDFViewer, setUsePDFViewer] = useState(false);
   const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null);
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
@@ -31,6 +34,19 @@ const ResourcePage = () => {
   // Check if GitHub repo is available for "All Subjects"
   const showAllSubjects = hasGitHubRepo(classId || '', resourceType || '') && 
     (resourceType === 'lesson-notes' || resourceType === 'past-papers');
+
+  // Get current page from URL search params
+  const currentPage = parseInt(searchParams.get('page') || '1', 10);
+
+  // Initialize from URL parameters
+  useEffect(() => {
+    if (urlSubject) {
+      // Decode the subject from URL (replace hyphens with spaces and handle special cases)
+      const decodedSubject = urlSubject === 'all-subjects' ? 'All Subjects' : 
+        decodeURIComponent(urlSubject.replace(/-/g, ' '));
+      setSelectedSubject(decodedSubject);
+    }
+  }, [urlSubject]);
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -104,19 +120,31 @@ const ResourcePage = () => {
 
   const handleSubjectSelect = (subject: string) => {
     setSelectedSubject(subject);
+    
+    // Navigate to subject page and reset page to 1
+    const encodedSubject = subject === 'All Subjects' ? 'all-subjects' : 
+      encodeURIComponent(subject.toLowerCase().replace(/\s+/g, '-'));
+    navigate(`/class/${classId}/resources/${resourceType}/${encodedSubject}`);
   };
 
   const handleBackToSubjects = () => {
     setSelectedSubject(null);
     setDocuments([]);
     setGithubDocuments([]);
-    setUsePDFViewer(false);
     setSelectedPdfUrl(null);
+    // Navigate back to resource type page
+    navigate(`/class/${classId}/resources/${resourceType}`);
   };
 
-  const toggleViewMode = () => {
-    setUsePDFViewer(!usePDFViewer);
-    setSelectedPdfUrl(null);
+  const handlePageChange = (page: number) => {
+    // Update URL search params
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (page === 1) {
+      newSearchParams.delete('page');
+    } else {
+      newSearchParams.set('page', page.toString());
+    }
+    setSearchParams(newSearchParams);
   };
 
   const closePdfModal = () => {
@@ -140,9 +168,7 @@ const ResourcePage = () => {
           resourceTypeTitle={resourceTypeTitle}
           currentDocumentsLength={currentDocuments.length}
           loading={loading}
-          usePDFViewer={usePDFViewer}
           onBackToSubjects={handleBackToSubjects}
-          onToggleViewMode={toggleViewMode}
         />
 
         {!selectedSubject ? (
@@ -154,15 +180,16 @@ const ResourcePage = () => {
           />
         ) : (
           <ResourceDocumentViewer
-            usePDFViewer={usePDFViewer}
             currentDocuments={currentDocuments}
             selectedSubject={selectedSubject}
             resourceTypeTitle={resourceTypeTitle}
             classTitle={classTitle}
             loading={loading}
             isGitHub={isGitHub}
+            currentPage={currentPage}
             onPreview={handlePreview}
             onDownload={handleDownload}
+            onPageChange={handlePageChange}
           />
         )}
 
