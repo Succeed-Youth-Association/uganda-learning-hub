@@ -5,7 +5,7 @@ import { Input } from './input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';
 import { Label } from './label';
 import { Card } from './card';
-import { FileText, File, FileImage, Search, Loader2 } from 'lucide-react';
+import { FileText, File, FileImage, Search, Loader2, Eye, Download } from 'lucide-react';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { ResourceDocument } from '../../utils/dataLoader';
 import { GitHubDocument } from '../../utils/githubLoader';
