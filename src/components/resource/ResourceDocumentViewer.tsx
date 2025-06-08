@@ -13,8 +13,10 @@ interface ResourceDocumentViewerProps {
   classTitle: string;
   loading: boolean;
   isGitHub: boolean;
+  currentPage: number;
   onPreview: (document: ResourceDocument | GitHubDocument) => void;
   onDownload: (document: ResourceDocument | GitHubDocument) => void;
+  onPageChange: (page: number) => void;
 }
 
 const ResourceDocumentViewer: React.FC<ResourceDocumentViewerProps> = ({
@@ -25,8 +27,10 @@ const ResourceDocumentViewer: React.FC<ResourceDocumentViewerProps> = ({
   classTitle,
   loading,
   isGitHub,
+  currentPage,
   onPreview,
-  onDownload
+  onDownload,
+  onPageChange
 }) => {
   // Convert documents to PDFViewer format
   const pdfDocuments = currentDocuments.map(doc => ({
@@ -47,8 +51,10 @@ const ResourceDocumentViewer: React.FC<ResourceDocumentViewerProps> = ({
     <EnhancedDocumentList
       documents={currentDocuments}
       loading={loading}
+      currentPage={currentPage}
       onPreview={onPreview}
       onDownload={onDownload}
+      onPageChange={onPageChange}
       isGitHub={isGitHub}
       resourceType={resourceTypeTitle}
       classTitle={classTitle}

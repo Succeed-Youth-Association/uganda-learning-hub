@@ -13,8 +13,10 @@ import { useDocumentOperations } from '../../hooks/useDocumentOperations';
 interface EnhancedDocumentListProps {
   documents: (ResourceDocument | GitHubDocument)[];
   loading: boolean;
+  currentPage: number;
   onPreview: (document: ResourceDocument | GitHubDocument) => void;
   onDownload: (document: ResourceDocument | GitHubDocument) => void;
+  onPageChange: (page: number) => void;
   isGitHub?: boolean;
   resourceType: string;
   classTitle: string;
@@ -24,8 +26,10 @@ interface EnhancedDocumentListProps {
 const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   documents,
   loading,
+  currentPage,
   onPreview,
   onDownload,
+  onPageChange,
   isGitHub = false,
   resourceType,
   classTitle,
@@ -33,7 +37,6 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [fileTypeFilter, setFileTypeFilter] = useState('all');
-  const [currentPage, setCurrentPage] = useState(1);
   const [documentSizes, setDocumentSizes] = useState<Record<string, number>>({});
   const itemsPerPage = 20;
 
@@ -72,12 +75,15 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentDocuments = filteredDocuments.slice(startIndex, startIndex + itemsPerPage);
 
+  // Reset to page 1 when search or filter changes
   useEffect(() => {
-    setCurrentPage(1);
+    if (currentPage > 1) {
+      onPageChange(1);
+    }
   }, [searchTerm, fileTypeFilter]);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+  const handlePageChangeInternal = (page: number) => {
+    onPageChange(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -138,7 +144,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
         <PaginationWithJump
           currentPage={currentPage}
           totalPages={totalPages}
-          onPageChange={handlePageChange}
+          onPageChange={handlePageChangeInternal}
           className="pt-6"
         />
       )}

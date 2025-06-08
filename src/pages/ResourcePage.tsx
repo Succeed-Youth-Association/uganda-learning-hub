@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import ResourcePageHeader from '../components/resource/ResourcePageHeader';
 import ResourceSubjectSelector from '../components/resource/ResourceSubjectSelector';
@@ -16,13 +16,17 @@ import {
 import { loadGitHubData, hasGitHubRepo, GitHubDocument } from '../utils/githubLoader';
 
 const ResourcePage = () => {
-  const { classId, resourceType } = useParams();
+  const { classId, resourceType, subject: urlSubject, page: urlPage } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [documents, setDocuments] = useState<ResourceDocument[]>([]);
   const [githubDocuments, setGithubDocuments] = useState<GitHubDocument[]>([]);
   const [loading, setLoading] = useState(false);
   const [usePDFViewer, setUsePDFViewer] = useState(false);
   const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const subjects = getSubjectsForClassAndResource(classId || '', resourceType || '');
   const classTitle = getClassTitle(classId || '');
@@ -31,6 +35,23 @@ const ResourcePage = () => {
   // Check if GitHub repo is available for "All Subjects"
   const showAllSubjects = hasGitHubRepo(classId || '', resourceType || '') && 
     (resourceType === 'lesson-notes' || resourceType === 'past-papers');
+
+  // Initialize from URL parameters
+  useEffect(() => {
+    if (urlSubject) {
+      // Decode the subject from URL (replace hyphens with spaces and handle special cases)
+      const decodedSubject = urlSubject === 'all-subjects' ? 'All Subjects' : 
+        decodeURIComponent(urlSubject.replace(/-/g, ' '));
+      setSelectedSubject(decodedSubject);
+    }
+    
+    if (urlPage) {
+      const pageNum = parseInt(urlPage, 10);
+      if (!isNaN(pageNum) && pageNum > 0) {
+        setCurrentPage(pageNum);
+      }
+    }
+  }, [urlSubject, urlPage]);
 
   // Load documents when subject is selected
   useEffect(() => {
@@ -63,6 +84,29 @@ const ResourcePage = () => {
 
     loadDocuments();
   }, [selectedSubject, classId, resourceType]);
+
+  // Update URL when subject or page changes
+  const updateURL = (subject?: string, page?: number) => {
+    if (!classId || !resourceType) return;
+
+    let newPath = `/class/${classId}/resources/${resourceType}`;
+    
+    if (subject) {
+      // Encode subject for URL (replace spaces with hyphens and handle special cases)
+      const encodedSubject = subject === 'All Subjects' ? 'all-subjects' : 
+        encodeURIComponent(subject.toLowerCase().replace(/\s+/g, '-'));
+      newPath += `/${encodedSubject}`;
+      
+      if (page && page > 1) {
+        newPath += `/${page}`;
+      }
+    }
+
+    // Only navigate if the path has changed
+    if (location.pathname !== newPath) {
+      navigate(newPath, { replace: true });
+    }
+  };
 
   const handlePreview = (document: ResourceDocument | GitHubDocument) => {
     const url = 'download_url' in document ? document.download_url : document.pdfUrl;
@@ -104,6 +148,8 @@ const ResourcePage = () => {
 
   const handleSubjectSelect = (subject: string) => {
     setSelectedSubject(subject);
+    setCurrentPage(1);
+    updateURL(subject, 1);
   };
 
   const handleBackToSubjects = () => {
@@ -112,6 +158,16 @@ const ResourcePage = () => {
     setGithubDocuments([]);
     setUsePDFViewer(false);
     setSelectedPdfUrl(null);
+    setCurrentPage(1);
+    // Navigate back to resource type page
+    navigate(`/class/${classId}/resources/${resourceType}`, { replace: true });
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    if (selectedSubject) {
+      updateURL(selectedSubject, page);
+    }
   };
 
   const toggleViewMode = () => {
@@ -161,8 +217,10 @@ const ResourcePage = () => {
             classTitle={classTitle}
             loading={loading}
             isGitHub={isGitHub}
+            currentPage={currentPage}
             onPreview={handlePreview}
             onDownload={handleDownload}
+            onPageChange={handlePageChange}
           />
         )}
 
