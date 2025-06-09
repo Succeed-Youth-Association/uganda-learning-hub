@@ -23,5 +23,5 @@ def create_file_list_in_each_folder(root_folder):
         print(f"✅ Created JSON in: {output_json_path}")
 
 # 🔄 Replace this with your root folder path
-root_folder_path = r"e:\p7-science-past-papers"
+root_folder_path = r"f:\docs\past papers\primary\P.7\SST"
 create_file_list_in_each_folder(root_folder_path)
