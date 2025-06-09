@@ -1,90 +1,121 @@
 import os
 import fitz  # PyMuPDF
-from PIL import Image
-import io
-import shutil
 from datetime import datetime
 
-def compress_pdf(input_path, output_path, quality=80, resolution=150):
+def compress_pdf_lossy(input_path, output_path, image_quality=70):
     """
-    Compress a PDF file while maintaining quality.
+    Compress a PDF file with lossy image compression.
     
     Args:
-        input_path (str): Path to input PDF file.
-        output_path (str): Path to save compressed PDF.
-        quality (int): JPEG quality (1-100), higher = better.
-        resolution (int): DPI for images, lower = smaller file size.
+        input_path (str): Path to the input PDF file
+        output_path (str): Path to save the compressed PDF file
+        image_quality (int): Quality for JPEG compression (1-100), lower means more compression
     """
     doc = fitz.open(input_path)
     
-    # Create a new PDF writer
-    writer = fitz.open()
-    
+    # Process each page to compress images
     for page in doc:
-        # Get the page
-        pix = page.get_pixmap(dpi=resolution)
+        # Get all images on the page
+        img_list = page.get_images(full=True)
         
-        # Convert to image for compression
-        img = Image.open(io.BytesIO(pix.tobytes("ppm")))
-        
-        # Compress the image
-        img_bytes = io.BytesIO()
-        img.save(img_bytes, format="JPEG", quality=quality)
-        img_bytes.seek(0)
-        
-        # Create a new PDF page with compressed image
-        new_page = writer.new_page(width=page.rect.width, height=page.rect.height)
-        new_page.insert_image(new_page.rect, stream=img_bytes)
+        for img in img_list:
+            xref = img[0]
+            base_image = doc.extract_image(xref)
+            
+            # Only process JPEG images (we'll convert others to JPEG)
+            if base_image["ext"] not in ("jpeg", "jpg"):
+                # Convert non-JPEG images to JPEG with quality setting
+                pix = fitz.Pixmap(doc, xref)
+                
+                # Convert to RGB if needed (JPEG doesn't support transparency)
+                if pix.n - pix.alpha > 3:  # CMYK or something else
+                    pix = fitz.Pixmap(fitz.csRGB, pix)
+                
+                # Convert to JPEG with quality setting
+                img_data = pix.tobytes("jpeg", quality=image_quality)
+                doc.update_image(xref, img_data)
+                pix = None  # Free memory
     
-    # Save the compressed PDF
-    writer.save(output_path, garbage=4, deflate=True)
-    writer.close()
+    # Save with aggressive compression options
+    doc.save(
+        output_path,
+        garbage=4,          # Remove unused objects
+        deflate=True,       # Compress other objects
+        clean=True,         # Clean and sanitize the file
+        deflate_images=True,  # Compress images
+        deflate_fonts=True,   # Compress fonts
+    )
+    
     doc.close()
 
-def compress_folder(input_folder, output_folder, quality=80, resolution=150):
+def compress_pdfs_in_folder(folder_path, image_quality=70):
     """
-    Compress all PDF files in a folder.
+    Compress all PDF files in a folder with lossy compression.
     
     Args:
-        input_folder (str): Folder containing PDFs to compress.
-        output_folder (str): Folder to save compressed PDFs.
-        quality (int): JPEG quality (1-100).
-        resolution (int): DPI for images.
+        folder_path (str): Path to the folder containing PDF files
+        image_quality (int): JPEG quality setting (1-100)
     """
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+    # Create a subfolder for compressed files
+    compressed_folder = os.path.join(folder_path, "compressed_lossy")
+    os.makedirs(compressed_folder, exist_ok=True)
     
-    for filename in os.listdir(input_folder):
-        if filename.lower().endswith('.pdf'):
-            input_path = os.path.join(input_folder, filename)
-            output_path = os.path.join(output_folder, filename)
+    # Get all PDF files in the folder
+    pdf_files = [f for f in os.listdir(folder_path) if f.lower().endswith('.pdf')]
+    
+    if not pdf_files:
+        print("No PDF files found in the specified folder.")
+        return
+    
+    print(f"Found {len(pdf_files)} PDF files to compress.")
+    print(f"Using JPEG quality setting: {image_quality} (lower = more compression)")
+    
+    # Process each file
+    for pdf_file in pdf_files:
+        input_path = os.path.join(folder_path, pdf_file)
+        
+        # Create output filename
+        filename, ext = os.path.splitext(pdf_file)
+        output_filename = f"{filename}_compressed_q{image_quality}{ext}"
+        output_path = os.path.join(compressed_folder, output_filename)
+        
+        print(f"Compressing: {pdf_file}...", end=" ")
+        
+        try:
+            # Get original size
+            original_size = os.path.getsize(input_path)
             
-            print(f"Compressing: {filename}")
-            try:
-                compress_pdf(input_path, output_path, quality, resolution)
-                
-                # Compare file sizes
-                orig_size = os.path.getsize(input_path) / 1024
-                new_size = os.path.getsize(output_path) / 1024
-                reduction = (1 - (new_size / orig_size)) * 100
-                
-                print(f"  Original: {orig_size:.2f} KB")
-                print(f"  Compressed: {new_size:.2f} KB")
-                print(f"  Reduction: {reduction:.2f}%\n")
-            except Exception as e:
-                print(f"  Error compressing {filename}: {str(e)}")
+            # Compress the file
+            start_time = datetime.now()
+            compress_pdf_lossy(input_path, output_path, image_quality)
+            compression_time = (datetime.now() - start_time).total_seconds()
+            
+            # Get compressed size
+            compressed_size = os.path.getsize(output_path)
+            
+            # Calculate savings
+            savings = original_size - compressed_size
+            percent_saved = (savings / original_size) * 100
+            
+            print(f"Done! Original: {original_size/1024:.1f} KB, "
+                  f"Compressed: {compressed_size/1024:.1f} KB, "
+                  f"Saved: {percent_saved:.1f}%, "
+                  f"Time: {compression_time:.2f}s")
+            
+        except Exception as e:
+            print(f"Failed to compress {pdf_file}: {str(e)}")
 
 if __name__ == "__main__":
-    # Configuration
-    INPUT_FOLDER = "f:\docs\past papers\primary\P.7\ENG"  # Folder with original PDFs
-    OUTPUT_FOLDER = "f:\docs\past papers\primary\P.7\ENG\compressed_pdfs"  # Folder for compressed PDFs
-    QUALITY = 85  # JPEG quality (1-100)
-    RESOLUTION = 150  # DPI for images
+    # Specify your folder path here
+    folder_path = r"F:\docs\past papers\primary\P.7\ENG"
     
-    print(f"PDF Compression Tool (iLovePDF-style)")
-    print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Settings: Quality={QUALITY}, Resolution={RESOLUTION} DPI\n")
+    # Set the image quality (try values between 30-70)
+    # Lower numbers mean more compression but lower quality
+    jpeg_quality = 50
     
-    compress_folder(INPUT_FOLDER, OUTPUT_FOLDER, QUALITY, RESOLUTION)
-    
-    print("\nCompression complete!")
+    # Verify the folder exists
+    if not os.path.exists(folder_path):
+        print(f"The specified folder does not exist: {folder_path}")
+    else:
+        compress_pdfs_in_folder(folder_path, jpeg_quality)
+    print("Compression process completed.")
