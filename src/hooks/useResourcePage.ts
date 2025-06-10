@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
-import { ResourceDocument, loadResourceData, getClassTitle, getResourceTypeTitle } from '../utils/dataLoader';
+import { ResourceDocument, loadResourceData, getClassTitle, getResourceTypeTitle, getSubjectsForClassAndResource } from '../utils/dataLoader';
 import { GitHubDocument, loadGitHubData, hasGitHubRepo } from '../utils/githubLoader';
 
 export const useResourcePage = () => {
@@ -41,21 +41,35 @@ export const useResourcePage = () => {
           // Load from GitHub
           console.log('Loading from GitHub repository');
           allDocuments = await loadGitHubData(classId, resourceType);
-        } else {
-          // Load from JSON files
-          console.log('Loading from JSON files');
-          const resourceData = await loadResourceData(classId, resourceType, selectedSubject || '');
-          allDocuments = resourceData;
           
-          // Extract subjects from document URLs for non-GitHub data
+          // For GitHub data, extract subjects from file names
           const subjects = Array.from(new Set(
-            resourceData.map((doc: ResourceDocument) => {
-              const fileName = doc.pdfUrl.split('/').pop() || '';
-              // Extract subject from filename - this is a simplified approach
+            allDocuments.map((doc) => {
+              const fileName = (doc as GitHubDocument).name.toLowerCase();
+              // Extract subject from filename - simplified approach
               return fileName.split('.')[0];
             })
           ));
-          setAllSubjects(subjects);
+          setAllSubjects(['All Subjects', ...subjects]);
+        } else {
+          // Load from JSON files - get available subjects from configuration
+          console.log('Loading from JSON files');
+          const availableSubjects = getSubjectsForClassAndResource(classId, resourceType);
+          setAllSubjects(['All Subjects', ...availableSubjects]);
+          
+          // If a specific subject is selected, load its data
+          if (selectedSubject && selectedSubject !== 'All Subjects') {
+            const resourceData = await loadResourceData(classId, selectedSubject, resourceType);
+            allDocuments = resourceData;
+          } else {
+            // Load all subjects data
+            const allSubjectsData: ResourceDocument[] = [];
+            for (const subject of availableSubjects) {
+              const subjectData = await loadResourceData(classId, subject, resourceType);
+              allSubjectsData.push(...subjectData);
+            }
+            allDocuments = allSubjectsData;
+          }
         }
 
         setDocuments(allDocuments);
@@ -79,7 +93,14 @@ export const useResourcePage = () => {
         console.error('Error loading resource data:', error);
         setDocuments([]);
         setFilteredDocuments([]);
-        setAllSubjects([]);
+        
+        // Still try to get subjects from configuration even if data loading fails
+        if (!hasGitHubRepo(classId, resourceType)) {
+          const availableSubjects = getSubjectsForClassAndResource(classId, resourceType);
+          setAllSubjects(['All Subjects', ...availableSubjects]);
+        } else {
+          setAllSubjects([]);
+        }
       } finally {
         setLoading(false);
       }
