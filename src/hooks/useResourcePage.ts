@@ -45,8 +45,17 @@ export const useResourcePage = () => {
           // Load from JSON files
           console.log('Loading from JSON files');
           const resourceData = await loadResourceData(classId, resourceType);
-          allDocuments = resourceData.documents;
-          setAllSubjects(resourceData.subjects);
+          allDocuments = resourceData;
+          
+          // Extract subjects from document URLs for non-GitHub data
+          const subjects = Array.from(new Set(
+            resourceData.map((doc: ResourceDocument) => {
+              const fileName = doc.pdfUrl.split('/').pop() || '';
+              // Extract subject from filename - this is a simplified approach
+              return fileName.split('.')[0];
+            })
+          ));
+          setAllSubjects(subjects);
         }
 
         setDocuments(allDocuments);

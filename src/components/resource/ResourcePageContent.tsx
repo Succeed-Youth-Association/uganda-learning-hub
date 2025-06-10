@@ -80,10 +80,8 @@ const ResourcePageContent: React.FC<ResourcePageContentProps> = ({
 
       {previewDocument && (
         <PDFModal
-          isOpen={!!previewDocument}
+          pdfUrl={isGitHub ? (previewDocument as GitHubDocument).download_url : (previewDocument as ResourceDocument).pdfUrl}
           onClose={onClosePreview}
-          document={previewDocument}
-          isGitHub={isGitHub}
         />
       )}
     </div>
