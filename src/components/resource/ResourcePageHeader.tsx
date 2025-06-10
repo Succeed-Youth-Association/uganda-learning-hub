@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { ArrowLeft } from 'lucide-react';
-import { formatSubjectTitle } from '../../utils/stringUtils';
 
 interface ResourcePageHeaderProps {
   selectedSubject: string | null;
@@ -24,16 +23,6 @@ const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({
   loading,
   onBackToSubjects
 }) => {
-  const getFormattedTitle = () => {
-    if (!selectedSubject) return resourceTypeTitle;
-    
-    if (selectedSubject === 'All Subjects') {
-      return `All Subjects ${resourceTypeTitle}`;
-    }
-    
-    return formatSubjectTitle(selectedSubject, resourceTypeTitle);
-  };
-
   return (
     <div className="mb-8">
       {selectedSubject ? (
@@ -53,7 +42,7 @@ const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({
       )}
       
       <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-        {getFormattedTitle()}
+        {selectedSubject ? selectedSubject : resourceTypeTitle}
       </h1>
       <p className="text-lg text-muted-foreground mb-6">
         {selectedSubject 
