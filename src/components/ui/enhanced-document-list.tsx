@@ -104,6 +104,8 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
         fileTypeFilter={fileTypeFilter}
         onSearchChange={setSearchTerm}
         onFileTypeChange={setFileTypeFilter}
+        documents={documents}
+        isGitHub={isGitHub}
       />
 
       {/* Documents Grid */}
