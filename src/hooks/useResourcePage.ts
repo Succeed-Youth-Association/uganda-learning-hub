@@ -44,7 +44,7 @@ export const useResourcePage = () => {
         } else {
           // Load from JSON files
           console.log('Loading from JSON files');
-          const resourceData = await loadResourceData(classId, resourceType);
+          const resourceData = await loadResourceData(classId, resourceType, selectedSubject || '');
           allDocuments = resourceData;
           
           // Extract subjects from document URLs for non-GitHub data
