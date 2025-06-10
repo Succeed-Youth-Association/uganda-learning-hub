@@ -116,21 +116,21 @@ export const useResourcePage = () => {
     });
   };
 
-  const handlePreview = (document: ResourceDocument | GitHubDocument) => {
-    setPreviewDocument(document);
+  const handlePreview = (doc: ResourceDocument | GitHubDocument) => {
+    setPreviewDocument(doc);
   };
 
-  const handleDownload = async (document: ResourceDocument | GitHubDocument) => {
+  const handleDownload = async (doc: ResourceDocument | GitHubDocument) => {
     try {
       let downloadUrl: string;
       let fileName: string;
 
       if (isGitHub) {
-        const githubDoc = document as GitHubDocument;
+        const githubDoc = doc as GitHubDocument;
         downloadUrl = githubDoc.download_url;
         fileName = githubDoc.name;
       } else {
-        const resourceDoc = document as ResourceDocument;
+        const resourceDoc = doc as ResourceDocument;
         downloadUrl = resourceDoc.pdfUrl;
         fileName = downloadUrl.split('/').pop() || 'document.pdf';
       }
