@@ -33,35 +33,17 @@ export const useDocumentFilter = (
     }
   };
 
-  const matchesSearch = (text: string, searchTerm: string): boolean => {
+  // GitHub-like search: simple case-insensitive substring matching
+  const matchesSearch = (filename: string, searchTerm: string): boolean => {
     if (!searchTerm.trim()) return true;
     
-    const textLower = text.toLowerCase();
-    const searchWords = searchTerm.toLowerCase().split(/\s+/);
+    const normalizedFilename = filename.toLowerCase();
+    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
     
-    const commonWords = ['past', 'papers', 'exam', 'examination', 'test', 'question', 'lesson', 'notes'];
-    const filteredSearchWords = searchWords.filter(word => 
-      word.length > 2 && !commonWords.includes(word)
-    );
+    // Split search term by spaces and check if all words are found in filename
+    const searchWords = normalizedSearchTerm.split(/\s+/);
     
-    if (filteredSearchWords.length === 0) return true;
-    
-    const textParts = textLower.split(/[\s\-_\.]+/);
-    
-    return filteredSearchWords.some(searchWord => {
-      if (textLower.includes(searchWord)) return true;
-      if (textParts.some(part => part.startsWith(searchWord))) return true;
-      if (textParts.some(part => searchWord.startsWith(part))) return true;
-      
-      const numberMap = {
-        '1': 'one', '2': 'two', '3': 'three', '4': 'four',
-        '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine'
-      };
-      const searchWithNumbersReplaced = searchWord.replace(
-        /[1-9]/g, match => numberMap[match] || match
-      );
-      return textLower.includes(searchWithNumbersReplaced);
-    });
+    return searchWords.every(word => normalizedFilename.includes(word));
   };
 
   const filteredDocuments = useMemo(() => {

@@ -8,6 +8,7 @@ import { GitHubDocument } from '../../utils/githubLoader';
 import { extractFileName, getFileExtension } from '../../utils/fileUtils';
 import { FILE_TYPE_CONFIG } from '../../utils/fileTypeConfig';
 import FileTypeIcon from './file-type-icon';
+import HighlightedText from './highlighted-text';
 
 interface EnhancedDocumentCardProps {
   document: ResourceDocument | GitHubDocument;
@@ -16,6 +17,7 @@ interface EnhancedDocumentCardProps {
   resourceType: string;
   classTitle: string;
   size?: number;
+  searchTerm?: string;
   onPreview: (document: ResourceDocument | GitHubDocument) => void;
   onDownload: (document: ResourceDocument | GitHubDocument) => void;
   onWhatsAppShare: (document: ResourceDocument | GitHubDocument) => void;
@@ -28,6 +30,7 @@ const EnhancedDocumentCard: React.FC<EnhancedDocumentCardProps> = ({
   resourceType,
   classTitle,
   size,
+  searchTerm = "",
   onPreview,
   onDownload,
   onWhatsAppShare
@@ -81,8 +84,8 @@ const EnhancedDocumentCard: React.FC<EnhancedDocumentCardProps> = ({
         />
       </div>
       
-      <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 line-clamp-2 break-words">
-        {formattedName}
+      <h3 className="text-base lg:text-lg font-semibold text-card-foreground mb-3 break-words leading-tight">
+        <HighlightedText text={formattedName} searchTerm={searchTerm} />
       </h3>
       
       <div className="space-y-1 mb-4 text-sm text-muted-foreground">
