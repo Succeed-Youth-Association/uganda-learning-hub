@@ -87,6 +87,10 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleDocumentSelect = (document: ResourceDocument | GitHubDocument) => {
+    onPreview(document);
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
@@ -104,6 +108,9 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
         fileTypeFilter={fileTypeFilter}
         onSearchChange={setSearchTerm}
         onFileTypeChange={setFileTypeFilter}
+        filteredDocuments={filteredDocuments}
+        isGitHub={isGitHub}
+        onDocumentSelect={handleDocumentSelect}
       />
 
       {/* Documents Grid */}
@@ -130,6 +137,7 @@ const EnhancedDocumentList: React.FC<EnhancedDocumentListProps> = ({
                 resourceType={resourceType}
                 classTitle={classTitle}
                 size={size}
+                searchTerm={searchTerm}
                 onPreview={onPreview}
                 onDownload={onDownload}
                 onWhatsAppShare={(doc) => handleWhatsAppShare(doc, isGitHub)}
