@@ -1,0 +1,263 @@
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/#Creative Printers Workbook Reading Middle class.pdf"
+    },
+        {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/A $ P for nurses - Copy - Copy.pdf"
+    },
+        {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/baby class (2).pdf"
+    },
+        {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS DAILY ROUTINE THIRD TERM 2019.pdf"
+    },
+        {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class English term iii scheme of work.pdf"
+    },
+        {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class Numbers term iii scheme of work.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class RE term iii scheme of work.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Class Reading Term 2 Lesson Notes.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class Reading term iii scheme of work.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class term iii English scheme of work.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class writing term iii-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby class writing term iii.pdf"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Eng Language dev I Scheme Term 2-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Eng Language dev I Scheme Term 2.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Eng Language Devt 2 Scheme Term 2-1.pdf"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Aptitude scheme Top class I-III.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/baby English notes I-III-1-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/baby English notes I-III-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY ENGLISH SCHEME TERM 3.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY ENGLISH SCHEME.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 3 LESSON NOTES TERM 1 2025.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 3 LESSON NOTES TERM 1 2025.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 5 LESSON NOTES TERM 1 2025.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 5 LESSON NOTES TERM 1 2025.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby lesson notes english TERM I - III, 2024.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LESSON TERM III.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LESSON TERM III.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY Scheme for Baby class all learning areas all terms  2023.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY SCHEME FOR ENGLISH FOR BABY CLASS (done).doc"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY SCHEME OF WORK FOR LEARNING AREA II BABY ENG T2.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY SCHEMES all terms.pdf"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY WORKBOOK.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Writing Scheme Term 2.pdf"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS HOLIDAY PACKAGE @MR KIMULI DERRICK-0754336823-_042532.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY READING NOTES.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY READING SCHEME (1)-1.docx"
+    },{
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-MATHS SCHEME TERM I.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-NEWS SCHEME TERM I.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-READING SCHEME TERM I.docx"
+    }, {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-ENGLISH SCHEME TERM I.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-GK2 SCHEME TERM I.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-GK3 SCHEME TERM I.docx"
+    },
+    
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY-WRITING SCHEME TERM I.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY NOTES 2023.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Baby class weekly activity.pdf"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Baby Class WORK 19TH MAY.pdf"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Baby HOLIDAY PACKAGE.pdf"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/BABY TERM 2 HOLIDAY PACKAGE.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/BABY CLASS package term III 2023 GROUP A.docx"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/BABY CLASS ENGLISH HOLIDAY WORK KINGS SCHOOL KABOWA.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/BABY CLASS ENGLISH HOMEWORK FOR TERM II.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Book One baby class 3-4 year.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Book One baby class 3-4 year-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Book One baby class 3-4 year.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/BOOST GUIDE 6-8 YEARS.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Holiday Package baby 2 CREATIVE.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Holiday Package BABY CREATIVE.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Holiday package baby EOT 1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Holiday Package BABY T3.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/HOLIDAY PACKAGE FOR BABY CLASS-1.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/HOLIDAY PACKAGE FOR BABY CLASS.pdf"
+    },    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Kindergarden WORKBOOK.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Kindergarden WORKBOOK.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Package for Baby Class Term I 2020.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Reading comprehension 3.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Reading comprehension 5.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Reading comprehension 6.pdf"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/SOCIAL DEVELOPMENT BABY.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby/Untitled BABY T3.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/2 term 2 lesson notes  for  middle for number  2015.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/3 Lesson notes  for  middle class  for  Aptitude 2015.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/3 Lesson notes  for  Top  class  for  Aptitude 2015.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/3 Scheme  for  middle class  for  Aptitude 2015.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/4 Lesson notes  for  Baby class for Reading  2015.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Article.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS ALL SUBJECTS SCHEME OF WORK ALL TERMS 2025.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS APTITUDE SCHEME OF WORK TERM 1-3 2025.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS DAILY HOMEWORK TERM II.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS  RECESS PACKAGE, 2020 HORMISDALLEN SCHOOLS pdf.pdf"
+    },
+
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY Class - Holiday Package .pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS  HOLIDAY WORK TERM 3 2023.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY (3-4 YRS) HOLIDAY PACKAGE.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/B.K_S.4 ENGLISH SCHEME[1].docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/B.O.T I TOP CLASS.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABIES HOLIDAY PACKAGE TERM II.pdf"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/4 Scheme of  work  for Baby classEnglish   2015 (Repaired).docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/4 schemes  for  babyclass  for  Aptitude 2015.docx"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/Baby Animals and Kind Mother Duck.docx"
+    },  {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS LA5 - MID TERM 1 2024.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS LANGUAGE DEVELOPMENT  SCHEME OF WORK TERM 1-3 2025.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS LANGUAGE.pdf"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS 7FOR SOCIAL DEVELOPMENT.docx"
+    },
+    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY CLASS MATHEMATICAL CONCEPTS SCHEME OF WORK TERM 1-3 2025.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY NUMBERS FOR BABY CLASS 0 - 4YRS done).doc"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY SCHEME  HEALTH HABITS 2020.docx"
+    },   {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY SOCIAL DEV'T  SCHEME OF WORK.docx"
+    },    {
+        "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY[1].docx"
+    },{
+    "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 3 MID II2.pdf"
+},
+{
+    "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA 3 MID III.pdf"
+},
+{
+    "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA.3 MID TERM 1 2023.pdf"
+},
+{
+    "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/BABY LA3.pdf"
+},
+{
+    "pdfUrl": "https://fresh-teacher.github.io/baby-class-past-papers/EOT III BABY LA3.pdf"
+},
